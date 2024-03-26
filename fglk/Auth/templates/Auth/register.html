@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form method="post">
+    {{ form.hidden_tag() }}
+    {{ form.name.label() }}{{ form.name() }}
+    {{ form.email.label() }}{{ form.email() }}
+    {{ form.password.label() }}{{ form.password() }}
+    
+    {% if role=='admin' %}
+        {{ form.adminkey.label() }}{{ form.adminkey() }}
+    {% endif %}
+    
+    {{ form.submit() }}
+        
+</form>
+
+{% endblock %}
