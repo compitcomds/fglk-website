@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --color-bkg: 210deg 40% 98%;
+        --color-content: 217deg 32.6% 17.5%;
+    }
+    @media (prefers-color-scheme:dark){
+        :root {
+            --color-bkg: 217deg 32.6% 17.5%;
+            --color-content: 210deg 40% 98%;
+        }
+    }
+    :root[data-theme="dark"]{
+        --color-bkg: 210deg 40% 98%;
+        --color-content: 217deg 32.6% 17.5%;
+    }
+    :root[data-theme="cool"]{
+        --color-bkg: 217deg 32.6% 17.5%;
+        --color-content: 210deg 40% 98%;
+    }
+}
+
+body {
+    @apply bg-gray-800 text-white font-sans antialiased relative;
+}
+/* navbar start */
+.navbar {
+    @apply bg-slate-800 text-white font-bold py-2 px-2  shadow-md flex;
+}
+
+/* search bar */
+.search {
+    @apply max-w-lg mx-auto ;
+}
+.searchBar {
+    @apply relative ;
+}
+.searchBox {
+    @apply w-full bg-gray-800 text-white border border-gray-700 rounded-md px-4 py-2 focus:outline-none focus:border-indigo-500;
+}
+/* search bar end*/
+/* Login button */
+.loginBtn {
+    @apply bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-500;
+}
+    
+.nav-item {
+    @apply w-24 h-10 bg-slate-200 text-black flex items-center justify-center rounded mr-4 cursor-pointer transition duration-200 ease-in-out;
+}
+/* navbar end */
+
+
+/* sidebar and main content */
+.sideMain {
+    @apply flex h-screen bg-gray-100;
+}
+
+
+
+/* sidebar */
+
+.sideNav {
+    @apply bg-gray-800 text-gray-100 w-2/12 flex-shrink-0;
+}
+.sideCon {
+    @apply p-4;
+}
+.sideTxt {
+    @apply text-xl font-semibold mb-4;
+}
+.sideItem {
+    @apply space-y-3;
+}
+.sideItems {
+    @apply  bg-slate-800 rounded;
+}
+
+
+
+/* index page css */
+
+
+/* main content */
+.mainContent {
+    @apply w-10/12 flex-grow p-8 bg-gray-700 text-white font-sans antialiased ;
+}
+
+.mainTop {
+    @apply flex gap-4 rounded-md h-full max-h-96;
+}
+
+.mainTopIn {
+    @apply w-9/12 bg-gray-300 p-4 rounded-md;
+}
+
+.mainTopRight {
+    @apply w-3/12 flex flex-col;
+}
+
+.mainTopRightOne {
+    @apply bg-gray-500 p-4 rounded-md mb-4 h-full max-h-80;
+}
+
+.mainTopRightBase {
+    @apply rounded-md h-full max-h-24 flex gap-4;
+}
+
+.mainTopRightBaseOne {
+    @apply w-1/2 bg-gray-300 p-4 rounded-md;
+}
+
+.mainTopRightBaseTwo {
+    @apply  bg-gray-500 p-4 rounded-md;
+}

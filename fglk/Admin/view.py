@@ -4,7 +4,7 @@ from fglk.database import db
 from bson.objectid import ObjectId
 
 
-Admin = Blueprint('Admin',__name__,template_folder='templates/Admin')
+Admin = Blueprint('Admin',__name__,template_folder='templates/Admin',static_folder='static')
 
 @Admin.before_request
 @login_required

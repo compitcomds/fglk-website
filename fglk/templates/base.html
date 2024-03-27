@@ -1,16 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
+
 <body>
     <a href="{{url_for('Auth.login')}}">login</a>
     <a href="{{url_for('Auth.register')}}">register</a>
     <a href="{{url_for('Auth.logout')}}">Logout</a>
-    {% block content %}
+    {# Navbar #}
+    <div class="navbar">
+        <div class="nav-item"></div>
+        <div class="search">
+            <!-- Search Bar -->
+            <div class="searchBar">
+                <input type="text" class="searchBox" placeholder="Search...">
+            </div>
+        </div>
+        {#
+        <button class="loginBtn">
+            Login
+        </button>
+        #}
+    </div>
 
-    {% endblock content %}
+    {# Sidebar #}
+    <div class="sideMain ">
+        <!-- Sidebar -->
+        <div class="sideNav ">
+            <div class="sideCon">
+                <h2 class="sideTxt">Sidebar</h2>
+                <div class="sideItem">
+                    <div class="sideItems">Example</div>
+                    <div class="sideItems">Example</div>
+                    <div class="sideItems">Example</div>
+                    <div class="sideItems">Example</div>
+                </div>
+            </div>
+        </div>
+        {% block content %}
+
+        {% endblock content %}
+
+    </div>
+
+
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'cool' ? 'dark' : 'cool';
+            document.documentElement.setAttribute('data-theme', newTheme);
+        }
+    </script>
 </body>
+
 </html>

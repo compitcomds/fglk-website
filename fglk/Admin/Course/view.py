@@ -4,7 +4,7 @@ from fglk.database import db
 from bson.objectid import ObjectId
 from fglk.Admin.Course.form import AddCourseForm
 
-Admin_Course = Blueprint('Admin_Course',__name__,template_folder='templates/Admin_Course')
+Admin_Course = Blueprint('Admin_Course',__name__,template_folder='templates/Admin_Course',static_folder='static')
 @Admin_Course.route('/')
 def ShowCourse():
       data=db.course.find()

@@ -12,7 +12,7 @@ from config import Config
 
 ## can use flask cache memory to store the memeory into flask carche ##
 
-Auth=Blueprint('Auth',__name__,template_folder='templates/Auth',static_folder='')
+Auth=Blueprint('Auth',__name__,template_folder='templates/Auth',static_folder='static')
 
 bcrypt = Bcrypt(app)
 login_manager=LoginManager(app)
