@@ -230,7 +230,6 @@ img {
 .mainTopRightOne {
     @apply 
     bg-gray-500 
-    p-4 
     rounded-md 
     mb-4 
     h-4/5;
@@ -272,3 +271,29 @@ img {
     duration-700;
 }
 
+/*  -------------------- Features -------------------- */
+.feature {
+    @apply
+    flex
+    py-6
+    h-2/5
+    gap-5
+    ;
+}
+.feature-long {
+    @apply
+    w-6/12    
+    bg-slate-400
+    rounded-md    
+    ;
+
+}
+
+.feature-small {
+    @apply
+    w-4/12    
+    bg-slate-400
+    
+    rounded-md;
+}
+/*  -------------------- Features End -------------------- */

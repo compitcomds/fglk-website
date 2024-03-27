@@ -778,7 +778,6 @@ img {
   border-radius: 0.375rem;
   --tw-bg-opacity: 1;
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
-  padding: 1rem;
 }
 
 .mainTopRightBase {
@@ -815,3 +814,26 @@ img {
   transition-duration: 700ms;
 }
 
+/*  -------------------- Features -------------------- */
+
+.feature {
+  display: flex;
+  height: 40%;
+  gap: 1.25rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.feature-long {
+  width: 50%;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}
+
+.feature-small {
+  width: 33.333333%;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}
