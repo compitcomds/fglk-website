@@ -1,15 +1,16 @@
-from flask import Blueprint,redirect,flash,render_template,url_for,request
+from flask import Blueprint,redirect,flash,render_template,url_for,request,session
 from fglk import app
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager,login_user,login_required,current_user,logout_user
-from fglk.Auth.form import LoginForm, RegistrationForm, RegistrationFormadmin
+from fglk.Auth.form import LoginForm, RegistrationForm, RegistrationFormadmin,ForgotPasswordForm,OtpForm,ResetPasswordForm
 from secrets import token_hex
 from fglk.database import db
 from datetime import datetime, timedelta
 from bson.objectid import ObjectId
 from fglk.Auth.modles import Student, Admin
 from config import Config
-
+from .Mail import SendMail
+from .Otp import generate_otp,check_otp
 ## can use flask cache memory to store the memeory into flask carche ##
 
 Auth=Blueprint('Auth',__name__,template_folder='templates/Auth',static_folder='static')
@@ -60,11 +61,11 @@ def login():
             flash('Invalid username or password!', 'error')
     return render_template('login.html', form=form)
 
+
 @Auth.route('/register', methods=['GET', 'POST'])
 def register():
     role = request.args.get('role')  # Check if 'role' parameter is provided in the URL
     collection = db['users']
-    
     if role == 'admin':
         form = RegistrationFormadmin()
     else:
@@ -96,9 +97,52 @@ def register():
 
 
 
-@Auth.route('/forgot_password')
+
+@Auth.route('/forgot_password' , methods=['GET', 'POST'])
 def forgot_password():
-    return ['forgot_password Page']
+    form=ForgotPasswordForm()
+    if form.validate_on_submit():
+        email=form.email.data
+        userX=db.users.find_one({'email':email})
+        if userX:
+            session['email']=email
+            session['otp_bycrypt']=generate_otp(email,6)
+            return redirect (url_for('Auth.otp'))
+        flash('Not user', 'error')
+        return render_template('forgot_password.html',form=form)
+        # return session.get('email')
+    return render_template('forgot_password.html',form=form)
+
+@Auth.route('/otp', methods=['GET', 'POST'])
+def otp():
+    if session.get('email') and session.get('otp_bycrypt') :
+        form=OtpForm()
+        if form.validate_on_submit():
+            otp=form.otp.data
+            if check_otp(otp,session.get('otp_bycrypt')):
+                return redirect (url_for('Auth.reset_password'))
+            else:
+                flash('Invalid Otp!', 'error')
+                return render_template('otp.html',form=form)
+        return render_template('otp.html',form=form)
+    else:
+        return redirect (url_for('Auth.forgot_password'))
+
+
+@Auth.route('/resetPassword', methods=['GET', 'POST'])
+def reset_password():
+    if not session.get('email'):
+        return redirect (url_for('Auth.login'))
+    form=ResetPasswordForm()
+    if form.validate_on_submit():
+        password_hash = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        db.users.update_one({'email': session.get('email')}, {'$set': {'password': password_hash}})
+        session.pop('email',None)
+        session.pop('otp_bycrypt',None)
+        return redirect(url_for('Auth.login'))
+    return render_template('resetPassword.html',form=form)
+
+
 
 @login_required
 @Auth.route('/test')

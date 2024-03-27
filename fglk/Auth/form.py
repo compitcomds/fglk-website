@@ -19,3 +19,14 @@ class RegistrationFormadmin(RegistrationForm):
     adminkey=PasswordField('Enter The Key',validators=[DataRequired()])
 
 # class LoginFormadmin(LoginForm):
+class ForgotPasswordForm(FlaskForm):
+    email=EmailField('Enter Mail')
+    submit=SubmitField('Get Otp')
+
+class OtpForm(FlaskForm):
+    otp=StringField('Enter OTP')
+    submit=SubmitField('Verify')
+    
+class ResetPasswordForm(FlaskForm):
+    password = PasswordField('Password', validators=[DataRequired()])
+    submit = SubmitField('Reset Password')
