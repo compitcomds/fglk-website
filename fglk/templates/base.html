@@ -19,8 +19,26 @@
     <a href="{{url_for('Auth.logout')}}">Logout</a>#}
 
     {# Navbar #}
+    <div class="nav-item">
+        <div class="logo">Logo</div>
+        {# Sidebar #}
+        <div class="sideMain ">
+            <!-- Sidebar -->
+            <div class="sideNav ">
+                <div class="sideCon">
+                    <h2 class="sideTxt">Sidebar</h2>
+                    <div class="sideItem">
+                        <div class="sideItems">Example</div>
+                        <div class="sideItems">Example</div>
+                        <div class="sideItems">Example</div>
+                        <div class="sideItems">Example</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="navbar">
-        <div class="nav-item"></div>
+
         <div class="nav-item1">
             <div class="search">
                 <!-- Search Bar -->
@@ -53,26 +71,37 @@
 
     </div>
 
-    {# Sidebar #}
-    <div class="sideMain ">
-        <!-- Sidebar -->
-        <div class="sideNav ">
-            <div class="sideCon">
-                <h2 class="sideTxt">Sidebar</h2>
-                <div class="sideItem">
-                    <div class="sideItems"></div>
-                    <div class="sideItems"></div>
-                    <div class="sideItems"></div>
-                    <div class="sideItems"></div>
+
+    {% block content %}
+
+    {% endblock content %}
+    <footer class="mainFooter">
+        <div class="footer ">
+            <div class="footerStart ">
+                <div class="footerAbout ">
+                    <h2 class="footerHead">About Us</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc consectetur
+                        accumsan sed vel ligula. Vivamus nec enim varius, vehicula orci eget, vehicula nisi.</p>
+                </div>
+                <div class="footerAbout">
+                    <h2 class="footerHead">Useful Links</h2>
+                    <ul>
+                        <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                        <li><a href="#" class="hover:text-gray-300">About Us</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Services</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footerAbout">
+                    <h2 class="footerHead">Contact Us</h2>
+                    <p>123 Main Street</p>
+                    <p>City, State, ZIP</p>
+                    <p>Email: info@example.com</p>
+                    <p>Phone: 123-456-7890</p>
                 </div>
             </div>
         </div>
-        {% block content %}
-
-        {% endblock content %}
-
-    </div>
-
+    </footer>
 
     <script>
         function toggleTheme() {
@@ -82,8 +111,8 @@
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
-    
+
+
 </body>
 
 </html>
