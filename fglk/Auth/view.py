@@ -18,8 +18,6 @@ Auth=Blueprint('Auth',__name__,template_folder='templates/Auth',static_folder='s
 bcrypt = Bcrypt(app)
 login_manager=LoginManager(app)
 
-
-      
 @login_manager.user_loader
 def load_user(user_id):
     # Assuming you have a way to retrieve the user from the user ID
@@ -30,11 +28,6 @@ def load_user(user_id):
         elif user_data['role']=='Admin':
             return Admin(user_data['_id'],user_data['name'],user_data['email'],user_data['role'],user_data['token'])
     return None
-
-
-@login_manager.unauthorized_handler
-def unauthorized_callback():
-    return redirect('/login')
 
 @Auth.route('/login',methods=['GET','POST'])
 def login():
@@ -70,7 +63,6 @@ def register():
         form = RegistrationFormadmin()
     else:
         form = RegistrationForm()
-    
     if form.validate_on_submit():
         if db.users.find_one({'email': form.email.data}):
             flash('Email already exists!', 'error')
@@ -92,7 +84,6 @@ def register():
                 collection.insert_one(data)
                 flash('Registration successful! You can now login.', 'success')
                 return redirect('/login')
-    
     return render_template('register.html', form=form, role=role)
 
 
@@ -142,17 +133,11 @@ def reset_password():
         return redirect(url_for('Auth.login'))
     return render_template('resetPassword.html',form=form)
 
-
-
 @login_required
 @Auth.route('/test')
 def test_login():
     token = request.cookies.get('token')
     return {'token':token,'id':str(current_user.user_id),'name':str(current_user.name),'role':str(current_user.role)}
-
-@Auth.errorhandler(404)
-def page_not_found(error):
-    return render_template('404.html'), 404
 
 @Auth.route('/logout')
 @login_required
@@ -162,3 +147,11 @@ def logout():
     response = redirect(url_for('Auth.login'))
     response.delete_cookie('token')  # Remove the token cookie
     return response
+
+@Auth.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
+
+@login_manager.unauthorized_handler
+def unauthorized_callback():
+    return redirect('/login')
