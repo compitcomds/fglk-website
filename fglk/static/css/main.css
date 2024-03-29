@@ -654,20 +654,39 @@ body {
 /* navbar images end */
 
 .nav-item {
+  position: fixed;
+  top: 0px;
+  z-index: 50;
   display: flex;
-  height: 2rem;
+  height: 83.333333%;
   width: 16.666667%;
-  cursor: pointer;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 0.25rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.logo {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  width: 91.666667%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .nav-item1 {
+  margin-left: auto;
   display: flex;
   width: 83.333333%;
   align-items: center;
@@ -683,26 +702,16 @@ body {
 
 /* sidebar and main content */
 
-.sideMain {
-  display: flex;
-  height: 100vh;
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
 /* sidebar */
 
-.sideNav {
-  width: 16.666667%;
-  flex-shrink: 0;
+.sideMain {
+  height: 100%;
+  width: 91.666667%;
   --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(243 244 246 / var(--tw-text-opacity));
-}
-
-.sideCon {
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
   padding: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .sideTxt {
@@ -719,14 +728,12 @@ body {
 }
 
 .sideItems {
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 0.25rem;
   --tw-bg-opacity: 1;
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
 }
 
 /* index page css */
@@ -734,6 +741,7 @@ body {
 /* main content */
 
 .mainContent {
+  margin-left: auto;
   width: 83.333333%;
   flex-grow: 1;
   --tw-bg-opacity: 1;
@@ -778,7 +786,6 @@ img {
   border-radius: 0.375rem;
   --tw-bg-opacity: 1;
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
-  padding: 1rem;
 }
 
 .mainTopRightBase {
@@ -815,3 +822,63 @@ img {
   transition-duration: 700ms;
 }
 
+/*  -------------------- Features -------------------- */
+
+.feature {
+  display: flex;
+  height: 40%;
+  gap: 1.25rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.feature-long {
+  width: 50%;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}
+
+.feature-small {
+  width: 33.333333%;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}
+
+/*  -------------------- Features End -------------------- */
+
+/*  -------------------- Footer start -------------------- */
+
+.mainFooter {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerStart {
+  display: flex;
+}
+
+.footerAbout {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .footerAbout {
+    width: 33.333333%;
+  }
+}
+
+.footerHead {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+/*  -------------------- Footer End -------------------- */
