@@ -38,7 +38,7 @@ body {
 
 /* navbar start */
 /* Assuming you have other Tailwind CSS imports or directives before this */
-.navbar {
+.nav {
     @apply bg-primary
      text-textcol
       font-bold 
@@ -49,7 +49,19 @@ body {
       z-10
       fixed;
 }
-
+.logo {
+    @apply
+    my-3
+    bg-slate-400
+    flex 
+    items-center 
+    justify-center
+    rounded-md
+    w-2/12    
+    px-3
+    py-1
+    ;
+}
 /* search bar */
 .search {
     @apply
@@ -77,8 +89,7 @@ body {
     @apply
     flex
     items-center
-    justify-end
-    
+    justify-end    
     ;
 }
 .circleImg {
@@ -107,30 +118,6 @@ body {
 }
 /* navbar images end */
 
-.nav-item {
-    @apply 
-    w-2/12    
-    text-textcol     
-    items-center 
-    justify-center 
-    h-screen
-    fixed
-    ;
-}
-
-.logo {
-    @apply
-    my-3
-    bg-slate-400
-    flex 
-    items-center 
-    justify-center
-    rounded-md
-    w-2/12    
-    px-3
-    py-1
-    ;
-}
 .nav-item1 {
     @apply
     w-10/12
@@ -150,161 +137,32 @@ body {
 /* navbar end */
 
 
-/* sidebar and main content */
-
-
-
-
-/* sidebar */
-.sideMain {
-    @apply
-    w-11/12
-    h-full
-    py-20
-    p-4
-    bg-primary;;
-}
-
-
-.sideTxt {
-    @apply 
-    text-xl 
-    font-semibold 
-    mb-4;
-}
-
-.sideItem {
-    @apply 
-    space-y-4;
-}
-
-.sideItems {
-    @apply 
-    flex 
-    items-center 
-    justify-center
-    rounded;
-}
-
-
-
-/* index page css */
-
-
-/* main content */
-.mainContent {
-    @apply 
-    w-10/12 
-    flex-grow 
-    p-8 
-    ml-auto
-    bg-primary 
-    text-textcol 
-    overflow-y-auto
-    h-screen 
-    font-sans antialiased
-    ;
-}
-
-.mainTop {
-    @apply 
-    flex 
-    gap-4 
-    rounded-md 
-    h-3/5 
-    ;
-}
-
-.mainTopIn {
-    @apply 
-    w-9/12     
-    rounded-md;
-}
-img {
-    @apply
-    w-full
-    h-full
-    object-cover
-    rounded-md;
-}
-.mainTopRight {
-    @apply 
-    w-3/12 
-    flex 
-    flex-col;
-}
-
-.mainTopRightOne {
-    @apply 
-    rounded-md 
-    mb-4 
-    h-4/5;
-}
-
-.mainTopRightBase {
-    @apply 
-    rounded-md 
-    h-1/5 
-    flex 
-    gap-4;
-}
-
-.mainTopRightBaseOne{
-    @apply 
-    relative
-    overflow-hidden 
-    rounded-lg 
-    w-1/2
-    ;
-}
-
-
-.mainTopRightBaseOne img {
-    @apply
-    absolute 
-    inset-0 
-    w-full 
-    h-full 
-    object-cover 
-    filter 
-    blur-sm
-    ;
-}
-.mainTopRightBaseOne img:hover {
-    @apply
-    scale-110
-    transition-all
-    duration-700;
-}
-
-/*  -------------------- Features -------------------- */
-.feature {
+/* screen */
+.screen {
     @apply
     flex
-    py-6
-    h-1/4
-    gap-5
-    ;
+    text-textcol
 }
-.feature-long {
+
+/* sidebar */
+.sidebar {
     @apply
-    w-6/12    
-    rounded-md    
-    ;
-
+    w-2/12
+    bg-slate-500
+    h-screen
+    fixed
+    
 }
-
-.feature-small {
+.sidebarList {
     @apply
-    w-4/12       
-    rounded-md;
+    block px-4 py-2 text-gray-800 hover:bg-gray-300
 }
-/*  -------------------- Features End -------------------- */
 
-
-
-
-/*  -------------------- Footer start -------------------- */
-
-
-/*  -------------------- Footer End -------------------- */
+/* index page css */
+/* main content */
+.main-content {
+    @apply
+    w-full
+    bg-slate-300
+    
+}

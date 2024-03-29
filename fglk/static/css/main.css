@@ -566,10 +566,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.visible {
-  visibility: visible;
-}
-
 body {
   position: relative;
   --tw-bg-opacity: 1;
@@ -583,7 +579,7 @@ body {
 
 /* Assuming you have other Tailwind CSS imports or directives before this */
 
-.navbar {
+.nav {
   position: fixed;
   z-index: 10;
   display: flex;
@@ -596,6 +592,22 @@ body {
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.logo {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  width: 16.666667%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 /* search bar */
@@ -660,32 +672,6 @@ body {
 
 /* navbar images end */
 
-.nav-item {
-  position: fixed;
-  height: 100vh;
-  width: 16.666667%;
-  align-items: center;
-  justify-content: center;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.logo {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-  display: flex;
-  width: 16.666667%;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.375rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
 .nav-item1 {
   margin-left: auto;
   display: flex;
@@ -701,148 +687,45 @@ body {
 
 /* navbar end */
 
-/* sidebar and main content */
+/* screen */
+
+.screen {
+  display: flex;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
 
 /* sidebar */
 
-.sideMain {
-  height: 100%;
-  width: 91.666667%;
+.sidebar {
+  position: fixed;
+  height: 100vh;
+  width: 16.666667%;
   --tw-bg-opacity: 1;
-  background-color: rgb(11 11 43 / var(--tw-bg-opacity));
-  padding: 1rem;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
 }
 
-.sideTxt {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  font-weight: 600;
+.sidebarList {
+  display: block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
-.sideItem > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
-}
-
-.sideItems {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.25rem;
+.sidebarList:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
 /* index page css */
 
 /* main content */
 
-.mainContent {
-  margin-left: auto;
-  height: 100vh;
-  width: 83.333333%;
-  flex-grow: 1;
-  overflow-y: auto;
+.main-content {
+  width: 100%;
   --tw-bg-opacity: 1;
-  background-color: rgb(11 11 43 / var(--tw-bg-opacity));
-  padding: 2rem;
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
 }
-
-.mainTop {
-  display: flex;
-  height: 60%;
-  gap: 1rem;
-  border-radius: 0.375rem;
-}
-
-.mainTopIn {
-  width: 75%;
-  border-radius: 0.375rem;
-}
-
-img {
-  height: 100%;
-  width: 100%;
-  border-radius: 0.375rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.mainTopRight {
-  display: flex;
-  width: 25%;
-  flex-direction: column;
-}
-
-.mainTopRightOne {
-  margin-bottom: 1rem;
-  height: 80%;
-  border-radius: 0.375rem;
-}
-
-.mainTopRightBase {
-  display: flex;
-  height: 20%;
-  gap: 1rem;
-  border-radius: 0.375rem;
-}
-
-.mainTopRightBaseOne {
-  position: relative;
-  width: 50%;
-  overflow: hidden;
-  border-radius: 0.5rem;
-}
-
-.mainTopRightBaseOne img {
-  position: absolute;
-  inset: 0px;
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  --tw-blur: blur(4px);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.mainTopRightBaseOne img:hover {
-  --tw-scale-x: 1.1;
-  --tw-scale-y: 1.1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 700ms;
-}
-
-/*  -------------------- Features -------------------- */
-
-.feature {
-  display: flex;
-  height: 25%;
-  gap: 1.25rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-.feature-long {
-  width: 50%;
-  border-radius: 0.375rem;
-}
-
-.feature-small {
-  width: 33.333333%;
-  border-radius: 0.375rem;
-}
-
-/*  -------------------- Features End -------------------- */
-
-/*  -------------------- Footer start -------------------- */
-
-/*  -------------------- Footer End -------------------- */
