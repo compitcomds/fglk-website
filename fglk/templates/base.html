@@ -9,6 +9,10 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
@@ -19,26 +23,9 @@
     <a href="{{url_for('Auth.logout')}}">Logout</a>#}
 
     {# Navbar #}
-    <div class="nav-item">
-        <div class="logo">Logo</div>
-        {# Sidebar #}
-        <div class="sideMain ">
-            <!-- Sidebar -->
-            <div class="sideNav ">
-                <div class="sideCon">
-                    <h2 class="sideTxt">Sidebar</h2>
-                    <div class="sideItem">
-                        <div class="sideItems">Example</div>
-                        <div class="sideItems">Example</div>
-                        <div class="sideItems">Example</div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <div class="navbar">
-
+        <div class="logo">Logo</div>
         <div class="nav-item1">
             <div class="search">
                 <!-- Search Bar -->
@@ -71,13 +58,30 @@
 
     </div>
     <!--  End of Navbar -->
-    
+    <div class="nav-item">        
+        {# Sidebar #}
+        <div class="sideMain ">
+            <!-- Sidebar -->
+            <div class="sideNav ">
+                <div class="sideCon">
+                    <h2 class="sideTxt">Sidebar</h2>
+                    <div class="sideItem">
+                        <div class="sideItems">Example</div>
+                        <div class="sideItems">Example</div>
+                        <div class="sideItems">Example</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Main Content Section -->
     {% block content %}
 
     {% endblock content %}
     <!--  Footer Section -->
-    <footer class="mainFooter">
+
+    <!-- <footer class="mainFooter">
         <div class="footer ">
             <div class="footerStart ">
                 <div class="footerAbout ">
@@ -103,7 +107,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
 
     <script>
         function toggleTheme() {

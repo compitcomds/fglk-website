@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @layer base {
     :root {
         --color-bkg: 210deg 40% 98%;
@@ -28,22 +30,25 @@
 
 body {
     @apply
-     bg-gray-800
-     text-white
-      font-sans antialiased 
+    bg-primary
+     text-textcol
+      font-webFont 
       relative;
 }
 
 /* navbar start */
 .navbar {
     @apply
-    bg-slate-800
-    text-white
+    bg-primary
+    text-textcol
     font-bold
     p-2
     flex
     items-center
-    justify-between;
+    justify-between
+    w-full
+    z-50
+    fixed;
 }
 
 /* search bar */
@@ -94,10 +99,9 @@ body {
     rounded-full;
 }
 .profile {
-    @apply
-    
+    @apply    
     w-auto
-    text-white 
+    text-textcol 
     rounded-lg 
     px-6 
     py-2;
@@ -107,12 +111,10 @@ body {
 .nav-item {
     @apply 
     w-2/12    
-    bg-slate-800 
-    text-white 
-    flex 
-    flex-col
+    text-textcol     
     items-center 
     justify-center 
+    h-screen
     fixed
     ;
 }
@@ -125,8 +127,8 @@ body {
     items-center 
     justify-center
     rounded-md
-    w-11/12    
-    px-4
+    w-2/12    
+    px-3
     py-1
     ;
 }
@@ -159,9 +161,9 @@ body {
     @apply
     w-11/12
     h-full
-    py-6
+    py-20
     p-4
-    bg-slate-800;;
+    bg-primary;;
 }
 
 
@@ -182,7 +184,6 @@ body {
     flex 
     items-center 
     justify-center
-    bg-slate-300 
     rounded;
 }
 
@@ -198,8 +199,8 @@ body {
     flex-grow 
     p-8 
     ml-auto
-    bg-gray-800 
-    text-white 
+    bg-primary 
+    text-textcol 
     overflow-y-auto
     h-screen 
     font-sans antialiased
@@ -236,7 +237,6 @@ img {
 
 .mainTopRightOne {
     @apply 
-    bg-gray-500 
     rounded-md 
     mb-4 
     h-4/5;
@@ -283,14 +283,13 @@ img {
     @apply
     flex
     py-6
-    h-2/5
+    h-1/4
     gap-5
     ;
 }
 .feature-long {
     @apply
     w-6/12    
-    bg-slate-400
     rounded-md    
     ;
 
@@ -298,9 +297,7 @@ img {
 
 .feature-small {
     @apply
-    w-4/12    
-    bg-slate-400
-    
+    w-4/12       
     rounded-md;
 }
 /*  -------------------- Features End -------------------- */
@@ -309,14 +306,11 @@ img {
 
 
 /*  -------------------- Footer start -------------------- */
-.mainFooter {
+.mainFooter{
     @apply
     mx-auto 
-    py-4 
-    flex 
-    flex-wrap 
-    justify-between
-    bg-slate-800
+    w-10/12 
+    bg-primary
     ;
 }
 .footer {
