@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Sections Form</title>
+</head>
+
+<body>
+    <h2>Add Course</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+       this is section add
+        {{ form.name(size=32) }}
+        {{ form.submit }}
+    </form>
+    <hr>
+    {% for element in data %}
+    {{ element|e }}
+    <a href="#">click</a>
+{% endfor %}
+
+</body>
+
+</html>
