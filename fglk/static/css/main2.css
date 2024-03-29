@@ -444,28 +444,6 @@ video {
   display: none;
 }
 
-:root {
-  --color-bkg: 210deg 40% 98%;
-  --color-content: 217deg 32.6% 17.5%;
-}
-
-@media (prefers-color-scheme:dark) {
-  :root {
-    --color-bkg: 217deg 32.6% 17.5%;
-    --color-content: 210deg 40% 98%;
-  }
-}
-
-:root[data-theme="dark"] {
-  --color-bkg: 210deg 40% 98%;
-  --color-content: 217deg 32.6% 17.5%;
-}
-
-:root[data-theme="cool"] {
-  --color-bkg: 217deg 32.6% 17.5%;
-  --color-content: 210deg 40% 98%;
-}
-
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -575,87 +553,69 @@ body {
 }
 
 .nav {
-  position: fixed;
   display: flex;
-  width: 100%;
   align-items: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(11 11 43 / var(--tw-bg-opacity));
-  padding: 0.5rem;
 }
 
-.logo {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
+.brandlogo {
+  margin: 0.75rem;
   width: 16.666667%;
+  padding: 0.75rem;
+}
+
+.brandlogo img {
+  margin: 0.25rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 11rem;
+  padding: 0.25rem;
+}
+
+.searchBar input[type='text'] {
   border-radius: 0.375rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
 
-.search {
-  width: 50%;
-  padding-left: 1.75rem;
-}
-
-.searchBox {
-  width: 100%;
-  border-radius: 0.375rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
-.navImg {
+.flex-class {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
-.circleImg {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
+.nav-img-circle {
   height: 2rem;
   width: 2rem;
-  cursor: pointer;
-  border-radius: 9999px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
 }
 
-.circleImg img {
+.image-round {
   height: 2rem;
   width: 2rem;
   border-radius: 9999px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .profile {
-  width: auto;
-  border-radius: 0.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .nav-item {
-  margin-left: auto;
   display: flex;
-  width: 83.333333%;
   align-items: center;
-}
-
-.navItemImg {
-  display: flex;
-  width: 50%;
-  justify-content: flex-end;
-}
+  justify-content: space-between;
+} 

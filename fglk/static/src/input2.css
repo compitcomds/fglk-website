@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    @apply bg-primary text-textcol font-webFont;
+}
+
+.nav{
+    @apply flex items-center;
+}
+
+.brandlogo{
+    @apply  w-2/12 p-3 m-3 ;
+}
+.brandlogo img{
+    @apply h-fit w-44 m-1 p-1 ;
+}
+.searchBar input[type='text']{
+    @apply px-3 py-1 rounded-md ;
+}
+.flex-class{
+    @apply flex justify-between items-center;
+}
+.nav-img-circle{
+    @apply h-8 w-8;
+}
+.image-round{
+    @apply  h-8 w-8 rounded-full;
+}
+.nav-right{
+    @apply flex justify-between items-center;
+}
+.nav-icons{
+    @apply flex justify-between items-center
+}
+.profile{
+    @apply flex justify-between items-center
+}
+.nav-item{
+    @apply  flex justify-between items-center;
+} 
