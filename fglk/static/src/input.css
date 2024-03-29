@@ -306,37 +306,6 @@ img {
 
 
 /*  -------------------- Footer start -------------------- */
-.mainFooter{
-    @apply
-    mx-auto 
-    w-10/12 
-    bg-primary
-    ;
-}
-.footer {
-    @apply
-    flex
-    items-center
-    justify-between
-}
-
-.footerStart {
-    @apply
-    flex;
-}
-
-.footerAbout {
-    @apply
-    w-full 
-    md:w-1/3 
-    mb-8
-     ;
-}
-.footerHead {
-    @apply
-    text-xl font-semibold mb-4;
-}
-
 
 
 /*  -------------------- Footer End -------------------- */
