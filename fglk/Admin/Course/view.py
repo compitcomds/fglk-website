@@ -44,10 +44,12 @@ def section(name):
       Name=request.args.get('Name')
       Delete=request.args.get('Delete', type=bool)
       if Name and Delete:
-            data=db.course.find_one({'name':Name})
-            db.content.delete_many({'_id': {'$in': data['sections']}})
+            # data2=db.course.find_one({'name':name})
+            data=db.section.find_one({'name':Name})
+            # db.content.delete_many({'_id': {'$in': data2['content']}})
+            db.course.update_one({'name':name},{'$pull':{'sections':data['_id']}})
             db.section.delete_one({'name':Name})
-            return redirect(url_for('.Course'))
+            return redirect (url_for('.section',name=name))
       if Name:
             data=db.section.find_one({'name':Name})
             if data:
@@ -56,15 +58,15 @@ def section(name):
                   return redirect (url_for('.section',name=name))
       else:
             form=AddSection()
-      # form=AddSection()
       if form.validate_on_submit():
             data={
                   'name':form.name.data,
                   'content':[]
             }
-            id=db.section.insert_one(data)
-            id=id.inserted_id
-            db.course.update_one({'name': name}, {'$push': {'sections': id}})
+            if Name:
+                  db.section.insert_one(data)
+            else:
+                  db.section.update_one({'name': name}, {'$set':data})
             return redirect (url_for('.section',name=name))
       data=db.section.find()
       return render_template('Admin_Section.html',form=form,data=list(data))
