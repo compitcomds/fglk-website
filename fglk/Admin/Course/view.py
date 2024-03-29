@@ -45,7 +45,7 @@ def section(name):
       Delete=request.args.get('Delete', type=bool)
       if Name and Delete:
             data=db.course.find_one({'name':Name})
-            # db.content.delete_many({'_id': {'$in': data['sections']}})
+            db.content.delete_many({'_id': {'$in': data['sections']}})
             db.section.delete_one({'name':Name})
             return redirect(url_for('.Course'))
       if Name:

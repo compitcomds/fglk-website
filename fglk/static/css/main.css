@@ -566,6 +566,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.visible {
+  visibility: visible;
+}
+
 body {
   position: relative;
   --tw-bg-opacity: 1;
