@@ -37,18 +37,17 @@ body {
 }
 
 /* navbar start */
+/* Assuming you have other Tailwind CSS imports or directives before this */
 .navbar {
-    @apply
-    bg-primary
-    text-textcol
-    font-bold
-    p-2
-    flex
-    items-center
-    justify-between
-    w-full
-    z-1
-    fixed;
+    @apply bg-primary
+     text-textcol
+      font-bold 
+      p-2 flex 
+      items-center 
+      justify-between
+      w-full 
+      z-10 
+      fixed;
 }
 
 /* search bar */
