@@ -13,7 +13,7 @@ def Course():
       Delete=request.args.get('Delete', type=bool)
       if Name and Delete:
             data=db.course.find_one({'name':Name})
-            db.section.delete_many({'_id': {'$in': 'sections'}})
+            db.section.delete_many({'_id': {'$in': data['sections']}})
             db.course.delete_one({'name':Name})
             return redirect(url_for('.Course'))
       if Name:
@@ -43,10 +43,24 @@ def Course():
 def section(name):
       Name=request.args.get('Name')
       Delete=request.args.get('Delete', type=bool)
-      form=AddSection()
+      if Name and Delete:
+            data=db.course.find_one({'name':Name})
+            # db.content.delete_many({'_id': {'$in': data['sections']}})
+            db.section.delete_one({'name':Name})
+            return redirect(url_for('.Course'))
+      if Name:
+            data=db.section.find_one({'name':Name})
+            if data:
+                  form=AddSection(**data)  
+            else:
+                  return redirect (url_for('.section',name=name))
+      else:
+            form=AddSection()
+      # form=AddSection()
       if form.validate_on_submit():
             data={
-                  'name':form.name.data
+                  'name':form.name.data,
+                  'content':[]
             }
             id=db.section.insert_one(data)
             id=id.inserted_id
