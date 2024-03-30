@@ -74,8 +74,14 @@ function updateNextPrevImages() {
     // Center and fit the background image inside the div
     document.getElementById('next').style.backgroundSize = 'cover';
     document.getElementById('next').style.backgroundPosition = 'center';
+    document.getElementById('next').style.alignItems= 'center';
+    document.getElementById('next').style.justifyContent="space-between";
+
     document.getElementById('prev').style.backgroundSize = 'cover';
     document.getElementById('prev').style.backgroundPosition = 'center';
+    document.getElementById('prev').style.alignItems= 'center';
+    document.getElementById('prev').style.justifyContent="space-between";
+
     
 }
 
