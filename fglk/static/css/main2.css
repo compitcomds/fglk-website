@@ -544,6 +544,11 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+img {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   --tw-bg-opacity: 1;
   background-color: rgb(11 11 43 / var(--tw-bg-opacity));
@@ -552,15 +557,29 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+h3 {
+  font-weight: 700;
+}
+
 .nav {
+  position: fixed;
+  margin-top: -3.5rem;
   display: flex;
+  width: 100%;
   align-items: center;
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
 }
 
 .brandlogo {
-  margin: 0.75rem;
   width: 16.666667%;
-  padding: 0.75rem;
+}
+
+.nav-item {
+  display: flex;
+  width: 83.333333%;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .brandlogo img {
@@ -571,35 +590,49 @@ body {
   padding: 0.25rem;
 }
 
-.searchBar input[type='text'] {
-  border-radius: 0.375rem;
+.searchform input[type='text'] {
+  width: 100%;
+  border-radius: 9999px;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
 
-.flex-class {
+.searchform {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.nav-img-circle {
+.searchform button {
+  margin-left: -4rem;
   height: 2rem;
   width: 2rem;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 6 23 / var(--tw-bg-opacity));
+  padding: 0.25rem;
+}
+
+.nav-img-circle {
+  border-radius: 9999px;
+  border-width: 2px;
+  padding: 0.25rem;
 }
 
 .image-round {
   height: 2rem;
   width: 2rem;
   border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .nav-right {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .nav-icons {
@@ -608,14 +641,156 @@ body {
   justify-content: space-between;
 }
 
-.profile {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.iconsa {
+  margin: 0.75rem;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.nav-item {
+.iconsa i {
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.profile {
+  margin: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-} 
+  gap: 0.75rem;
+}
+
+.searchBar {
+  width: 50%;
+}
+
+.side-nav {
+  position: fixed;
+  height: 100vh;
+  width: 16.666667%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
+}
+
+.main-content {
+  margin-left: auto;
+  height: 2000px;
+  width: 83.333333%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
+}
+
+.margin-top {
+  margin-top: 3.5rem;
+  display: flex;
+}
+
+.side-nav-item a {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.side-nav-main-item {
+  margin-top: 10rem;
+  margin-left: 1rem;
+}
+
+/* hero */
+
+.hero {
+  margin: 1.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
+}
+
+.banner {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.banner-image {
+  width: 75%;
+}
+
+.banner-image img {
+  border-radius: 0.375rem;
+}
+
+.banner-details {
+  height: auto;
+  width: 25%;
+  justify-content: stretch;
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}
+
+.banner-text {
+  height: 75%;
+  width: auto;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 88 12 / var(--tw-bg-opacity));
+}
+
+.banner-btn {
+  display: flex;
+  height: 25%;
+  width: auto;
+  gap: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 204 21 / var(--tw-bg-opacity));
+}
+
+.npimg {
+  margin: 0.25rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  width: 50%;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+}
+
+.npimg img {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.banner-btn a {
+  margin: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  padding: 0.75rem;
+}
+
+/* feature */
+
+.feature {
+  margin: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}
+
+.big_feature {
+  height: 8rem;
+  width: 50%;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.small_feature {
+  height: 8rem;
+  width: 25%;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}

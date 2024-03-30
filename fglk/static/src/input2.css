@@ -5,41 +5,118 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+img{
+    @apply w-full h-full;
+}
 body{
-    @apply bg-primary text-textcol font-webFont;
+    @apply bg-primary text-textcol font-webFont ;
 }
-
+h3{
+    @apply font-bold 
+}
 .nav{
-    @apply flex items-center;
+    @apply flex items-center bg-slate-400 w-full fixed -mt-14;
 }
-
 .brandlogo{
-    @apply  w-2/12 p-3 m-3 ;
+    @apply  w-2/12 ;
 }
+.nav-item{
+    @apply w-10/12 flex justify-between items-center;
+} 
 .brandlogo img{
     @apply h-fit w-44 m-1 p-1 ;
 }
-.searchBar input[type='text']{
-    @apply px-3 py-1 rounded-md ;
+.searchform input[type='text']{
+    @apply px-3 py-1 rounded-full w-full ;
 }
-.flex-class{
-    @apply flex justify-between items-center;
+.searchform {
+    @apply flex justify-between items-center ;
+} 
+.searchform button{
+    @apply p-1 -ml-16 bg-slate-950 rounded-full h-8 w-8
 }
 .nav-img-circle{
-    @apply h-8 w-8;
+    @apply p-1 rounded-full border-2;
 }
 .image-round{
-    @apply  h-8 w-8 rounded-full;
+    @apply  h-8 w-8 rounded-full bg-white;
 }
 .nav-right{
-    @apply flex justify-between items-center;
+    @apply flex mx-5 ;
 }
 .nav-icons{
-    @apply flex justify-between items-center
+    @apply flex justify-between items-center ;
+}
+.iconsa {
+        @apply  m-3 rounded-full bg-white text-black ;
+}
+.iconsa i{
+    @apply justify-between items-center p-2;
 }
 .profile{
-    @apply flex justify-between items-center
+    @apply flex justify-between items-center m-2 gap-3;
 }
-.nav-item{
-    @apply  flex justify-between items-center;
-} 
+.searchBar{
+    @apply w-1/2;
+}
+.side-nav{
+    @apply w-2/12 bg-red-300 h-screen fixed;
+}
+.main-content{
+    @apply w-10/12 bg-blue-700 h-[2000px] ml-auto;
+}
+
+.margin-top{
+    @apply mt-14 flex 
+}
+.side-nav-item a{
+    @apply flex gap-3  
+
+}
+.side-nav-main-item {
+    @apply mt-40 ml-4
+}
+
+/* hero */
+.hero{
+    @apply m-5 bg-slate-50   
+}
+.banner{
+    @apply flex gap-3
+}
+.banner-image{
+    @apply w-9/12
+}
+.banner-image img{
+    @apply rounded-md
+}
+.banner-details{
+   @apply bg-slate-500 h-auto w-3/12 justify-stretch 
+}
+.banner-text{
+    @apply w-auto h-3/4 bg-orange-600 rounded-lg 
+}
+.banner-btn{
+    @apply w-auto h-1/4 bg-yellow-400 flex gap-1
+}
+.npimg{
+    @apply bg-slate-900 w-1/2 m-1 my-3 rounded-md
+}
+.npimg img{
+    @apply object-fill
+}
+.banner-btn a{
+    @apply bg-gray-700 p-3 m-2
+}
+
+/* feature */
+.feature{
+    @apply m-5 bg-slate-400 flex gap-5 justify-between items-center
+}
+
+.big_feature{
+    @apply w-1/2  bg-black h-32 rounded-full
+}
+.small_feature{
+    @apply w-1/4 bg-black  h-32 rounded-full
+}
