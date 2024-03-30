@@ -11,6 +11,7 @@ module.exports = {
       //   button: "#e87b38",
       //   buttonhover: "#f8c23a",
       // },
+      
       colors: {
         primary:"#0b0b2b",
         secondaryp:"#fed1fa",

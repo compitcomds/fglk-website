@@ -4,7 +4,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
+@layer utilities {
+    .animate-gradient {
+      animation: gradient 2s linear infinite;
+    }
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
 img{
     @apply w-full h-full;
 }
@@ -15,7 +32,7 @@ h3{
     @apply font-bold 
 }
 .nav{
-    @apply flex items-center bg-slate-400 w-full fixed -mt-14;
+    @apply flex items-center bg-primary w-full fixed -mt-14;
 }
 .brandlogo{
     @apply  w-2/12 ;
@@ -27,7 +44,7 @@ h3{
     @apply h-fit w-44 m-1 p-1 ;
 }
 .searchform input[type='text']{
-    @apply px-3 py-1 rounded-full w-full ;
+    @apply px-3 py-1 rounded-full w-full bg-slate-800;
 }
 .searchform {
     @apply flex justify-between items-center ;
@@ -48,10 +65,10 @@ h3{
     @apply flex justify-between items-center ;
 }
 .iconsa {
-        @apply  m-3 rounded-full bg-white text-black ;
+        @apply  m-3 rounded-full text-white space-x-6 px-2;
 }
 .iconsa i{
-    @apply justify-between items-center p-2;
+    @apply justify-between items-center p-2 cursor-pointer;
 }
 .profile{
     @apply flex justify-between items-center m-2 gap-3;
@@ -59,45 +76,76 @@ h3{
 .searchBar{
     @apply w-1/2;
 }
+/* top nav end */
+
+/* side nav start */
 .side-nav{
-    @apply w-2/12 bg-red-300 h-screen fixed;
+    @apply w-2/12 bg-primary h-screen fixed my-2 mx-8;
 }
+/*  Side Nav End*/
+/* main content */
 .main-content{
-    @apply w-10/12 bg-blue-700 h-[2000px] ml-auto;
+    @apply w-10/12 h-[2000px] ml-auto;
 }
 
 .margin-top{
     @apply mt-14 flex 
 }
 .side-nav-item a{
-    @apply flex gap-3  
+    @apply flex gap-3
 
 }
+
 .side-nav-main-item {
-    @apply mt-40 ml-4
+    @apply my-4 mx-4 space-y-4 
 }
-
+.side-nav-secondary-item {
+    @apply absolute bottom-48 left-0 right-0 p-4 
+}
+.side-icon {
+    @apply  justify-center space-y-4
+}
+.side-nav-secondary-icon {
+    @apply flex items-center cursor-pointer
+}
+.side-nav-secondary-icon i{
+    @apply mr-2
+}
 /* hero */
 .hero{
-    @apply m-5 bg-slate-50   
+    @apply m-5 bg-primary
 }
 .banner{
     @apply flex gap-3
 }
 .banner-image{
-    @apply w-9/12
+    @apply w-9/12 rounded-lg 
 }
 .banner-image img{
-    @apply rounded-md
+    @apply rounded-lg
 }
+.dot-container {
+    @apply  flex justify-center space-x-2 mt-2
+}
+.dot {
+    @apply inline-block w-2 h-2 bg-orange-200 rounded-full space-y-2
+}
+.active-dot {
+    @apply bg-orange-500
+}
+
 .banner-details{
-   @apply bg-slate-500 h-auto w-3/12 justify-stretch 
+   @apply  h-auto w-3/12 justify-stretch rounded-md
 }
 .banner-text{
-    @apply w-auto h-3/4 bg-orange-600 rounded-lg 
+    @apply w-auto h-3/4 py-2 px-2 rounded-lg bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 animate-gradient;
 }
+
 .banner-btn{
-    @apply w-auto h-1/4 bg-yellow-400 flex gap-1
+    @apply w-auto rounded-lg h-1/4  flex gap-1
+}
+.banner-btn2{
+    @apply w-auto rounded-lg h-auto flex gap-1 
 }
 .npimg{
     @apply bg-slate-900 w-1/2 m-1 my-3 rounded-md
@@ -106,17 +154,39 @@ h3{
     @apply object-fill
 }
 .banner-btn a{
-    @apply bg-gray-700 p-3 m-2
+    @apply bg-slate-400 p-3 m-2  rounded-lg
+}
+.banner-btn2 a{
+    @apply bg-slate-400 p-1 m-2  rounded-lg
 }
 
 /* feature */
 .feature{
-    @apply m-5 bg-slate-400 flex gap-5 justify-between items-center
+    @apply m-8 my-14 flex gap-5 justify-between items-center rounded-md
 }
 
 .big_feature{
-    @apply w-1/2  bg-black h-32 rounded-full
+    @apply w-1/2  bg-black h-44 rounded-xl
 }
 .small_feature{
-    @apply w-1/4 bg-black  h-32 rounded-full
+    @apply w-1/4 bg-black h-44 rounded-xl
 }
+.feature img{
+    @apply rounded-lg
+}
+
+/* about */
+
+.about {
+    @apply m-8 my-14 flex gap-5 justify-between items-center
+}
+
+.about-text {
+    @apply w-1/2 bg-slate-500 text-white py-6 px-1 h-72 overflow-hidden
+}
+.about-image {
+    @apply w-1/2 bg-slate-200 text-white h-72 rounded-2xl overflow-hidden
+}
+
+/* Crads */
+

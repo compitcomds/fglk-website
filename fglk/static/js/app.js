@@ -24,8 +24,8 @@ function updateBanner() {
     document.getElementById('banner-img').src = data[currentIndex]['img-link'];
     document.getElementById('banner-text').innerHTML = '<p>' + data[currentIndex]['text'] + '</p>';
     document.getElementById('banner-heading').innerHTML='<h3>' + data[currentIndex]['heading'] + '</h3>';
-    document.getElementById('banner-button-link').href = data[currentIndex]['button-link'];
-    document.getElementById('banner-button-link').textContent = data[currentIndex]['button-text'];
+    document.getElementById('banner-button-link2').href = data[currentIndex]['button-link2'];
+    document.getElementById('banner-button-link2').textContent = data[currentIndex]['button-text'];
     updateDotNavigation();
 }
 
