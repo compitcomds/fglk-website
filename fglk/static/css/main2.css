@@ -779,7 +779,7 @@ p {
 
 .side-nav-main-item {
   margin-bottom: 1rem;
-  margin-top: 9rem;
+  margin-top: 7rem;
 }
 
 .side-nav-main-item > :not([hidden]) ~ :not([hidden]) {
@@ -806,6 +806,30 @@ p {
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
+.v-line {
+  margin: 0.75rem;
+  height: 50%;
+  width: 0.25rem;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.v-line-active {
+  margin: 0.75rem;
+  height: 50%;
+  width: 0.25rem;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+}
+
+.side-nav-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .side-nav-secondary-icon {
   display: flex;
   cursor: pointer;
@@ -814,6 +838,15 @@ p {
 
 .side-nav-secondary-icon i {
   margin-right: 0.5rem;
+}
+
+.on-page {
+  margin-left: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity));
 }
 
 /* hero */
@@ -1003,7 +1036,7 @@ p {
 /* feature */
 
 .feature {
-  margin: 2rem;
+  margin: 1.5rem;
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
   display: flex;
@@ -1018,7 +1051,7 @@ p {
   width: 50%;
   border-radius: 0.75rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
 
 .small_feature {
@@ -1026,7 +1059,7 @@ p {
   width: 25%;
   border-radius: 0.75rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
 
 .feature img {
@@ -1037,8 +1070,8 @@ p {
 
 .about {
   margin: 2rem;
-  margin-top: 3.5rem;
-  margin-bottom: 3.5rem;
+  margin-top: 9rem;
+  margin-bottom: 9rem;
   display: flex;
   gap: 1.25rem;
 }
@@ -1092,14 +1125,30 @@ p {
 }
 
 .card h4 {
+  margin-top: 0.5rem;
+  margin-inline-start: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(22 163 74 / var(--tw-text-opacity));
 }
 
 .card p {
+  margin: 0px;
+  margin-inline-start: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.card i {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .card img {

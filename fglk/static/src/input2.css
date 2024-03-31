@@ -114,7 +114,7 @@ p{
 }
 
 .side-nav-main-item {
-    @apply my-4 mt-36 space-y-5
+    @apply my-4 mt-28 space-y-5
 }
 .side-nav-secondary-item {
     @apply absolute bottom-24 left-0 right-0 p-4 
@@ -122,12 +122,26 @@ p{
 .side-icon {
     @apply  justify-center space-y-4
 }
+.v-line{
+    @apply w-1 h-1/2 m-3 bg-white rounded-lg
+}
+.v-line-active{
+    @apply  w-1 h-1/2 m-3 bg-green-500 rounded-lg
+}
+.side-nav-name{
+    @apply flex justify-center items-center
+}
 .side-nav-secondary-icon {
     @apply flex items-center cursor-pointer
 }
 .side-nav-secondary-icon i{
     @apply mr-2
 }
+.on-page{
+    @apply text-green-500 ml-2 font-semibold text-lg
+}
+
+
 /* hero */
 .hero{
     @apply m-5 bg-primary
@@ -203,14 +217,14 @@ p{
 }
 /* feature */
 .feature{
-    @apply m-8 my-14 flex gap-5 justify-between items-center rounded-md
+    @apply m-6 my-14 flex gap-5 justify-between items-center rounded-md 
 }
 
 .big_feature{
-    @apply w-1/2  bg-black h-24 rounded-xl
+    @apply w-1/2  bg-slate-600 h-24 rounded-xl
 }
 .small_feature{
-    @apply w-1/4 bg-black h-24 rounded-xl
+    @apply w-1/4 bg-slate-600 h-24 rounded-xl
 }
 .feature img{
     @apply rounded-lg
@@ -219,7 +233,7 @@ p{
 /* about */
 
 .about {
-    @apply m-8 my-14 flex gap-5 
+    @apply m-8 my-36 flex gap-5 
 }
 
 .about-text {
@@ -248,10 +262,13 @@ p{
     @apply  w-1/3 rounded-md h-auto
 }
 .card h4{
-    @apply font-bold text-lg
+    @apply font-bold text-lg mt-2 ms-2 text-green-600 flex justify-start items-center 
 }
 .card p{
-    @apply text-white
+    @apply text-white ms-2 text-sm m-0
+}
+.card i{
+    @apply mx-2
 }
 .card img{
     @apply h-full w-auto rounded-md
