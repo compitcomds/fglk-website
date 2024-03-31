@@ -42,7 +42,11 @@ p{
     @apply text-base text-white text-sm font-light 
 }
 .tag{
-    @apply  bg-black hover:bg-slate-700 py-1 px-2 rounded-full text-sm
+    @apply  bg-neutral-950 bg-opacity-20 hover:bg-slate-700 py-1 px-2 rounded-full text-sm
+}
+
+.top{
+    @apply  justify-start items-start h-3/4
 }
 .nav{
     @apply flex items-center bg-primary w-full fixed -mt-14 pt-2;
@@ -110,10 +114,10 @@ p{
 }
 
 .side-nav-main-item {
-    @apply my-4 mt-14  space-y-5
+    @apply my-4 mt-36 space-y-5
 }
 .side-nav-secondary-item {
-    @apply absolute bottom-48 left-0 right-0 p-4 
+    @apply absolute bottom-24 left-0 right-0 p-4 
 }
 .side-icon {
     @apply  justify-center space-y-4
@@ -155,34 +159,44 @@ p{
 } */
 
 .banner-texts{
-    @apply w-auto h-3/4 py-2 px-2 rounded-lg  bg-gradient-to-r from-slate-500 to-slate-800 ;
+    @apply w-auto h-3/4 py-2 px-2 rounded-lg  
+    bg-gradient-to-r from-slate-500 to-slate-800  ;
 }
 
 .banner-head{
-    @apply text-3xl font-semibold  mb-4
+    @apply text-3xl font-semibold  mb-4 
 }
 .banner-btn{
     @apply w-auto rounded-lg h-1/4  flex gap-1
 }
 .banner-exp {
-    @apply text-slate-200 font-semibold text-lg w-1/2 my-2 p-3 rounded-md bg-slate-800 text-center  ;
+    @apply text-slate-200 font-semibold 
+    text-lg w-1/2 my-2 p-1 rounded-full 
+     bg-slate-800 text-center  ;
 }
 .banner-exp i {
 }
+
+.r-end{
+    @apply h-1/4 items-end  flex justify-end
+}
 .npimg{
-    @apply bg-slate-900 w-1/2 m-1 my-3 rounded-md 
+    @apply bg-slate-900 w-1/2 m-1 
+    my-3 rounded-md 
 }
 .npimg i{
     @apply text-6xl flex h-full backdrop-blur-sm backdrop-brightness-50 justify-center items-center hover:text-orange-500
 }
 .banner-btn a{
-    @apply bg-slate-400 p-3 m-2  rounded-lg
+    @apply bg-slate-400 p-3 m-2 rounded-lg
 }
 .banner-btn2 a{
-    @apply bg-slate-400 p-1 m-2  rounded-lg
+    @apply bg-slate-400 p-1 m-2 rounded-lg
 }
 .banner-tags{
-    @apply flex flex-wrap gap-2 my-4
+    @apply flex flex-wrap gap-1
+}.banner-Subtext{
+    @apply text-xs font-thin
 }
 .banner-overlay{
     @apply relative
