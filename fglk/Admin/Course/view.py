@@ -63,13 +63,37 @@ def section(name):
                   'name':form.name.data,
                   'content':[]
             }
-            if Name:
-                  db.section.insert_one(data)
+            if not Name:
+                  inserted_section = db.section.insert_one(data)
+                  section_id = inserted_section.inserted_id
+
+                  db.course.update_one(
+                  {'name': name},
+                  {'$push': {'sections': section_id}}
+                  )
             else:
-                  db.section.update_one({'name': name}, {'$set':data})
+                  db.section.update_one({'name': Name}, {'$set':data})
             return redirect (url_for('.section',name=name))
-      data=db.section.find()
-      return render_template('Admin_Section.html',form=form,data=list(data))
+      data=db.course.find_one({'name':name})
+      data1=db.section.find({'_id':{'$in':data['sections']}})
+      return render_template('Admin_Section.html',form=form,data=list(data1),name=name)
+
+
+# @Admin_Course.route('/<string:name>/<string:section>',methods=['GET','POST'])
+# def content(name,section):
+#       Name=request.args.get('Name')
+#       Delete=request.args.get('Delete', type=bool)
+#       if Name and Delete:
+#             return redirect (url_for('.content',name=name,section=section))
+#       if Name:
+#             data=db.section.find_one({'name':Name})
+#             if data:
+#                   form=AddContent(**data)  
+#             else:
+#                   return redirect (url_for('.section',name=name))
+#       else:
+#             form=AddContent()
+#       return name+"  "+section
 
 
 

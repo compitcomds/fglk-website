@@ -1193,7 +1193,7 @@ p {
   display: flex;
 }
 
-.c-video iframe {
+.c-video video {
   height: 400px;
   width: 300px;
 }
