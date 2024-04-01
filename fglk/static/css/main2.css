@@ -1196,6 +1196,7 @@ p {
 .c-video iframe {
   height: 400px;
   width: 300px;
+  border-radius: 0.375rem;
 }
 
 .share_icon a {

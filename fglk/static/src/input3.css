@@ -1,0 +1,15 @@
+.card {
+    @apply mb-4 mx-auto w-96 h-screen bg-slate-500 rounded-lg flex items-center  flex-col;
+}
+.block-one {
+    @apply w-9/12 h-1/5  bg-slate-100 rounded-lg ;
+}
+.card-circle {
+    @apply w-5/12 h-1/4 -mt-14 z-10 rounded-full bg-green-600
+}
+.block-two {
+    @apply w-9/12 h-2/5 -mt-16 -z-0 bg-slate-100 rounded-lg ;
+}
+.small-block {
+    @apply w-9/12 h-14 bg-green-600 rounded-2xl my-2 
+}

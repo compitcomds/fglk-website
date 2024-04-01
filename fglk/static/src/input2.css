@@ -288,7 +288,7 @@ p{
     @apply flex
 }
 .c-video iframe{
-    @apply h-[400px] w-[300px]
+    @apply h-[400px] w-[300px] rounded-md
 }
 .share_icon a{
     @apply -m-14

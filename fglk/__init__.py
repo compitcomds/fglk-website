@@ -40,5 +40,6 @@ def sample():
 def about():
     return 'about page'
 
-
-
+@app.route('/card')
+def card():
+    return render_template('card.html')
