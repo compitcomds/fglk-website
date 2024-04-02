@@ -120,10 +120,10 @@ p{
     @apply my-4 mt-28 space-y-5
 }
 .side-nav-secondary-item {
-    @apply absolute bottom-24 left-0 right-0 p-4 
+    @apply absolute bottom-24 left-6 right-0 p-4 
 }
 .side-icon {
-    @apply  justify-center space-y-4
+    @apply  justify-center my-4 hover:text-green-500
 }
 .v-line{
     @apply w-1 h-1/2 m-3 bg-white rounded-lg hover:bg-green-500
@@ -279,17 +279,51 @@ p{
 
 /* courses */
 .top-course {
-    @apply mx-3 mt-28
+    @apply mx-3 mt-28 my-8;
 }
-.course-card-row{
-    @apply flex 
+
+.course-card-row {
+    @apply flex w-96 py-4 bg-gray-900 justify-center items-center rounded-xl shadow-sm shadow-white;
 }
-.c-video{
-    @apply flex
+
+.course-video {
+    @apply  bg-slate-800 max-w-full text-white relative rounded-md; /* Adjusted max width */
+    overflow: hidden; /* Ensures the video does not overflow its container */
 }
-.c-video iframe{
-    @apply h-[400px] w-[300px]
+
+.c-video {
+    @apply flex relative;
+     /* Added position relative */
 }
-.share_icon a{
-    @apply -m-14
+
+.c-video video {
+    @apply w-full h-auto; /* Set video width to 100% of its container */
+}
+
+.video-controls {
+    @apply absolute top-0 left-0 w-full h-full flex justify-between items-center pointer-events-none; /* Positioned the controls */
+}
+
+.mute-toggle {
+    @apply text-white p-2 absolute top-0 right-8 bg-none  bg-opacity-50 rounded-lg cursor-pointer; /* Styled the mute button */
+}
+
+.share_icon a {
+    @apply text-white absolute top-0 right-0 m-2 bg-none; /* Positioned the icon */
+}
+
+.c-name {
+    @apply p-2 ;
+}
+
+.vid-text {
+    @apply text-xl font-medium mb-2 text-white;
+}
+
+.text-sm {
+    @apply text-base mb-4 text-white;
+}
+
+.vid-btn {
+    @apply inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out;
 }

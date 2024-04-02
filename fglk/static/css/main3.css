@@ -1,51 +1,186 @@
+/* General card styling */
+
 .card {
   margin-left: auto;
   margin-right: auto;
+  max-width: 100%;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #0891b2 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(8 145 178 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-from-position: 10%;
+  --tw-gradient-to: rgb(207 250 254 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #cffafe var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-via-position: 30%;
+  --tw-gradient-to: #fef08a var(--tw-gradient-to-position);
+  --tw-gradient-to-position: 90%;
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+
+@media (min-width: 640px) {
+  .card {
+    max-width: 24rem
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    max-width: 24rem
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    max-width: 24rem
+  }
+}
+
+@media (min-width: 1280px) {
+  .card {
+    max-width: 24rem
+  }
+}
+
+/* Block one styling */
+
+.block-one {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  max-height: 20rem
+  /* Adjust max height as needed */
+}
+
+.block-one img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center
+}
+
+/* Card circle styling */
+
+.card-circle {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -4rem;
+  max-height: 8rem;
+  max-width: 8rem;
+  overflow: hidden;
+  border: 4px solid #0e7490;
+  /* Adjust the border width and color */
+  border-radius: 50%
+  /* Ensure the border is rounded to form a circle */
+}
+
+.card-circle img {
+  max-height: 8rem;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center
+}
+
+/* Block two styling */
+
+.block-two {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: -4rem;
+  max-width: 100%;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem
+  /* Adjust max width */
+}
+
+/* Text styles */
+
+.big-head {
+  margin-bottom: 0.25rem;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(8 145 178 / var(--tw-text-opacity))
+}
+
+.small-head {
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity))
+}
+
+.small-txt {
+  padding-top: 0.75rem;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity))
+}
+
+/* Feature styling */
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
+
+.feature-block {
+  margin-top: 1rem;
   margin-bottom: 1rem;
   display: flex;
-  height: 100vh;
-  width: 24rem;
-  flex-direction: column;
+  height: 50%;
+  width: 66.666667%;
+  flex-direction: row;
   align-items: center;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(100 116 139 / var(--tw-bg-opacity))
+  background-color: rgb(14 116 144 / var(--tw-bg-opacity))
 }
 
-.block-one {
-  height: 20%;
-  width: 75%;
-  border-radius: 0.5rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity))
+.feature-icon {
+  margin-right: 4rem;
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  align-items: center;
+  justify-content: center;
+  fill: currentColor;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
+  /* Added margin right to create space between icon and text */
 }
 
-.card-circle {
-  z-index: 10;
-  margin-top: -3.5rem;
-  height: 25%;
-  width: 41.666667%;
-  border-radius: 9999px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 163 74 / var(--tw-bg-opacity))
+.feature-block .feature-text {
+  cursor: pointer;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  text-decoration-line: none
+  /* Removed underline from text */
 }
 
-.block-two {
-  z-index: 0;
-  margin-top: -4rem;
-  height: 40%;
-  width: 75%;
-  border-radius: 0.5rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity))
-}
-
-.small-block {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  height: 3.5rem;
-  width: 75%;
-  border-radius: 1rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 163 74 / var(--tw-bg-opacity))
-}

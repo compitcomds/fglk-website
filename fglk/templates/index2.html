@@ -118,57 +118,57 @@
         Top <div class="headind2color">Courses!!</div>
     </div>
 
-        <div class="course-card-row">
-            <div class="course-video">
-                <div class="c-video" id="video-container">
-                    <!-- <iframe
-                        src="https://ccdstest.b-cdn.net/Untitled%20design.mp4"
-                        loading="lazy" 
-                        allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
-                        allowfullscreen="true">
-                    </iframe> -->
-                    <video id="video" autoplay muted loop>
-                        <source src="https://ccdstest.b-cdn.net/Untitled%20design%20(1).mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div id="mute-toggle">Mute</div>
+    <div class="course-card-row">
+        <div class="course-video">
+            <div class="c-video" id="video-container">
+                <video id="video" autoplay muted loop>
+                    <source src="https://ccdstest.b-cdn.net/Untitled%20design%20(1).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                    <div id="mute-toggle" class="mute-toggle">Mute</div>
                     <div class="share_icon"> <a href="/course"><i class="fa-solid fa-share-nodes"></i></a></div>
                 </div>
-                <div class="c-nmae">
-                    Python Basics
-                </div>
             </div>
-
+            <div class="c-name">
+                <h5 class="vid-text">Python Basics</h5>
+                <p class="text-sm">Some quick example</p>
+                <!-- <button type="button" class="vid-btn">Button</button> -->
+            </div>
         </div>
-        <script>
-            var video = document.getElementById("video");
-            var muteToggle = document.getElementById("mute-toggle");
-        
-            muteToggle.addEventListener("click", function() {
-                if (video.muted) {
-                    video.muted = false;
-                    muteToggle.textContent = "Mute";
-                } else {
-                    video.muted = true;
-                    muteToggle.textContent = "Unmute";
-                }
-            });
-        
-            // Autoplay on hover
-            var isHovering = false;
-            video.addEventListener("mouseenter", function() {
-                if (!isHovering) {
-                    video.play();
-                    isHovering = true;
-                }
-            });
-        
-            video.addEventListener("mouseleave", function() {
-                if (isHovering) {
-                    video.pause();
-                    isHovering = false;
-                }
-            });
-        </script>
+    </div>
+
+    <script>
+        var video = document.getElementById("video");
+        var muteToggle = document.getElementById("mute-toggle");
+
+        muteToggle.addEventListener("click", function () {
+            if (video.muted) {
+                video.muted = false;
+                muteToggle.textContent = "Mute";
+            } else {
+                video.muted = true;
+                muteToggle.textContent = "Unmute";
+            }
+        });
+
+        // Autoplay on hover
+        var isHovering = false;
+        video.addEventListener("mouseenter", function () {
+            if (!isHovering) {
+                video.play();
+                isHovering = true;
+            }
+        });
+
+        video.addEventListener("mouseleave", function () {
+            if (isHovering) {
+                video.pause();
+                isHovering = false;
+            }
+        });
+    </script>
 </section>
+
+
 {% endblock %}

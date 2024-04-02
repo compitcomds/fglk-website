@@ -1,15 +1,61 @@
+/* General card styling */
 .card {
-    @apply mb-4 mx-auto w-96 h-screen bg-slate-500 rounded-lg flex items-center  flex-col;
+    @apply max-w-full sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm mx-auto shadow-xl rounded-lg text-gray-900 bg-gradient-to-r from-cyan-600 from-10% via-cyan-100 via-30% to-yellow-200 to-90%;
 }
+
+/* Block one styling */
 .block-one {
-    @apply w-9/12 h-1/5  bg-slate-100 rounded-lg ;
+    @apply rounded-lg overflow-hidden mx-6 bg-white;
+    max-height: 20rem; /* Adjust max height as needed */
 }
+
+.block-one img {
+    @apply object-cover object-center w-full;
+}
+
+/* Card circle styling */
 .card-circle {
-    @apply w-5/12 h-1/4 -mt-14 z-10 rounded-full bg-green-600
+    @apply mx-auto max-w-32 max-h-32 relative -mt-16 overflow-hidden;
+    border: 4px solid #0e7490; /* Adjust the border width and color */
+    border-radius: 50%; /* Ensure the border is rounded to form a circle */
 }
+
+.card-circle img {
+    @apply max-h-32 w-full object-cover object-center;
+}
+
+/* Block two styling */
 .block-two {
-    @apply w-9/12 h-2/5 -mt-16 -z-0 bg-slate-100 rounded-lg ;
+    @apply px-6 -mt-16 bg-white max-w-full mx-6 rounded-lg; /* Adjust max width */
 }
-.small-block {
-    @apply w-9/12 h-14 bg-green-600 rounded-2xl my-2 
+
+/* Text styles */
+.big-head {
+    @apply font-bold text-3xl text-center mb-1 pt-4 text-cyan-600;
 }
+
+.small-head {
+    @apply text-gray-800 text-sm text-center;
+}
+
+.small-txt {
+    @apply text-center text-gray-600 text-base pt-3 font-normal;
+}
+
+/* Feature styling */
+.feature {
+    @apply flex flex-col justify-center items-center;
+}
+
+.feature-block {
+    @apply flex flex-row  items-center w-4/6 h-1/2 bg-cyan-700 my-4 rounded-lg;
+}
+
+.feature-icon {
+    @apply w-8 h-8 px-1 fill-current flex justify-center items-center text-white mr-16; /* Added margin right to create space between icon and text */
+}
+
+.feature-block .feature-text {
+    @apply text-center text-white no-underline cursor-pointer; /* Removed underline from text */
+}
+
