@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h2>Add Course</h2>
+    <h2>Add Sections Form</h2>
     <form method="POST">
         {{ form.hidden_tag() }}
        this is section add
@@ -18,10 +18,11 @@
     <hr>
     {% for element in data %}
         {{ element|e }}
-        <a href="{{element.name}}">click</a>
+        <a href="{{url_for('.content',name=element.name,section=name)}}">click</a>
         <a href="?Name={{element.name}}">update</a>
         <a href="?Name={{element.name}}&Delete=True">delete</a>
-{% endfor %}
+        <br><br>
+    {% endfor %}
 
 </body>
 
