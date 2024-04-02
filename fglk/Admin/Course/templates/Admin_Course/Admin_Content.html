@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Sections Form</title>
+</head>
+
+<body>
+    <h2>Add xontent Form</h2>
+    {% if data_type == "video" %}
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        title- {{ form.title() }}
+        dis-{{ form.discription() }}
+        link-{{ form.link() }}
+        reso-{{ form.resource() }}
+        {{ form.submit }}
+    </form>
+    {% for error in form.link.errors %}
+                <span style="color: red;">{{ error }}</span><br>
+            {% endfor %}
+    {%elif data_type == "docs"%}
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        title-{{ form.title() }}
+        content{{ form.content_text() }}
+        {{ form.submit }}
+    </form>
+    {% endif %}
+    
+    <hr>
+    {% for element in data %}
+    {{ element|e }}
+    <a href="?Name={{element.name}}">update</a>
+    <a href="?Name={{element.name}}&Delete=True">delete</a>
+    <br><br>
+    {% endfor %}
+
+</body>
+
+</html>

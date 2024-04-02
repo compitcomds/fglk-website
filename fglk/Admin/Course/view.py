@@ -79,22 +79,56 @@ def section(name):
       return render_template('Admin_Section.html',form=form,data=list(data1),name=name)
 
 
-# @Admin_Course.route('/<string:name>/<string:section>',methods=['GET','POST'])
-# def content(name,section):
-#       Name=request.args.get('Name')
-#       Delete=request.args.get('Delete', type=bool)
-#       if Name and Delete:
-#             return redirect (url_for('.content',name=name,section=section))
-#       if Name:
-#             data=db.section.find_one({'name':Name})
-#             if data:
-#                   form=AddContent(**data)  
-#             else:
-#                   return redirect (url_for('.section',name=name))
-#       else:
-#             form=AddContent()
-#       return name+"  "+section
-
+@Admin_Course.route('/<string:name>/<string:section>',methods=['GET','POST'])
+def content(name,section):
+      data_type=request.args.get('data_type',type=str) #docs / video
+      Name=request.args.get('Name')
+      Delete=request.args.get('Delete', type=bool)
+      if not data_type:
+            flash('Boskide ko kide hai','error')
+            return redirect (url_for('.section',name=name))
+      if Name and Delete:
+            return redirect (url_for('.content',name=name,section=section))
+      if Name:
+            data=db.content.find_one({'name':Name})
+            if data_type =='docs' and data:
+                  #this for updataing docs
+                  pass 
+            elif data_type == 'video' and data:
+                  #this  is updating video
+                  pass
+            else:
+                  return redirect (url_for('.content',name=name,section=section))
+      else:
+            if data_type == 'docs':
+                 form=AddDocs()
+            if data_type == 'video':
+                  form=AddVideo()
+      if form.validate_on_submit():
+            if data_type == 'docs':
+                  data={'type':'docs','title':form.title.data,'content_text':form.content_text.data}
+            elif data_type == 'video':
+                  data={'title':form.title.data,'discription':form.discription.data,'link':form.link.data,'resource':form.resource.data}
+            if not Name:
+                  print(1)
+                  inserted_content = db.content.insert_one(data)
+                  print(2)
+                  content_id = inserted_content.inserted_id
+                  print(3)
+                  db.section.update_one(
+                  {'name': section},
+                  {'$push': {'content': content_id}}
+                  )
+                  print(4)
+            else:
+                  db.section.update_one({'name': Name}, {'$set':data})
+            return redirect (url_for('.content',name=name,section=section))
+      data=db.section.find_one({'name':name})
+      if data:
+            data1=db.content.find({'_id':{'$in':data['content']}})
+      else:
+            data1=[]
+      return render_template('Admin_Content.html',form=form,data=list(data1),name=name,section=section,data_type=data_type)
 
 
 # type=request.args.get('Type')
