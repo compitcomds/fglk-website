@@ -13,7 +13,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+   <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
 </head>
 
 <body>
@@ -60,20 +62,26 @@
                 <div class="side-nav-main-item">
                     <div class="side-nav-item on-page">
                         <a href="#">
-                            <div class="side-nav-name "><div class="v-line-active"></div>Home</div>
+                            <div class="side-nav-name ">
+                                <div class="v-line-active"></div>Home
+                            </div>
                         </a>
                     </div>
                     <div class="side-nav-item ">
                         <div class="side-nav-item">
                             <a href="#">
-                                <div class="side-nav-name"><div class="v-line"></div>Course</div>
+                                <div class="side-nav-name">
+                                    <div class="v-line"></div>Course
+                                </div>
                             </a>
                         </div>
                     </div>
                     <div class="side-nav-item">
                         <div class="side-nav-item">
                             <a href="#">
-                                <div class="side-nav-name"><div class="v-line"></div>Community</div>
+                                <div class="side-nav-name">
+                                    <div class="v-line"></div>Community
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -81,19 +89,19 @@
                 <div class="side-nav-secondary-item">
                     <div class="side-icon">
                         <a href="#" class="side-nav-secondary-icon">
-                            <i class="fas fa-cog mr-2"></i> 
+                            <i class="fas fa-cog mr-2"></i>
                             <span>Setting</span>
                         </a>
-                        
+
                     </div>
                     <div class="side-icon">
                         <a href="#" class="side-nav-secondary-icon">
                             <i class="fas fa-question-circle mr-2"></i> <!-- Help icon -->
                             <span>Help</span>
                         </a>
-                        
+
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -104,10 +112,14 @@
             </div>
         </div>
     </section>
-    
+
 
 
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="jquery.min.js"></script>
+    <script src="owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
 </body>
 
