@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 @layer utilities {
     .animate-gradient {
       animation: gradient 2s linear infinite;
@@ -29,7 +30,7 @@ body{
     @apply bg-primary text-textcol font-webFont ;
 }
 h3{
-    @apply font-bold 
+    @apply font-bold
 }
 p{
     @apply my-2
@@ -49,7 +50,7 @@ p{
     @apply  justify-start items-start h-3/4
 }
 .nav{
-    @apply flex items-center bg-primary w-full fixed -mt-14 pt-2;
+    @apply flex items-center z-10 bg-primary w-full fixed -mt-14 pt-2;
 }
 .brandlogo{
     @apply  w-2/12 ;
@@ -97,7 +98,7 @@ p{
 
 /* side nav start */
 .side-nav{
-    @apply w-2/12 bg-primary h-screen fixed my-2 pl-5;
+    @apply w-2/12 bg-primary h-screen fixed my-2 pl-5 z-10;
 }
 /*  Side Nav End*/
 /* main content */
@@ -279,51 +280,85 @@ p{
 
 /* courses */
 .top-course {
-    @apply mx-3 mt-28 my-8;
+    @apply mx-3 mt-28 my-8 ;
+}
+.row1 {
+    @apply flex  gap-4 overflow-x-scroll;
 }
 
 .course-card-row {
-    @apply flex w-96 py-4 bg-gray-900 justify-center items-center rounded-xl shadow-sm shadow-white;
+    @apply min-w-[200px] max-w-[500px] h-full p-2 bg-gray-900 rounded-xl shadow-sm shadow-white;
+    /* Adjust min-width and max-width as needed */
 }
 
 .course-video {
-    @apply  bg-slate-800 max-w-full text-white relative rounded-md; /* Adjusted max width */
-    overflow: hidden; /* Ensures the video does not overflow its container */
-}
-
-.c-video {
-    @apply flex relative;
-     /* Added position relative */
+    @apply bg-slate-800 text-white rounded-md relative;
 }
 
 .c-video video {
-    @apply w-full h-auto; /* Set video width to 100% of its container */
+    @apply rounded-t-md;
 }
 
 .video-controls {
-    @apply absolute top-0 left-0 w-full h-full flex justify-between items-center pointer-events-none; /* Positioned the controls */
+    @apply  absolute top-0  flex justify-between gap-32 items-center p-2 ;
 }
 
 .mute-toggle {
-    @apply text-white p-2 absolute top-0 right-8 bg-none  bg-opacity-50 rounded-lg cursor-pointer; /* Styled the mute button */
+    @apply text-white cursor-pointer;
 }
 
 .share_icon a {
-    @apply text-white absolute top-0 right-0 m-2 bg-none; /* Positioned the icon */
+    @apply text-white;
 }
 
 .c-name {
-    @apply p-2 ;
+    @apply p-2;
 }
 
 .vid-text {
-    @apply text-xl font-medium mb-2 text-white;
+    @apply mb-2 text-white;
 }
 
-.text-sm {
-    @apply text-base mb-4 text-white;
+.price-info {
+    @apply flex justify-between mt-2;
 }
 
-.vid-btn {
-    @apply inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out;
+.discounted-price {
+    @apply text-white font-medium;
 }
+
+.price {
+    @apply text-white font-medium;
+}
+
+.line-through {
+    @apply text-gray-400;
+    text-decoration: line-through;
+}
+
+.real-price {
+    @apply text-white font-medium mt-1;
+}
+
+.explore-btn {
+    @apply px-4 py-2 w-full bg-green-500 text-white rounded-b-md;
+}
+/* CSS for the share box */
+.share-box {
+    @apply absolute top-16 left-0 bg-white p-4 border border-gray-300 shadow-lg hidden;
+    z-index: 50; /* Adjust as needed */
+}
+
+.share-option {
+    @apply block mb-2 bg-gray-100 border border-gray-300 p-2 cursor-pointer;
+}
+
+/* CSS for the share icon */
+.share-button {
+    @apply bg-transparent border-none cursor-pointer;
+}
+
+.hgggg{
+    @apply h-[2222px]
+}
+/* testimonial */

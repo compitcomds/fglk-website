@@ -102,3 +102,48 @@ document.getElementById('next').addEventListener('click', nextBanner);
 document.getElementById('prev').addEventListener('click', prevBanner);
 }
 fetchData();
+
+// video
+document.addEventListener("DOMContentLoaded", function () {
+    var videos = document.querySelectorAll(".video");
+    var muteToggles = document.querySelectorAll(".mute-toggle");
+
+    muteToggles.forEach(function (muteToggle, index) {
+        muteToggle.addEventListener("click", function () {
+            if (videos[index].muted) {
+                videos[index].muted = false;
+                muteToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
+            } else {
+                videos[index].muted = true;
+                muteToggle.innerHTML = '<i class="fas fa-volume-off"></i>';
+            }
+        });
+    });
+
+    videos.forEach(function (video, index) {
+        video.addEventListener("mouseenter", function () {
+            video.play();
+        });
+
+        video.addEventListener("mouseleave", function () {
+            video.pause();
+        });
+    });
+});
+
+// swiper
+document.addEventListener("DOMContentLoaded", function() {
+    var shareButton = document.getElementById("shareButton");
+    var shareBox = document.getElementById("shareBox");
+
+    shareButton.addEventListener("click", function() {
+        shareBox.classList.toggle("hidden");
+    });
+
+    // Close the share box when clicking outside of it
+    document.addEventListener("click", function(event) {
+        if (!shareBox.contains(event.target) && event.target !== shareButton) {
+            shareBox.classList.add("hidden");
+        }
+    });
+});
