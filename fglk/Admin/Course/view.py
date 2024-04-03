@@ -92,11 +92,9 @@ def content(name,section):
       if Name:
             data=db.content.find_one({'name':Name})
             if data_type =='docs' and data:
-                  #this for updataing docs
-                  pass 
+                  form=AddDocs(**data)
             elif data_type == 'video' and data:
-                  #this  is updating video
-                  pass
+                  form=AddVideo(**data)
             else:
                   return redirect (url_for('.content',name=name,section=section))
       else:
@@ -110,16 +108,12 @@ def content(name,section):
             elif data_type == 'video':
                   data={'title':form.title.data,'discription':form.discription.data,'link':form.link.data,'resource':form.resource.data}
             if not Name:
-                  print(1)
                   inserted_content = db.content.insert_one(data)
-                  print(2)
                   content_id = inserted_content.inserted_id
-                  print(3)
                   db.section.update_one(
                   {'name': section},
                   {'$push': {'content': content_id}}
                   )
-                  print(4)
             else:
                   db.section.update_one({'name': Name}, {'$set':data})
             return redirect (url_for('.content',name=name,section=section))

@@ -18,8 +18,8 @@
     <hr>
     {% for element in data %}
         {{ element|e }}
-        <a href="{{url_for('.content',section=element.name,name=name,data_type='docs')}}">docs</a>
-        <a href="{{url_for('.content',section=element.name,name=name,data_type='video')}}">videos</a>
+        <!-- <a href="{{url_for('.content',section=element.name,name=name,data_type='video')}}">videos</a> -->
+        <!-- <a href="{{url_for('.content',section=element.name,name=name,data_type='docs')}}">docs</a> -->
         <a href="?Name={{element.name}}">update</a>
         <a href="?Name={{element.name}}&Delete=True">delete</a>
         <br><br>
