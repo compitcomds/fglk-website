@@ -9,6 +9,14 @@
 
 <body>
     <h2>Add content Form</h2>
+    <hr>
+    <a href="{{url_for('.content',section=section,name=name,data_type='video')}}">videos</a>
+    <a href="{{url_for('.content',section=section,name=name,data_type='docs')}}">docs</a>
+
+    <hr>
+    data_type-{{data_type}} <br>
+    sections-{{section}} <br>
+    name-{{name}} <br>
     {% if data_type == "video" %}
     <form method="POST">
         {{ form.hidden_tag() }}
@@ -17,10 +25,11 @@
         link-{{ form.link() }}
         reso-{{ form.resource() }}
         {{ form.submit }}
+        {% for error in form.link.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+        {% endfor %}
     </form>
-    {% for error in form.link.errors %}
-                <span style="color: red;">{{ error }}</span><br>
-            {% endfor %}
+
     {%elif data_type == "docs"%}
     <form method="POST">
         {{ form.hidden_tag() }}
@@ -29,12 +38,11 @@
         {{ form.submit }}
     </form>
     {% endif %}
-    
     <hr>
     {% for element in data %}
     {{ element|e }}
-    <a href="?Name={{element.name}}">update</a>
-    <a href="?Name={{element.name}}&Delete=True">delete</a>
+    <a href="{{url_for('.content',section=section,name=name,data_type=element.type,Name=element.title)}}">Update</a>
+    <a href="{{url_for('.content',section=section,name=name,Name=element.title,Delete=true)}}">Delete</a>
     <br><br>
     {% endfor %}
 

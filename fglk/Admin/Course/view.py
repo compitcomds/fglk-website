@@ -7,6 +7,7 @@ from fglk.Admin.Course.form import AddCourseForm, AddDocs,AddVideo, AddSection
 Admin_Course = Blueprint('Admin_Course',__name__,template_folder='templates/Admin_Course',static_folder='static')
 
 # this is master route that can CURD on the course table
+
 @Admin_Course.route('/',methods=['GET','POST'])
 def Course():
       Name=request.args.get('Name')
@@ -25,13 +26,16 @@ def Course():
       else:
             form=AddCourseForm()
       if form.validate_on_submit():
-            data={
+            if not Name:
+                  data={
                   'name':form.name.data,
                   'sections':[]
             }
-            if not Name:
                   db.course.insert_one(data)
             else:
+                  data={
+                  'name':form.name.data
+            }
                   db.course.update_one({'name':Name},{'$set':data})
             return redirect(url_for('.Course'))
       data=db.course.find()
@@ -59,11 +63,11 @@ def section(name):
       else:
             form=AddSection()
       if form.validate_on_submit():
-            data={
+            if not Name:
+                  data={
                   'name':form.name.data,
                   'content':[]
-            }
-            if not Name:
+                  }
                   inserted_section = db.section.insert_one(data)
                   section_id = inserted_section.inserted_id
 
@@ -72,25 +76,32 @@ def section(name):
                   {'$push': {'sections': section_id}}
                   )
             else:
+                  data={
+                  'name':form.name.data,
+                  }
                   db.section.update_one({'name': Name}, {'$set':data})
             return redirect (url_for('.section',name=name))
       data=db.course.find_one({'name':name})
       data1=db.section.find({'_id':{'$in':data['sections']}})
       return render_template('Admin_Section.html',form=form,data=list(data1),name=name)
 
-
+# adding content
 @Admin_Course.route('/<string:name>/<string:section>',methods=['GET','POST'])
 def content(name,section):
       data_type=request.args.get('data_type',type=str) #docs / video
       Name=request.args.get('Name')
       Delete=request.args.get('Delete', type=bool)
-      if not data_type:
-            flash('Boskide ko kide hai','error')
-            return redirect (url_for('.section',name=name))
+      # if not data_type:
+      #       flash('Boskide ko kide hai','error')
+      #       return redirect (url_for('.section',name=name))
       if Name and Delete:
-            return redirect (url_for('.content',name=name,section=section))
+             deleted_content = db.content.find_one_and_delete({'title': Name})
+             content_id = deleted_content['_id']
+             db.section.update_one({'name':section},
+                                   {'$pull':{'content': content_id}})
+             return redirect (url_for('.content',name=name,section=section))
       if Name:
-            data=db.content.find_one({'name':Name})
+            data=db.content.find_one({'title':Name})
             if data_type =='docs' and data:
                   form=AddDocs(**data)
             elif data_type == 'video' and data:
@@ -100,9 +111,11 @@ def content(name,section):
       else:
             if data_type == 'docs':
                  form=AddDocs()
-            if data_type == 'video':
+            elif data_type == 'video':
                   form=AddVideo()
-      if form.validate_on_submit():
+            else:
+                  form=False
+      if  form and form.validate_on_submit() :
             if data_type == 'docs':
                   data={'type':'docs','title':form.title.data,'content_text':form.content_text.data}
             elif data_type == 'video':
@@ -115,9 +128,9 @@ def content(name,section):
                   {'$push': {'content': content_id}}
                   )
             else:
-                  db.section.update_one({'name': Name}, {'$set':data})
+                  db.content.update_one({'title': Name}, {'$set':data})
             return redirect (url_for('.content',name=name,section=section))
-      data=db.section.find_one({'name':name})
+      data=db.section.find_one({'name':section})
       if data:
             data1=db.content.find({'_id':{'$in':data['content']}})
       else:
