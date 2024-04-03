@@ -584,7 +584,19 @@ p {
   margin-bottom: 0.5rem;
 }
 
+.flexy {
+  display: flex;
+}
+
 .heading {
+  margin-bottom: 1.5rem;
+  gap: 0.5rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+}
+
+.top-course-heading {
   margin-bottom: 1.5rem;
   display: flex;
   gap: 0.5rem;
@@ -1346,3 +1358,24 @@ p {
 }
 
 /* testimonial */
+
+.course-container {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  white-space: nowrap; /* Prevent wrapping of course cards */
+  width: 100%; /* Adjust the width as needed */
+  /* position: relative; Position for absolute child */
+}
+
+.course-card-row {
+  display: inline-block; /* Display course cards horizontally */
+  margin-right: 10px; /* Adjust spacing between course cards */
+  vertical-align: top; /* Align course cards to the top */
+  transition: transform 0.5s ease; /* Smooth transition for auto scrolling */
+}
+
+.course-container:hover .course-card-row {
+  animation-play-state: paused; /* Pause animation on hover */
+}
+.swiper-pagination{
+  margin-top: 150px;
+}

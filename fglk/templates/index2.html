@@ -1,7 +1,7 @@
 {% extends 'base2.html' %}
 {% block content %}
 <!-- Main Content Area -->
-
+{# Hero #}
 <section class="hero">
     <div class="banner">
         <div class="banner-image">
@@ -84,7 +84,7 @@
             allowfullscreen="true"></iframe>
     </div>
 </section>
-
+{# Feature-2 #}
 <section class="cards-section">
     <div class="card">
         <img src="https://images6.alphacoders.com/133/1333695.jpeg" alt="">
@@ -113,8 +113,10 @@
 
     </div>
 </section>
-<section class="top-course">
-    <div class="heading">
+{# Top Courses #}
+
+<!-- <section class="top-course ">
+    <div class="heading flexy">
         Top <div class="headind2color">Courses!!</div>
     </div>
 
@@ -136,24 +138,19 @@
                                 <i class="fa-solid fa-share-nodes"></i>
                             </button>
                         </div>
-                        
+
                     </div>
                     <div id="shareBox" class="share-box">
-                        <!-- Share options go here -->
                         <button class="share-option">Option 1</button>
                         <button class="share-option">Option 2</button>
-                        <!-- Add more share options as needed -->
                     </div>
                 </div>
 
                 <div class="c-name">
                     <p class="vid-text">Python Basics</p>
                     <div class="price-info">
-                        <!-- <div class="discounted-price">$49</div> -->
                         <div class="price">
                             <div class="real-price">Price <span class="line-through">₹102</span> ₹68</div>
-                            <!-- Changed real price to $69 -->
-
                         </div>
                     </div>
 
@@ -161,15 +158,94 @@
                 <button class="explore-btn">Explore Now</button>
             </div>
         </div>
-        </>
         {% endfor %}
     </div>
 
+</section> -->
+
+<section class="top-course">
+    <div class="heading flexy">
+        Top <div class="headind2color">Courses!!</div>
     </div>
 
+    <div class="swiper-container">
+        <div class="swiper-wrapper ">
+            {% for item in range(7) %}
+            <div class="swiper-slide course-card-row">
+                <div class="course-video">
+                    <div class="c-video" id="video-container{{ item }}">
+                        <video class="video" autoplay loop disablePictureInPicture>
+                            <source src="https://ccdstest.b-cdn.net/Untitled%20design%20(1).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-controls">
+                            <div class="mute-toggle"><i class="fas fa-volume-up"></i></div>
+                            <div class="share-icon">
+                                <button id="shareButton" class="share-button">
+                                    <i class="fa-solid fa-share-nodes"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="shareBox" class="share-box">
+                            <!-- Share options go here -->
+                            <button class="share-option">Option 1</button>
+                            <button class="share-option">Option 2</button>
+                            <!-- Add more share options as needed -->
+                        </div>
+                    </div>
+                    <div class="c-name">
+                        <p class="vid-text">Python Basics</p>
+                        <div class="price-info">
+                            <!-- <div class="discounted-price">$49</div> -->
+                            <div class="price">
+                                <div class="real-price">Price <span class="line-through">₹102</span> ₹68</div>
+                                <!-- Changed real price to $69 -->
+                            </div>
+                        </div>
+                    </div>
+                    <button class="explore-btn">Explore Now</button>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-- Add pagination if needed -->
+    </div>
 </section>
-<!-- testimonial -->
 
-<section class="hgggg"> </section>
+
+<!-- Include Swiper library -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+    window.onload = function() {
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 6.5,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 3000, // Autoplay delay in milliseconds
+                disableOnInteraction: true, // Autoplay continues even when user interacts with swiper
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            on: {
+                mouseenter: function () {
+                    swiper.autoplay.stop(); // Pause autoplay on mouse enter
+                },
+                mouseleave: function () {
+                    swiper.autoplay.start(); // Resume autoplay on mouse leave
+                },
+            },
+        });
+    };
+    
+</script>
+<div class="hgggg"></div>   
+
+
 
 {% endblock %}
