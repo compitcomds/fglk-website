@@ -332,7 +332,7 @@ p{
 }
 
 .line-through {
-    @apply text-gray-400;
+    @apply text-gray-500;
     text-decoration: line-through;
 }
 
