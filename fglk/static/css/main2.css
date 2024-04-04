@@ -1178,9 +1178,11 @@ p {
 }
 
 .banner-Subtext {
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: 100;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 300;
+  --tw-text-opacity: 1;
+  color: rgb(71 85 105 / var(--tw-text-opacity));
 }
 
 .banner-overlay {
