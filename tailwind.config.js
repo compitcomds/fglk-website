@@ -13,13 +13,14 @@ module.exports = {
       // },
       
       colors: {
-        primary:"#0b0b2b",
+        primary:"#fffbf7",
         secondaryp:"#fed1fa",
         secondaryo:"#fb6242",
-        secondaryg: "#ceec87",
+        secondaryg: "#3fc446",
         button: "#e87b38",
         buttonhover: "#f8c23a",
-        textcol : "#ffffff"
+        textcol : "#000000",
+        white_back : "#ffff",
       },
       fontFamily: {
         
