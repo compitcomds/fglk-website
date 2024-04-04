@@ -11,16 +11,9 @@
     }
   }
   
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  @keyframes marqueeLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
   }
   
 img{
@@ -45,7 +38,7 @@ p{
     @apply text-4xl font-bold mb-6 gap-2 flex
 }
 .para{
-    @apply text-base text-white text-sm font-light 
+    @apply text-base text-textcol text-sm font-light 
 }
 .tag{
     @apply  bg-neutral-950 bg-opacity-20 hover:bg-slate-700 py-1 px-2 rounded-full text-sm
@@ -66,19 +59,19 @@ p{
     @apply h-fit w-44 m-1 p-1 ;
 }
 .searchform input[type='text']{
-    @apply px-3 py-1 rounded-full w-full bg-slate-800;
+    @apply px-3 py-1 rounded-full w-full bg-white_back shadow-md shadow-slate-500;
 }
 .searchform {
     @apply flex justify-between items-center ;
 } 
 .searchform button{
-    @apply p-1 -ml-16 bg-slate-950 rounded-full h-8 w-8
+    @apply p-1 -ml-16 bg-white_back rounded-full h-8 w-8
 }
 .nav-img-circle{
-    @apply p-1 rounded-full border-2;
+    @apply p-1 rounded-full border-2 border-secondaryo;
 }
 .image-round{
-    @apply  h-8 w-8 rounded-full bg-white;
+    @apply  h-8 w-8 rounded-full bg-white_back;
 }
 .nav-right{
     @apply flex mx-5 ;
@@ -87,14 +80,34 @@ p{
     @apply flex justify-between items-center ;
 }
 .iconsa {
-        @apply  m-3 rounded-full text-white space-x-6 px-2;
+        @apply  m-3 rounded-full text-textcol space-x-6 px-2 ;
 }
 .iconsa i{
-    @apply justify-between items-center p-2 cursor-pointer;
+    @apply justify-between items-center p-2 cursor-pointer hover:text-secondaryo;
 }
 .profile{
     @apply flex justify-between items-center m-2 gap-3;
 }
+.dropdown-container {
+    @apply relative inline-block text-left;
+}
+
+.dropdown-button {
+    @apply inline-flex justify-center items-center w-full px-1 py-2 text-sm font-medium text-textcol;
+}
+
+.dropdown-arrow {
+    @apply w-4 h-4 ml-1 -mr-1;
+}
+
+.dropdown-menu {
+    @apply absolute left-0 mr-2 w-40 mt-1 origin-top-left bg-white_back divide-y divide-gray-100 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300;
+}
+
+.dropdown-item {
+    @apply block px-4 py-2 text-sm text-textcol hover:bg-gray-100;
+}
+
 .searchBar{
     @apply w-1/2;
 }
@@ -110,7 +123,7 @@ p{
     @apply w-10/12 h-[2000px] ml-auto;
 }
 
-.margin-top{main-content
+.margin-top{
     @apply mt-14 flex 
 }
 .side-nav-item a{
@@ -118,26 +131,26 @@ p{
 
 }
 .side-nav-item:hover .v-line{
-    @apply bg-green-500
+    @apply bg-secondaryo
 }
 
 .side-nav-main-item {
-    @apply my-4 mt-28 space-y-5
+    @apply my-4 mt-3 space-y-5
 }
 .side-nav-secondary-item {
     @apply absolute bottom-24 left-6 right-0 p-4 
 }
 .side-icon {
-    @apply  justify-center my-4 hover:text-green-500
+    @apply  justify-center my-4 hover:text-secondaryo
 }
 .v-line{
-    @apply w-1 h-1/2 m-3 bg-white rounded-lg hover:bg-green-500
+    @apply w-1 h-1/2 m-3 bg-textcol rounded-lg hover:bg-secondaryo
 }
 .v-line-active{
-    @apply  w-1 h-1/2 m-3 bg-green-500 rounded-lg
+    @apply  w-1 h-1/2 m-3 bg-secondaryo rounded-lg
 }
 .side-nav-name{
-    @apply flex justify-center items-center hover:text-green-500 hover:ml-2 hover:font-semibold hover:text-lg
+    @apply flex justify-center items-center hover:text-secondaryo hover:ml-2 hover:font-semibold hover:text-lg
 }
 .side-nav-secondary-icon {
     @apply flex items-center cursor-pointer
@@ -146,10 +159,14 @@ p{
     @apply mr-2
 }
 .on-page{
-    @apply text-green-500 ml-2 font-semibold text-lg
+    @apply text-secondaryo ml-2 font-semibold text-lg
 }
-
-
+.side-box {
+    @apply w-4/5 h-20 shadow-sm cursor-pointer hover:text-secondaryo  shadow-slate-500 text-textcol px-1  rounded-xl mt-8 flex items-center justify-center
+}
+.side-box .plus {
+    @apply text-2xl px-4
+}
 /* hero */
 .hero{
     @apply m-5 bg-primary
@@ -182,7 +199,7 @@ p{
 
 .banner-texts{
     @apply w-auto h-3/4 py-2 px-2 rounded-lg  
-    bg-gradient-to-r from-slate-500 to-slate-800  ;
+    bg-gradient-to-br from-yellow-400 via-blue-500 to-red-500  ;
 }
 
 .banner-head{
@@ -196,18 +213,17 @@ p{
     text-lg w-1/2 my-2 p-1 rounded-full 
      bg-slate-800 text-center  ;
 }
-.banner-exp i {
-}
+
 
 .r-end{
     @apply h-1/4 items-end  flex justify-end
 }
 .npimg{
-    @apply bg-slate-900 w-1/2 m-1 
+    @apply  w-1/2 m-1 
     my-3 rounded-md 
 }
 .npimg i{
-    @apply text-6xl flex h-full backdrop-blur-sm backdrop-brightness-50 justify-center items-center hover:text-orange-500
+    @apply text-6xl flex h-full backdrop-blur-sm backdrop-brightness-50 justify-center items-center text-white_back hover:text-secondaryo
 }
 .banner-btn a{
     @apply bg-slate-400 p-3 m-2 rounded-lg
@@ -254,11 +270,11 @@ p{
     @apply w-full h-full rounded-2xl 
 }
 .headind2color{
-    @apply text-green-500
+    @apply text-secondaryg
 }
 
 .about-exp, .about-exp i {
-    @apply text-green-500 font-semibold text-lg  my-2;
+    @apply text-secondaryg font-semibold text-lg  my-2;
 }
 /* Crads */
 
@@ -273,7 +289,7 @@ p{
     @apply font-bold text-lg mt-2 ms-2 text-green-600 flex justify-start items-center 
 }
 .card p{
-    @apply text-white ms-2 text-sm m-0
+    @apply text-textcol ms-2 text-sm m-0
 }
 .card i{
     @apply mx-2
@@ -287,16 +303,16 @@ p{
     @apply mx-3 mt-28 my-8 ;
 }
 .row1 {
-    @apply flex  gap-4 overflow-x-scroll;
+    @apply w-full overflow-hidden p-1 ;
 }
 
 .course-card-row {
-    @apply min-w-[200px] max-w-[500px] h-full p-2 bg-gray-900 rounded-xl shadow-sm shadow-white;
+    @apply min-w-[200px] max-w-[500px] h-full p-2 text-textcol rounded-xl shadow-sm shadow-slate-400;
     /* Adjust min-width and max-width as needed */
 }
 
 .course-video {
-    @apply bg-slate-800 text-white rounded-md relative;
+    @apply  text-textcol rounded-md relative;
 }
 
 .c-video video {
@@ -304,23 +320,23 @@ p{
 }
 
 .video-controls {
-    @apply  absolute top-0  flex justify-between gap-32 items-center p-2 ;
+    @apply  absolute top-0  flex justify-between gap-[102px] items-center p-2 ;
 }
 
 .mute-toggle {
-    @apply text-white cursor-pointer;
+    @apply text-primary cursor-pointer bg-opacity-50 bg-slate-500 rounded-lg h-8 w-8 flex justify-center items-center;
 }
 
-.share_icon a {
-    @apply text-white;
+.share-button  {
+    @apply text-primary  bg-slate-500 bg-opacity-50 rounded-lg h-8 w-8 flex justify-center items-center;
 }
 
 .c-name {
-    @apply p-2;
+    @apply p-2 ;
 }
 
 .vid-text {
-    @apply mb-2 text-white;
+    @apply mb-2 text-textcol;
 }
 
 .price-info {
@@ -328,41 +344,67 @@ p{
 }
 
 .discounted-price {
-    @apply text-white font-medium;
+    @apply text-textcol font-medium;
 }
 
 .price {
-    @apply text-white font-medium;
+    @apply text-textcol font-medium;
 }
 
 .line-through {
-    @apply text-gray-500;
+    @apply text-gray-400;
     text-decoration: line-through;
 }
 
 .real-price {
-    @apply text-white font-medium mt-1;
+    @apply text-textcol font-medium mt-1;
 }
 
 .explore-btn {
-    @apply px-4 py-2 w-full bg-green-500 text-white rounded-b-md;
-}
-/* CSS for the share box */
-.share-box {
-    @apply absolute top-16 left-0 bg-white p-4 border border-gray-300 shadow-lg hidden;
-    z-index: 50; /* Adjust as needed */
-}
-
-.share-option {
-    @apply block mb-2 bg-gray-100 border border-gray-300 p-2 cursor-pointer;
-}
-
-/* CSS for the share icon */
-.share-button {
-    @apply bg-transparent border-none cursor-pointer;
+    @apply px-4 py-2 w-full bg-secondaryg text-white rounded-b-md;
 }
 
 .hgggg{
     @apply h-[2222px]
 }
 /* testimonial */
+/* Assuming .test-card is the parent container */
+.testimonial {
+    @apply flex gap-4 w-fit ; /* Add flex-wrap and gap to create a row with margin */
+}
+/* Assuming .testimonial is the child element */
+.testimonial-card {
+    @apply relative rounded-2xl  min-w-[200px] max-w-[500px] h-[100px] px-4  bg-slate-200 m-2;
+    
+}
+.test-svg {
+    @apply absolute top-6 left-6 fill-slate-100
+}
+/* Assuming other classes are within .testimonial */
+.test-head {
+    @apply relative;
+}
+
+.test-subhead {
+    @apply  tracking-tight text-slate-900 overflow-hidden;
+}
+
+.test-caption {
+    @apply relative mt-2 flex items-center justify-between border-t border-slate-100 ;
+}
+
+.test-title {
+    @apply  text-slate-900;
+}
+
+.test-desig {
+    @apply mt-1 text-sm text-slate-500;
+}
+
+.test-image {
+    @apply overflow-hidden rounded-full bg-slate-50;
+}
+
+.test-image img {
+    @apply h-10 w-10 object-cover;
+}

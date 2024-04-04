@@ -132,18 +132,28 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // swiper
-document.addEventListener("DOMContentLoaded", function() {
-    var shareButton = document.getElementById("shareButton");
-    var shareBox = document.getElementById("shareBox");
-
-    shareButton.addEventListener("click", function() {
-        shareBox.classList.toggle("hidden");
+window.onload = function () {
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 8.5,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 3000, // Autoplay delay in milliseconds
+            disableOnInteraction: true, // Autoplay continues even when user interacts with swiper
+        },
+        createElements: false,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        on: {
+            mouseenter: function () {
+                swiper.autoplay.stop(); // Pause autoplay on mouse enter
+            },
+            mouseleave: function () {
+                swiper.autoplay.start(); // Resume autoplay on mouse leave
+            },
+        },
     });
-
-    // Close the share box when clicking outside of it
-    document.addEventListener("click", function(event) {
-        if (!shareBox.contains(event.target) && event.target !== shareButton) {
-            shareBox.classList.add("hidden");
-        }
-    });
-});
+};
+// testimonial
