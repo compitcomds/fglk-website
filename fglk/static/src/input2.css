@@ -101,11 +101,11 @@ p{
 }
 
 .dropdown-menu {
-    @apply absolute left-0 mr-2 w-40 mt-1 origin-top-left bg-white_back divide-y divide-gray-100 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300;
+    @apply absolute left-0 mr-2 w-40 mt-1 origin-top-left bg-white_back divide-y divide-gray-400 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300;
 }
 
 .dropdown-item {
-    @apply block px-4 py-2 text-sm text-textcol hover:bg-gray-100;
+    @apply block px-4 py-2 text-sm text-textcol hover:bg-gray-400;
 }
 
 .searchBar{
@@ -198,15 +198,15 @@ p{
 } */
 
 .banner-texts{
-    @apply w-auto h-3/4 py-2 px-2 rounded-lg  
-    bg-gradient-to-br from-yellow-400 via-blue-500 to-red-500  ;
+    @apply w-auto h-3/4 p-4 rounded-lg  
+    bg-gradient-to-br from-pink-100 via-blue-200 to-orange-200  ;
 }
 
 .banner-head{
     @apply text-3xl font-semibold  mb-4 
 }
 .banner-btn{
-    @apply w-auto rounded-lg h-1/4  flex gap-1
+    @apply w-auto rounded-lg h-1/4  flex gap-2
 }
 .banner-exp {
     @apply text-slate-200 font-semibold 
@@ -219,17 +219,18 @@ p{
     @apply h-1/4 items-end  flex justify-end
 }
 .npimg{
-    @apply  w-1/2 m-1 
+    @apply  w-1/2 
     my-3 rounded-md 
 }
+
 .npimg i{
-    @apply text-6xl flex h-full backdrop-blur-sm backdrop-brightness-50 justify-center items-center text-white_back hover:text-secondaryo
+    @apply text-6xl flex h-full backdrop-blur-sm backdrop-brightness-100 rounded-md justify-center items-center text-white_back hover:text-secondaryo
 }
 .banner-btn a{
-    @apply bg-slate-400 p-3 m-2 rounded-lg
+    @apply bg-slate-400 p-3  rounded-lg
 }
 .banner-btn2 a{
-    @apply bg-slate-400 p-1 m-2 rounded-lg
+    @apply bg-slate-400 p-1  rounded-lg
 }
 .banner-tags{
     @apply flex flex-wrap gap-1
@@ -370,6 +371,9 @@ p{
 }
 /* testimonial */
 /* Assuming .test-card is the parent container */
+.testimonial-sec {
+    @apply mx-3 mt-14 my-8 ;
+}
 .testimonial {
     @apply flex gap-4 w-fit ; /* Add flex-wrap and gap to create a row with margin */
 }

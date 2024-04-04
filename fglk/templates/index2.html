@@ -115,53 +115,6 @@
 </section>
 {# Top Courses #}
 
-<!-- <section class="top-course ">
-    <div class="heading flexy">
-        Top <div class="headind2color">Courses!!</div>
-    </div>
-
-    <div class="row1">
-        {% for item in range(8) %}
-
-        <div class="course-card-row">
-            <div class="course-video">
-
-                <div class="c-video" id="video-container{{ item }}">
-                    <video class="video" autoplay loop disablePictureInPicture>
-                        <source src="https://ccdstest.b-cdn.net/Untitled%20design%20(1).mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="video-controls">
-                        <div class="mute-toggle"><i class="fas fa-volume-up"></i></div>
-                        <div class="share-icon">
-                            <button id="shareButton" class="share-button">
-                                <i class="fa-solid fa-share-nodes"></i>
-                            </button>
-                        </div>
-
-                    </div>
-                    <div id="shareBox" class="share-box">
-                        <button class="share-option">Option 1</button>
-                        <button class="share-option">Option 2</button>
-                    </div>
-                </div>
-
-                <div class="c-name">
-                    <p class="vid-text">Python Basics</p>
-                    <div class="price-info">
-                        <div class="price">
-                            <div class="real-price">Price <span class="line-through">₹102</span> ₹68</div>
-                        </div>
-                    </div>
-
-                </div>
-                <button class="explore-btn">Explore Now</button>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-
-</section> -->
 
 <section class="top-course">
     <div class="heading flexy">
@@ -208,8 +161,13 @@
         </div>
     </div>
 </section>
-<marquee behavior="alternate" direction="left" loop="">
-    <section>
+
+<section class="testimonial-sec">
+
+    <div class="heading flexy">
+        Top <div class="headind2color">Testimonial!!</div>
+    </div>
+    <marquee behavior="alternate" direction="left" loop="">
         <div class="testimonial">
             {% for element in range(10) %}
             <div class="testimonial-card">
@@ -237,10 +195,9 @@
 
             {% endfor %}
         </div>
-    </section>
-</marquee>
-<marquee behavior="alternate" direction="right" loop="" >
-    <section>
+    </marquee>
+
+    <marquee behavior="alternate" direction="right" loop="">
         <div class="testimonial">
             {% for element in range(10) %}
             <div class="testimonial-card">
@@ -268,13 +225,10 @@
 
             {% endfor %}
         </div>
-    </section>
-</marquee>
+    </marquee>
+</section>
+
 <!-- Include Swiper library -->
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-
-<div class="hgggg"></div>
-
 {% endblock %}

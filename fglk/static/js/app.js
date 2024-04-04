@@ -82,6 +82,10 @@ function updateNextPrevImages() {
     document.getElementById('prev').style.alignItems= 'center';
     document.getElementById('prev').style.justifyContent="space-between";
 
+    // document.getElementById('next').style.borderRadius = '50px'; // Adjust the value as needed
+    // doc  ument.getElementById('prev').style.borderRadius = '50px'; // Adjust the value as needed
+
+
     
 }
 
@@ -130,30 +134,39 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
-// swiper
 window.onload = function () {
-    var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 8.5,
+    var mySwiper = new Swiper('.swiper-container', {
+        slidesPerView: 4,
         spaceBetween: 30,
         loop: true,
         autoplay: {
-            delay: 3000, // Autoplay delay in milliseconds
-            disableOnInteraction: true, // Autoplay continues even when user interacts with swiper
+            delay: 3000,
+            disableOnInteraction: false, // Change to false to keep autoplay running even when user interacts with swiper
         },
         createElements: false,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
         },
-        on: {
-            mouseenter: function () {
-                swiper.autoplay.stop(); // Pause autoplay on mouse enter
-            },
-            mouseleave: function () {
-                swiper.autoplay.start(); // Resume autoplay on mouse leave
-            },
-        },
+    });
+
+    // Add event listeners to pause and resume autoplay
+    var swiperContainer = document.querySelector('.swiper-container');
+    swiperContainer.addEventListener('mouseenter', function () {
+        mySwiper.autoplay.stop();
+    });
+
+    swiperContainer.addEventListener('mouseleave', function () {
+        mySwiper.autoplay.start();
     });
 };
-// testimonial
+// screen size to 100%
+  document.addEventListener("DOMContentLoaded", function() {
+    if (window.innerWidth < window.innerHeight) {
+      var originalZoom = 1;
+      document.body.style.zoom = originalZoom;
+      window.onresize = function() {
+        document.body.style.zoom = originalZoom;
+      };
+    }
+  });
