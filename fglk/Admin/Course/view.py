@@ -10,15 +10,15 @@ Admin_Course = Blueprint('Admin_Course',__name__,template_folder='templates/Admi
 
 @Admin_Course.route('/',methods=['GET','POST'])
 def Course():
-      Name=request.args.get('Name')
+      _id=request.args.get('_id')
       Delete=request.args.get('Delete', type=bool)
-      if Name and Delete:
-            data=db.course.find_one({'name':Name})
+      if _id and Delete:
+            data=db.course.find_one({'_id':ObjectId(_id)})
             db.section.delete_many({'_id': {'$in': data['sections']}})
-            db.course.delete_one({'name':Name})
+            db.course.delete_one({'_id':ObjectId(_id)})
             return redirect(url_for('.Course'))
-      if Name:
-            data=db.course.find_one({'name':Name})
+      if _id:
+            data=db.course.find_one({'_id':ObjectId(_id)})
             if data:
                   form=AddCourseForm(**data)  
             else:
@@ -26,44 +26,60 @@ def Course():
       else:
             form=AddCourseForm()
       if form.validate_on_submit():
-            if not Name:
+            if not _id:
                   data={
                   'name':form.name.data,
+                  'discription':form.discription.data,
+                  'course_video':form.course_video.data,
+                  'hrs':form.hrs.data,
+                  'price':form.price.data,
+                  'discount':form.discount.data,
+                  'img1':form.img1.data,
+                  'img2':form.img2.data,
+                  'img3':form.img2.data,
                   'sections':[]
             }
                   db.course.insert_one(data)
             else:
                   data={
-                  'name':form.name.data
+                  'name':form.name.data,
+                  'discription':form.discription.data,
+                  'course_video':form.course_video.data,
+                  'hrs':form.hrs.data,
+                  'price':form.price.data,
+                  'discount':form.discount.data,
+                  'img1':form.img1.data,
+                  'img2':form.img2.data,
+                  'img3':form.img2.data,
             }
-                  db.course.update_one({'name':Name},{'$set':data})
+                  db.course.update_one({'_id':ObjectId(_id)},{'$set':data})
             return redirect(url_for('.Course'))
       data=db.course.find()
       return render_template('Admin_Course.html',form=form,data=list(data))
 
 # route for adding Sections in course:
 
-@Admin_Course.route('/<string:name>',methods=['GET','POST'])
-def section(name):
-      Name=request.args.get('Name')
+@Admin_Course.route('/<string:course_id>',methods=['GET','POST'])
+def section(course_id):
+      _id=request.args.get('_id')
       Delete=request.args.get('Delete', type=bool)
-      if Name and Delete:
+      if _id and Delete:
             # data2=db.course.find_one({'name':name})
-            data=db.section.find_one({'name':Name})
+            data=db.section.find_one({'_id':ObjectId(_id)})
             # db.content.delete_many({'_id': {'$in': data2['content']}})
-            db.course.update_one({'name':name},{'$pull':{'sections':data['_id']}})
-            db.section.delete_one({'name':Name})
-            return redirect (url_for('.section',name=name))
-      if Name:
-            data=db.section.find_one({'name':Name})
+            db.course.update_one({'_id':ObjectId(course_id)},{'$pull':{'sections':data['_id']}})
+            db.section.delete_one({'_id':ObjectId(course_id)})
+            return redirect (url_for('.section',course_id=course_id))
+      if _id:
+            data=db.section.find_one({'_id':ObjectId(_id)})
             if data:
                   form=AddSection(**data)  
             else:
-                  return redirect (url_for('.section',name=name))
+                  return redirect (url_for('.section',course_id=course_id))
       else:
             form=AddSection()
       if form.validate_on_submit():
-            if not Name:
+            if not _id:
                   data={
                   'name':form.name.data,
                   'content':[]
@@ -72,42 +88,42 @@ def section(name):
                   section_id = inserted_section.inserted_id
 
                   db.course.update_one(
-                  {'name': name},
+                  {'_id': ObjectId(course_id)},
                   {'$push': {'sections': section_id}}
                   )
             else:
                   data={
                   'name':form.name.data,
                   }
-                  db.section.update_one({'name': Name}, {'$set':data})
-            return redirect (url_for('.section',name=name))
-      data=db.course.find_one({'name':name})
+                  db.section.update_one({'_id': ObjectId(_id)}, {'$set':data})
+            return redirect (url_for('.section',course_id=course_id))
+      data=db.course.find_one({'_id':ObjectId(course_id)})
       data1=db.section.find({'_id':{'$in':data['sections']}})
-      return render_template('Admin_Section.html',form=form,data=list(data1),name=name)
+      return render_template('Admin_Section.html',form=form,data=list(data1),course_id=course_id)
 
 # adding content
-@Admin_Course.route('/<string:name>/<string:section>',methods=['GET','POST'])
-def content(name,section):
+@Admin_Course.route('/<string:course_id>/<string:section_id>',methods=['GET','POST'])
+def content(course_id,section_id):
       data_type=request.args.get('data_type',type=str) #docs / video
-      Name=request.args.get('Name')
+      content_id=request.args.get('content_id')
       Delete=request.args.get('Delete', type=bool)
       # if not data_type:
       #       flash('Boskide ko kide hai','error')
       #       return redirect (url_for('.section',name=name))
-      if Name and Delete:
-             deleted_content = db.content.find_one_and_delete({'title': Name})
+      if content_id and Delete:
+             deleted_content = db.content.find_one_and_delete({'_id': ObjectId(content_id)})
              content_id = deleted_content['_id']
-             db.section.update_one({'name':section},
+             db.section.update_one({'_id':ObjectId(section_id)},
                                    {'$pull':{'content': content_id}})
-             return redirect (url_for('.content',name=name,section=section))
-      if Name:
-            data=db.content.find_one({'title':Name})
+             return redirect (url_for('.content',course_id=course_id,section_id=section_id))
+      if content_id:
+            data=db.content.find_one({'_id':ObjectId(content_id)})
             if data_type =='docs' and data:
                   form=AddDocs(**data)
             elif data_type == 'video' and data:
                   form=AddVideo(**data)
             else:
-                  return redirect (url_for('.content',name=name,section=section))
+                  return redirect (url_for('.content',course_id=course_id,section_id=section_id))
       else:
             if data_type == 'docs':
                  form=AddDocs()
@@ -119,23 +135,27 @@ def content(name,section):
             if data_type == 'docs':
                   data={'type':'docs','title':form.title.data,'content_text':form.content_text.data}
             elif data_type == 'video':
-                  data={'title':form.title.data,'discription':form.discription.data,'link':form.link.data,'resource':form.resource.data}
-            if not Name:
+                  if form.resource.data:
+                        data={'title':form.title.data,'discription':form.discription.data,'link':form.link.data,'resource':form.resource.data ,'type':'video'}
+                  else:
+                        data={'title':form.title.data,'discription':form.discription.data,'link':form.link.data,'resource':'' ,'type':'video'}
+            if not content_id:
                   inserted_content = db.content.insert_one(data)
                   content_id = inserted_content.inserted_id
                   db.section.update_one(
-                  {'name': section},
+                  {'_id': ObjectId(section_id)},
                   {'$push': {'content': content_id}}
                   )
             else:
-                  db.content.update_one({'title': Name}, {'$set':data})
-            return redirect (url_for('.content',name=name,section=section))
-      data=db.section.find_one({'name':section})
+                  db.content.update_one({'_id': ObjectId(content_id)}, {'$set':data})
+            return redirect (url_for('.content',course_id=course_id,section_id=section_id))
+      data=db.section.find_one({'_id':ObjectId(section_id)})
+      print(data)
       if data:
             data1=db.content.find({'_id':{'$in':data['content']}})
       else:
             data1=[]
-      return render_template('Admin_Content.html',form=form,data=list(data1),name=name,section=section,data_type=data_type)
+      return render_template('Admin_Content.html',form=form,data=list(data1),course_id=course_id,section_id=section_id,data_type=data_type)
 
 
 # type=request.args.get('Type')

@@ -11,16 +11,23 @@
     <h2>Add Course</h2>
     <form method="POST">
         {{ form.hidden_tag() }}
-        {{ form.name.label }}
-        {{ form.name(size=32) }}
+        Name-{{ form.name() }}<br>
+        Discription-{{ form.discription() }}<br>
+        course_video-{{ form.course_video() }}<br>
+        hrs-{{ form.hrs() }}<br>
+        price-{{ form.price() }}<br>
+        discount-{{ form.discount() }}<br>
+        img1-{{ form.img1() }}<br>
+        img2-{{ form.img2() }}<br>
+        img3-{{ form.img3() }}<br>
         {{ form.submit }}
     </form>
     <hr>
 {% for element in data %}
         {{ element|e }}
-        <a href="{{element.name}}">click</a>
-        <a href="?Name={{element.name}}">update</a>
-        <a href="?Name={{element.name}}&Delete=True">delete</a>
+        <a href="{{element._id}}">click</a>
+        <a href="?_id={{element._id}}">update</a>
+        <a href="?_id={{element._id}}&Delete=True">delete</a>
         <br>
         <br>
 {% endfor %}
