@@ -1380,7 +1380,7 @@ input:focus {
   top: 0.25rem;
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 11rem;
   padding: 0.5rem;
 }
