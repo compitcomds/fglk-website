@@ -1,23 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-@layer utilities {
-    .animate-gradient {
-      animation: gradient 2s linear infinite;
-    }
-  }
-  
-  @keyframes marqueeLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-  }
-  
+
 img{
-    @apply w-full h-full;
+    @apply w-full h-full  ;
+    
 }
 body{
     @apply bg-primary text-textcol font-webFont {zoom:100};
@@ -40,9 +32,14 @@ p{
 .para{
     @apply text-base text-textcol text-sm font-light 
 }
-.tag{
-    @apply  bg-neutral-950 bg-opacity-20 hover:bg-slate-700 py-1 px-2 rounded-full text-sm
-}
+/* input2.css */
+
+
+.tag {
+    @apply mx-2 bg-neutral-400 bg-opacity-50 backdrop-blur-[2px] hover:bg-slate-700 py-1 px-2 rounded-full text-sm text-white;
+    animation: slideInFromLeft 0.21s ease-in; /* Apply the custom animation */
+  }
+  
 .top{
     @apply  justify-start items-start h-3/4
 }
@@ -176,13 +173,16 @@ input:focus {
     @apply m-5 bg-primary
 }
 .banner{
-    @apply flex gap-3
+    @apply flex gap-3;
+    
 }
 .banner-image{
-    @apply w-9/12 rounded-lg 
+    @apply w-9/12 rounded-full z-0 relative mt-3 ;
+    
 }
 .banner-image img{
-    @apply rounded-lg
+    @apply rounded-lg ;
+
 }
 .dot-container {
     @apply  flex justify-center space-x-2 mt-2
@@ -197,14 +197,12 @@ input:focus {
 .banner-details{
    @apply  h-auto w-3/12 justify-stretch rounded-md
 }
-/* .banner-text{
-    @apply w-auto h-3/4 py-2 px-2 rounded-lg  bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 animate-[background-animation_5s_infinite];
-} */
 
-.banner-texts{
-    @apply w-auto h-3/4 p-4 rounded-lg  
-    bg-gradient-to-br from-pink-100 via-blue-200 to-orange-200  ;
-}
+  .banner-texts {
+    @apply w-auto h-3/4 p-4 rounded-lg;
+    background: radial-gradient(circle, rgba(250, 224, 235, 1) 0%, rgba(197, 224, 255, 1) 100%); 
+  }
+  
 
 .banner-head{
     @apply text-xl font-semibold  mb-2 
@@ -237,7 +235,7 @@ input:focus {
     @apply bg-slate-400 p-1  rounded-lg
 }
 .banner-tags{
-    @apply flex flex-wrap gap-1
+    @apply flex flex-wrap gap-1 relative -mb-10 z-10 
 }
 .banner-Subtext{
     @apply text-slate-600 text-sm font-light

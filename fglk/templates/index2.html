@@ -3,11 +3,12 @@
 <!-- Main Content Area -->
 {# Hero #}
 <section class="hero">
+   
     <div class="banner">
         <div class="banner-image">
+            <div class="banner-tags" ></div>
             <img id="banner-img" src="https://images6.alphacoders.com/133/1333695.jpeg" alt="">
             <div class="dot-container" id="dot-container"></div>
-
         </div>
         <div class="banner-details">
             <div class="banner-texts">
@@ -22,11 +23,7 @@
 
                     </div>
                     <br>
-                    <div class="banner-tags">
-                        <div class="tag">#law</div>
-                        <div class="tag">#studentofLaw</div>
-                        <div class="tag">#free Course</div>
-                    </div>
+
                 </div>
                 <div class="r-end">
                     <div class="banner-exp" id="banner-button">
@@ -132,22 +129,21 @@
                                 Your browser does not support the video tag.
                             </video>
                             <div class="video-controls">
-                                <div class="mute-toggle"><i class="fas fa-volume-up"></i></div>
-                                <div class="share-icon">
-                                    <button id="shareButton" class="share-button">
-                                        <i class="fa-solid fa-share-nodes"></i>
-                                    </button>
+                                <div class="mute-toggle">
+                                    <i class="fas fa-volume-mute muted-icon"></i> <!-- Muted icon -->
+                                    <i class="fas fa-volume-up unmuted-icon"></i> <!-- Unmuted icon -->
                                 </div>
+                                
+                                
+                                
                             </div>
 
                         </div>
                         <div class="c-name">
                             <p class="vid-text">Python Basics</p>
                             <div class="price-info">
-                                <!-- <div class="discounted-price">$49</div> -->
                                 <div class="price">
                                     <div class="real-price">Price <span class="line-through">₹102</span> ₹68</div>
-                                    <!-- Changed real price to $69 -->
                                 </div>
                             </div>
                         </div>
@@ -171,7 +167,7 @@
         <div class="testimonial">
             {% for element in range(10) %}
             <div class="testimonial-card">
-                
+
                 <blockquote class="test-head">
                     <p class="test-subhead">
                         Awesome idea. Can't wait to see how this turns out!
@@ -197,7 +193,7 @@
         <div class="testimonial">
             {% for element in range(10) %}
             <div class="testimonial-card">
-                
+
                 <blockquote class="test-head">
                     <p class="test-subhead">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit

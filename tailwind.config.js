@@ -27,12 +27,6 @@ module.exports = {
         webFont: ['Raleway', 'sans-serif'],
 
       },
-      keyframes: {
-        'background-animation': {
-          '0%, 100%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg)' },
-        },
-      },
     },
     plugins: [],
   },
