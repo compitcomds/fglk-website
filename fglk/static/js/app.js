@@ -1,5 +1,5 @@
     async function fetchData() {
-        const url = 'http://localhost:5000/banner_data';
+        const url = '/banner_data';
     
         try {
             const response = await fetch(url);
