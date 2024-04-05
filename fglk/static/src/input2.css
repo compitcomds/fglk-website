@@ -322,7 +322,7 @@ p{
 }
 
 .video-controls {
-    @apply  absolute top-0  flex justify-between gap-[102px] items-center p-2 ;
+    @apply  absolute top-0  flex justify-between gap-[150px] items-center p-2 ;
 }
 
 .mute-toggle {
@@ -412,4 +412,17 @@ p{
 
 .test-image img {
     @apply h-10 w-10 object-cover;
+}
+/* footer */
+.foot {
+    @apply bg-indigo-700 py-4 text-gray-100
+}
+.foot-container {
+    @apply container mx-auto px-4
+}
+.footer-flex {
+    @apply -mx-4 flex flex-wrap justify-between
+}
+.foot-content {
+    @apply px-4 w-full text-center sm:w-auto sm:text-left
 }
