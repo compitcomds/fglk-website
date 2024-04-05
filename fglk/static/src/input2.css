@@ -327,7 +327,7 @@ input:focus {
 }
 
 .video-controls {
-    @apply  absolute top-1 w-full flex justify-around p-2 ;
+    @apply  absolute top-1 w-full flex justify-around  gap-44 p-2 ;
 }
 
 .mute-toggle {
