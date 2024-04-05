@@ -59,7 +59,10 @@ p{
     @apply h-fit w-44 m-1 p-1 ;
 }
 .searchform input[type='text']{
-    @apply px-3 py-1 rounded-full w-full bg-white_back shadow-md shadow-slate-500;
+    @apply  px-3 py-1 rounded-full w-full bg-white_back shadow-md shadow-slate-300;
+}
+input:focus {
+    @apply outline-none border-none
 }
 .searchform {
     @apply flex justify-between items-center ;
@@ -150,7 +153,7 @@ p{
     @apply  w-1 h-1/2 m-3 bg-secondaryo rounded-lg
 }
 .side-nav-name{
-    @apply flex justify-center items-center hover:text-secondaryo hover:ml-2 hover:font-semibold hover:text-lg
+    @apply flex justify-center items-center hover:text-secondaryo  hover:font-semibold hover:text-lg
 }
 .side-nav-secondary-icon {
     @apply flex items-center cursor-pointer

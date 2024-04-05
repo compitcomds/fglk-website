@@ -20,8 +20,10 @@ def checker():
 def AdminIndex():
       print(current_user.token,"this is current user token")
       print(request.cookies.get('token'),"this is request user token")
-      return "this is admin"
+      return render_template('index_admin.html')
 
 from .Course.view import Admin_Course
 Admin.register_blueprint(Admin_Course,url_prefix='/course')
 
+from .Community.view import Admin_Community
+Admin.register_blueprint(Admin_Community,url_prefix='/community')

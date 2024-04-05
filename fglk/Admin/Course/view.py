@@ -4,7 +4,10 @@ from fglk.database import db
 from bson.objectid import ObjectId
 from fglk.Admin.Course.form import AddCourseForm, AddDocs,AddVideo, AddSection
 
-Admin_Course = Blueprint('Admin_Course',__name__,template_folder='templates/Admin_Course',static_folder='static')
+Admin_Course = Blueprint('Admin_Course',
+                         __name__,
+                         template_folder='templates/Admin_Course',
+                         static_folder='static')
 
 # this is master route that can CURD on the course table
 
@@ -58,7 +61,6 @@ def Course():
       return render_template('Admin_Course.html',form=form,data=list(data))
 
 # route for adding Sections in course:
-
 @Admin_Course.route('/<string:course_id>',methods=['GET','POST'])
 def section(course_id):
       _id=request.args.get('_id')
@@ -107,9 +109,6 @@ def content(course_id,section_id):
       data_type=request.args.get('data_type',type=str) #docs / video
       content_id=request.args.get('content_id')
       Delete=request.args.get('Delete', type=bool)
-      # if not data_type:
-      #       flash('Boskide ko kide hai','error')
-      #       return redirect (url_for('.section',name=name))
       if content_id and Delete:
              deleted_content = db.content.find_one_and_delete({'_id': ObjectId(content_id)})
              content_id = deleted_content['_id']
@@ -157,22 +156,3 @@ def content(course_id,section_id):
             data1=[]
       return render_template('Admin_Content.html',form=form,data=list(data1),course_id=course_id,section_id=section_id,data_type=data_type)
 
-
-# type=request.args.get('Type')
-#       if type=='video':
-#             form=AddVideo()
-#             if form.validate_on_submit():
-#                   data={
-#                         'title':form.title.data,
-#                         'discription':form.discription.data,
-#                         'link':form.link.data,
-#                         'resource':form.resource.data
-#                   }
-#       if type == 'Docs':
-#             form=AddDocs()
-#             if form.validate_on_submit():
-#                   data={
-#                         'title':form.title.data,
-#                         'discription':form.discription.data,
-#                         'link':form.link.data
-#                   }      
