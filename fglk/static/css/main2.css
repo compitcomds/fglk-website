@@ -1088,9 +1088,9 @@ p {
 }
 
 .banner-head {
-  margin-bottom: 1rem;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   font-weight: 600;
 }
 
@@ -1173,8 +1173,8 @@ p {
 }
 
 .banner-Subtext {
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   font-weight: 300;
   --tw-text-opacity: 1;
   color: rgb(71 85 105 / var(--tw-text-opacity));
