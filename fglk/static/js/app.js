@@ -140,7 +140,7 @@ window.onload = function () {
         spaceBetween: 30,
         loop: true,
         autoplay: {
-            delay: 3000,
+            delay: 300000,
             disableOnInteraction: false, // Change to false to keep autoplay running even when user interacts with swiper
         },
         createElements: false,
