@@ -203,7 +203,7 @@ p{
 }
 
 .banner-head{
-    @apply text-3xl font-semibold  mb-4 
+    @apply text-xl font-semibold  mb-2 
 }
 .banner-btn{
     @apply w-auto rounded-lg h-1/4  flex gap-2
@@ -236,7 +236,7 @@ p{
     @apply flex flex-wrap gap-1
 }
 .banner-Subtext{
-    @apply text-slate-600 text-base font-light
+    @apply text-slate-600 text-sm font-light
 }
 .banner-overlay{
     @apply relative
