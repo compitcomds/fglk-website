@@ -7,12 +7,28 @@
     <title>Document</title>
     <!-- CSS only -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main2.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+    .mute-toggle .unmuted-icon {
+        display: none;
+    }
+    
+    .mute-toggle.muted .muted-icon {
+        display: inline;
+    }
+    
+    .mute-toggle.muted .unmuted-icon {
+        display: none;
+    }
+    
+</style>
 </head>
 
 <body>
@@ -75,10 +91,10 @@
         <div class="margin-top">
             <div class="side-nav">
                 <div class="side-nav-main-item">
-                    <div class="side-nav-item on-page">
+                    <div class="side-nav-item">
                         <a href="#">
                             <div class="side-nav-name ">
-                                <div class="v-line-active"></div>Home
+                                <div class="v-line"></div>Home
                             </div>
                         </a>
                     </div>
@@ -115,7 +131,8 @@
                             <span>Help</span>
                         </a>
                     </div>
-                    <a href="#" class="side-box">friends <br> forever<span class="plus"> + </span> </a>
+                    <!-- <a href="#" class="side-box">Be a <br> Contributor<span class="plus"> + </span> </a> -->
+                    <a href="#" class="side-box">Become a <br> Contributor</a>
                 </div>
 
             </div>
@@ -131,7 +148,7 @@
                                 <div class="foot-content">
                                     Copyright © 2024
                                     <script>new Date().getFullYear() > 2020 && document.write("- " + new Date().getFullYear())</script>
-                                    
+
                                     FG Lawkit. All Rights Reserved.
                                 </div>
                                 <!-- <div class="foot-content">
@@ -147,7 +164,7 @@
     </section>
 
 
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 

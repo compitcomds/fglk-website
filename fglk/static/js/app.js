@@ -1,5 +1,5 @@
     async function fetchData() {
-        const url = 'http://localhost:5000/banner_data';
+        const url = '/banner_data';
     
         try {
             const response = await fetch(url);
@@ -26,6 +26,15 @@ function updateBanner() {
     document.getElementById('banner-heading').innerHTML='<h3>' + data[currentIndex]['heading'] + '</h3>';
     document.getElementById('banner-button-link2').href = data[currentIndex]['button-link2'];
     document.getElementById('banner-button-link2').textContent = data[currentIndex]['button-text'];
+    document.querySelector('.banner-tags').innerHTML = '';
+
+    // Loop through tags in current data item and append them
+    data[currentIndex]['tags'].forEach(tag => {
+        let tagElement = document.createElement('div');
+        tagElement.classList.add('tag');
+        tagElement.textContent = tag;
+        document.querySelector('.banner-tags').appendChild(tagElement);
+    });
     updateDotNavigation();
 }
 
@@ -84,23 +93,17 @@ function updateNextPrevImages() {
 
     // document.getElementById('next').style.borderRadius = '50px'; // Adjust the value as needed
     // doc  ument.getElementById('prev').style.borderRadius = '50px'; // Adjust the value as needed
-
-
-    
 }
-
 
 // Function to change banner content at intervals
 function startBannerRotation() {
     updateBanner();
     updateNextPrevImages();
-    setInterval(nextBanner, 10000); // Change every 10 seconds
+    setInterval(nextBanner, 3000); // Change every 10 seconds
 }
 
 // Start banner rotation
 startBannerRotation();
-
-
 // Event listeners for the next and previous buttons
 document.getElementById('next').addEventListener('click', nextBanner);
 document.getElementById('prev').addEventListener('click', prevBanner);
@@ -112,14 +115,21 @@ document.addEventListener("DOMContentLoaded", function () {
     var videos = document.querySelectorAll(".video");
     var muteToggles = document.querySelectorAll(".mute-toggle");
 
+    // Mute all videos by default
+    videos.forEach(function(video) {
+        video.muted = true;
+    });
+
     muteToggles.forEach(function (muteToggle, index) {
         muteToggle.addEventListener("click", function () {
             if (videos[index].muted) {
                 videos[index].muted = false;
-                muteToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
+                muteToggle.querySelector('.muted-icon').style.display = 'none';
+                muteToggle.querySelector('.unmuted-icon').style.display = 'inline';
             } else {
                 videos[index].muted = true;
-                muteToggle.innerHTML = '<i class="fas fa-volume-off"></i>';
+                muteToggle.querySelector('.muted-icon').style.display = 'inline';
+                muteToggle.querySelector('.unmuted-icon').style.display = 'none';
             }
         });
     });
@@ -134,6 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
 window.onload = function () {
     var mySwiper = new Swiper('.swiper-container', {
         slidesPerView: 4,
