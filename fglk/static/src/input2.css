@@ -214,7 +214,8 @@
     @apply h-[2222px]
 }
 /* testimonial */
-/* Assuming .test-card is the parent container */
+/* Assuming .test-card is t
+he parent container */
 .testimonial-sec {
     @apply mx-3 mt-14 my-8 ;
 }
