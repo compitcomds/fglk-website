@@ -6,34 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- CSS only -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main2.css') }}">
+    {% block pageStyle %}
+
+    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-        <style>
-            .dot-container {
-                margin-top: 10px;
-              }
-              .dot {
-                display: inline-block;
-                width: 10px;
-                height: 10px;
-                background-color: #bbb;
-                border-radius: 50%;
-                margin: 0 5px;
-                cursor: pointer;
-              }
-              .active-dot {
-                background-color: #000000;
-              }
-        </style>
+    <link rel="stylesheet" href="https://stocksales.b-cdn.net/static%20content/assets/css/swiper.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .mute-toggle .unmuted-icon {
+            display: none;
+        }
+
+        .mute-toggle.muted .muted-icon {
+            display: inline;
+        }
+
+        .mute-toggle.muted .unmuted-icon {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
-    <section>
+    <section class="hidde">
         <div class="nav">
             <div class="brandlogo">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Steam_gray-brown_logo.svg/1280px-Steam_gray-brown_logo.svg.png"
@@ -43,7 +46,7 @@
                 <div class="searchBar">
                     <form method="post">
                         <div class="searchform">
-                            <input type="text">
+                            <input type="text" placeholder="Search..." id="searchInput" />
                             <button type="submit">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
@@ -51,64 +54,165 @@
                     </form>
                 </div>
                 <div class="nav-right">
-                    <!-- <div class="nav-icons">
+                    <div class="nav-icons">
                         <div class="iconsa">
-                            <i class="fa-regular fa-bell"></i>
+                            <a href="#"><i class="fa-regular fa-bell"></i></a>
+                            <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         </div>
-                    </div> -->
-                    <div class="profile">
-                        <div class="nav-img-circle">
-                            <img src="https://plan-uk.org/sites/default/files/styles/gallery_image/public/Images/Article/plan-uk-act-for-girls-street-harassment-jess.jpg"
-                                alt="" srcset="" class="image-round">
-                        </div>
-                        <div>
-                            <p>Darshan111</p>
+                    </div>
+                    <div class="dropdown-container">
+                        <div class="profile">
+                            <div class="nav-img-circle">
+                                <img src="https://plan-uk.org/sites/default/files/styles/gallery_image/public/Images/Article/plan-uk-act-for-girls-street-harassment-jess.jpg"
+                                    alt="" srcset="" class="image-round">
+                            </div>
+                            <div class="group">
+                                <button type="button" class="dropdown-button">
+                                    Darshan
+                                    <!-- Dropdown arrow -->
+                                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 12l-5-5h10l-5 5z" />
+                                    </svg>
+                                </button>
+
+                                <!-- Dropdown menu -->
+                                <div class="dropdown-menu">
+                                    <div class="dropdown-list">
+                                        <a href="#" class="dropdown-item">Login</a>
+                                        <a href="#" class="dropdown-item">Sign Up</a>
+                                        <a href="#" class="dropdown-item">Log Out</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- sm and md view -->
+    <section class="view-sm">
+        <div class="brandlogo-sm">
+            <img src="https://lh3.googleusercontent.com/proxy/tBwhoFnDimuqJIkOJaRGe9MBVyIq7nKImmjC-0BYSqbYMwWo13GpKdq_nJgQ2GxHoMJiTVj0VxFtKVJkgRdSanNC7e3IC6flFMf93D1T6cQJEjE6YtjHsigR64URGboslUr7t4cN5d2kUW5vSOtuhQxEH1Q"
+                alt="image" srcset="">
+        </div>
+        <div class="searchBar-sm">
+            <form method="post" class="searchBar">
+                <input type="text" placeholder="Search..." id="searchInput" />
+                <input type="submit" value="Search">
+            </form>
+        </div>
+    </section>
+    <!-- sm and md view end-->
+    <section class="hero10">
+        <!-- main content -->
+
+        {% block content %}
+
+        {% endblock content %}
+
+
+
+        <!-- Footer -->
+        <footer class="foot-sm">
+            <div class="foot-item"><a href="{{url_for('index')}}"><i class="fas fa-home"></i></a></div>
+            <div class="foot-item"><a href="{{url_for('course')}}"><i class="fas fa-book"></i></a></div>
+            <div class="foot-item"><i class="fas fa-users"></i></div>
+            <div class="foot-item"><i class="fas fa-user-md"></i></div>
+            <div class="foot-item"><i class="fas fa-cog"></i></div>
+        </footer>
+    </section>
+
+
+
     <section>
-        <div class="margin-top">
-            <div class="side-nav">
+        <div class="margin-top ">
+            <div class="side-nav hidde">
                 <div class="side-nav-main-item">
                     <div class="side-nav-item">
-                        <a href="#">
-                            <div>icon</div>
-                            <div>name</div>
+                        <a href="{{url_for('index')}}">
+                            <div class="side-nav-name ">
+                                <div class="v-line"></div>Home
+                            </div>
                         </a>
                     </div>
-                    <div class="side-nav-item">
-                        <a href="#">
-                            <div>icon</div>
-                            <div>name</div>
-                        </a>
+                    <div class="side-nav-item ">
+                        <div class="side-nav-item">
+                            <a href="{{url_for('course')}}">
+                                <div class="side-nav-name">
+                                    <div class="v-line"></div>Course
+                                </div>
+                            </a>
+                        </div>
                     </div>
                     <div class="side-nav-item">
-                        <a href="#">
-                            <div>icon</div>
-                            <div>name</div>
-                        </a>
+                        <div class="side-nav-item">
+                            <a href="#">
+                                <div class="side-nav-name">
+                                    <div class="v-line"></div>Community
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="side-nav-secondary-item">
-                    <div class="side-nav-secondary-item"></div>
-                    <div class="side-nav-secondary-item"></div>
+                    <div class="side-icon">
+                        <a href="#" class="side-nav-secondary-icon">
+                            <i class="fas fa-cog mr-2"></i>
+                            <span>Setting</span>
+                        </a>
+
+                    </div>
+                    <div class="side-icon">
+                        <a href="#" class="side-nav-secondary-icon">
+                            <i class="fas fa-question-circle mr-2"></i> <!-- Help icon -->
+                            <span>Help</span>
+                        </a>
+                    </div>
+                    <!-- <a href="#" class="side-box">Be a <br> Contributor<span class="plus"> + </span> </a> -->
+                    <a href="#" class="side-box">Become a <br> Contributor</a>
                 </div>
+
             </div>
 
             <div class="main-content">
-                {% block content %}
+                <div class="hidde">
+                    {% block content1 %}
 
-                {% endblock content %}
+                    {% endblock content1 %}
+                </div>
+
+                <footer class="hidde">
+                    <div class="foot">
+                        <div class="foot-container">
+                            <div class="footer-flex">
+                                <div class="foot-content">
+                                    Copyright © 2024
+                                    <script>new Date().getFullYear() > 2020 && document.write("- " + new Date().getFullYear())</script>
+
+                                    FG Lawkit. All Rights Reserved.
+                                </div>
+                                <!-- <div class="foot-content">
+                                    Made with ❤️ by Dipesh & Darshan.
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
+
         </div>
+
     </section>
 
 
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.4.4/swiper-bundle.min.js"></script>
+    <script src="https://stocksales.b-cdn.net/static%20content/assets/js/swiper.min.js"></script>
 
 </body>
 

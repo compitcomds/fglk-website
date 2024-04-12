@@ -4,41 +4,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-@layer base {
-    :root {
-        --color-bkg: 210deg 40% 98%;
-        --color-content: 217deg 32.6% 17.5%;
-    }
-
-    @media (prefers-color-scheme:dark) {
-        :root {
-            --color-bkg: 217deg 32.6% 17.5%;
-            --color-content: 210deg 40% 98%;
-        }
-    }
-
-    :root[data-theme="dark"] {
-        --color-bkg: 210deg 40% 98%;
-        --color-content: 217deg 32.6% 17.5%;
-    }
-
-    :root[data-theme="cool"] {
-        --color-bkg: 217deg 32.6% 17.5%;
-        --color-content: 210deg 40% 98%;
-    }
-}
-
 img{
-    @apply w-full h-full;
+    @apply w-full h-full  ;
+    
 }
 body{
-    @apply bg-primary text-textcol font-webFont ;
+    @apply bg-primary text-textcol font-webFont {zoom:100};
 }
 h3{
-    @apply font-bold 
+    @apply font-bold
+}
+p{
+    @apply my-2
+}
+.hidde {
+   @apply hidden xl:block lg:block
+}
+
+.flexy{
+    @apply flex
+}
+.heading{
+    @apply text-4xl font-bold mb-6 gap-2
+}
+.top-course-heading{
+    @apply text-4xl font-bold mb-6 gap-2 flex
+}
+.para{
+    @apply text-base text-textcol text-sm font-light 
+}
+/* input2.css */
+
+
+.tag {
+    @apply mx-2 bg-neutral-400 bg-opacity-50 backdrop-blur-[2px] hover:bg-slate-700 py-1 px-2 rounded-full text-sm text-white;
+    animation: slideInFromLeft 0.21s ease-in; /* Apply the custom animation */
+  }
+  
+.top{
+    @apply  justify-start items-start h-3/4
 }
 .nav{
-    @apply flex items-center bg-primary w-full fixed -mt-14;
+    @apply flex items-center z-10 bg-primary w-full fixed -mt-14 pt-2;
 }
 .brandlogo{
     @apply  w-2/12 ;
@@ -50,19 +57,22 @@ h3{
     @apply h-fit w-44 m-1 p-1 ;
 }
 .searchform input[type='text']{
-    @apply px-3 py-1 rounded-full w-full ;
+    @apply  px-3 py-1 rounded-full w-full bg-white_back shadow-md shadow-slate-300;
+}
+input:focus {
+    @apply outline-none border-none
 }
 .searchform {
     @apply flex justify-between items-center ;
 } 
 .searchform button{
-    @apply p-1 -ml-16 bg-slate-950 rounded-full h-8 w-8
+    @apply p-1 -ml-16 bg-white_back rounded-full h-8 w-8
 }
 .nav-img-circle{
-    @apply p-1 rounded-full border-2;
+    @apply p-1 rounded-full border-2 border-secondaryo;
 }
 .image-round{
-    @apply  h-8 w-8 rounded-full bg-white;
+    @apply  h-8 w-8 rounded-full bg-white_back;
 }
 .nav-right{
     @apply flex mx-5 ;
@@ -71,75 +81,335 @@ h3{
     @apply flex justify-between items-center ;
 }
 .iconsa {
-        @apply  m-3 rounded-full bg-white text-black ;
+        @apply  m-3 rounded-full text-textcol space-x-6 px-2 ;
 }
 .iconsa i{
-    @apply justify-between items-center p-2;
+    @apply justify-between items-center p-2 cursor-pointer hover:text-secondaryo;
 }
 .profile{
     @apply flex justify-between items-center m-2 gap-3;
 }
+.dropdown-container {
+    @apply relative inline-block text-left;
+}
+
+.dropdown-button {
+    @apply inline-flex justify-center items-center w-full px-1 py-2 text-sm font-medium text-textcol;
+}
+
+.dropdown-arrow {
+    @apply w-4 h-4 ml-1 -mr-1;
+}
+
+.dropdown-menu {
+    @apply absolute left-0 mr-2 w-40 mt-1 origin-top-left bg-white_back divide-y divide-gray-400 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300;
+}
+
+.dropdown-item {
+    @apply block px-4 py-2 text-sm text-textcol hover:bg-gray-400;
+}
+
 .searchBar{
     @apply w-1/2;
 }
+/* top nav end */
+
+/* side nav start */
 .side-nav{
-    @apply w-2/12 bg-red-300 h-screen fixed;
+    @apply w-2/12 bg-primary h-screen fixed my-2 pl-5 z-10;
 }
+/* main content */
 .main-content{
-    @apply w-10/12 bg-blue-700 h-[2000px] ml-auto;
+    @apply w-10/12 h-[2000px] ml-auto;
 }
 
 .margin-top{
     @apply mt-14 flex 
 }
 .side-nav-item a{
-    @apply flex gap-3  
+    @apply flex gap-3 
 
 }
+.side-nav-item:hover .v-line{
+    @apply bg-secondaryo
+}
+
 .side-nav-main-item {
-    @apply mt-40 ml-4
+    @apply my-4 mt-7 space-y-5
+}
+.side-nav-secondary-item {
+    @apply absolute bottom-24 left-6 right-0 
+}
+.side-icon {
+    @apply  justify-center my-4 hover:text-secondaryo
+}
+.v-line{
+    @apply w-1 h-1/2 m-3 bg-textcol rounded-lg hover:bg-secondaryo
+}
+.v-line-active{
+    @apply  w-1 h-1/2 m-3 bg-secondaryo rounded-lg
+}
+.side-nav-name{
+    @apply flex justify-center items-center hover:text-secondaryo  hover:font-semibold hover:text-lg
+}
+.side-nav-secondary-icon {
+    @apply flex items-center cursor-pointer
+}
+.side-nav-secondary-icon i{
+    @apply mr-2
+}
+.on-page{
+    @apply text-secondaryo ml-2 font-semibold text-lg
+}
+.side-box {
+    @apply w-auto h-auto shadow-sm cursor-pointer hover:text-secondaryo  shadow-slate-500 font-medium
+     text-textcol px-4 py-3 rounded-xl mt-8 flex items-center justify-start hover:shadow-secondaryo hover:shadow-md mr-12;
+}
+.side-box .plus {
+    @apply text-2xl px-2
+}
+/*  Side Nav End*/
+
+/* footer */
+.foot {
+    @apply bg-secondaryg py-4 text-gray-100 text-lg
+}
+.foot-container {
+    @apply container mx-auto px-4
+}
+.footer-flex {
+    @apply -mx-4 flex flex-wrap justify-between
+}
+.foot-content {
+    @apply px-4 w-full text-center sm:w-auto sm:text-left
 }
 
-/* hero */
-.hero{
-    @apply m-5 bg-slate-50   
+/* bottom nav */
+.view-sm {
+    @apply lg:hidden xl:hidden flex items-center h-auto shadow-sm z-10 bg-primary w-full fixed -mt-14;
 }
-.banner{
-    @apply flex gap-3
+.brandlogo-sm {
+    @apply w-2/12 h-16 flex items-center justify-center;
 }
-.banner-image{
-    @apply w-9/12
+.brandlogo-sm img {
+    @apply h-14 w-14 object-cover rounded-full;
 }
-.banner-image img{
-    @apply rounded-md
+.searchBar-sm {
+    @apply w-10/12 flex } 
+
+.searchBar-sm form {
+    @apply w-full flex rounded-full shadow-sm mx-2
+}  
+.searchBar input[type='submit'] {
+    @apply p-1 bg-slate-300  rounded-r-full;
 }
+.searchBar input[type='text'] {
+    @apply py-1 rounded-l-full w-full px-2 ;
+}
+input:focus {
+    @apply outline-none border-none;
+}
+/* footer */
+.foot-sm {
+    @apply lg:hidden xl:hidden fixed bottom-0 z-10 flex items-center bg-slate-500 w-full;
+}
+/* Base styles for .foot-item */
+.foot-item {
+    @apply flex text-center justify-center px-0.5 py-4 w-full;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Add transition for smooth effect */
+}
+
+/* Hover effect */
+.foot-item:hover {
+    
+    background-color: #77e707; /* Change background color on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a box-shadow on hover */
+}
+
+/* main content */
+.hero10{
+    @apply lg:hidden xl:hidden w-full mt-[56px] h-auto
+}
+.banner10{
+    @apply flex gap-3 mx-2 mt-10 my-8;
+    
+}
+.banner-image10{
+    @apply w-full rounded-full z-0 relative mt-8 ;
+    
+}
+.banner-image10 img{
+    @apply rounded-lg ;
+
+}
+.dot-container10 {
+    @apply  flex justify-center space-x-2 mt-2
+}
+.dot10 {
+    @apply inline-block w-2 h-2 bg-orange-200 rounded-full space-y-2
+}
+.active-dot10 {
+    @apply bg-orange-500
+}
+
 .banner-details{
-   @apply bg-slate-500 h-auto w-3/12 justify-stretch 
+   @apply  h-auto w-3/12 justify-stretch rounded-md
 }
-.banner-text{
-    @apply w-auto h-3/4 bg-orange-600 rounded-lg 
+
+  .banner-texts {
+    @apply w-auto h-3/4 p-4 rounded-lg;
+    background: radial-gradient(circle, rgba(250, 224, 235, 1) 0%, rgba(197, 224, 255, 1) 100%); 
+  }
+  
+
+.banner-head{
+    @apply text-xl font-semibold  mb-2 
 }
 .banner-btn{
-    @apply w-auto h-1/4 bg-yellow-400 flex gap-1
+    @apply w-auto rounded-lg h-1/4  flex gap-2
+}
+.banner-exp {
+    @apply text-slate-200 font-semibold 
+    text-lg w-1/2 my-2 p-1 rounded-full 
+     bg-slate-800 text-center  ;
+}
+
+
+.r-end{
+    @apply h-1/4 items-end  flex justify-end
 }
 .npimg{
-    @apply bg-slate-900 w-1/2 m-1 my-3 rounded-md
+    @apply  w-1/2 
+    my-3 rounded-md 
 }
-.npimg img{
-    @apply object-fill
+
+.npimg i{
+    @apply text-6xl flex h-full backdrop-blur-sm backdrop-brightness-100 rounded-md justify-center items-center text-white_back hover:text-secondaryo
 }
 .banner-btn a{
-    @apply bg-gray-700 p-3 m-2
+    @apply bg-slate-400 p-3  rounded-lg
+}
+.banner-btn2 a{
+    @apply bg-slate-400 p-1  rounded-lg
+}
+.banner-tags{
+    @apply flex flex-wrap gap-1 relative -mb-10 z-10 
+}
+.banner-Subtext{
+    @apply text-slate-600 text-sm font-light
+}
+.banner-overlay{
+    @apply relative
 }
 
 /* feature */
-.feature{
-    @apply m-5 bg-slate-400 flex gap-5 justify-between items-center
+.feature10{
+    @apply m-2 my-10 justify-between items-center rounded-md 
 }
 
-.big_feature{
-    @apply w-1/2  bg-black h-32 rounded-full
+.big_feature10{
+    @apply w-full  bg-slate-600 h-16 rounded-xl
 }
-.small_feature{
-    @apply w-1/4 bg-black  h-32 rounded-full
+.small-head {
+    @apply flex justify-between items-center my-4 gap-2 rounded-md;
+}
+.small_feature10{
+    @apply w-1/2 bg-slate-600 h-16 rounded-xl
+}
+.feature10 img{
+    @apply rounded-lg
+}
+
+/* about */
+
+.about10 {
+    @apply m-2 my-8 gap-5 bg-yellow-50 
+}
+
+.about-text10 {
+    @apply  w-full h-auto p-2 flex flex-col 
+}
+.about-video10 {
+    @apply embed-responsive aspect-ratio-4/3 
+}
+.about-video10 iframe{
+    @apply  rounded-2xl embed-responsive-item 
+}
+.heading10 {
+    @apply text-xl font-semibold
+}
+
+.headind2color10{
+    @apply text-secondaryg
+}
+
+.about-exp10, .about-exp10 i {
+    @apply text-secondaryg font-semibold text-xl  my-0;
+}
+
+/* card section */
+
+.card-section10 {
+     @apply w-full h-full flex flex-col justify-center bg-primary
+}
+
+.image-txt10 {
+    @apply flex flex-row items-center 
+}
+.card-image10 {
+    @apply h-12 w-12 rounded-full py-4 flex justify-center items-center
+}
+.card-image10 i {
+    @apply object-cover
+}
+.card-text10 {
+    @apply text-lg  w-auto py-4 px-4 text-secondaryg font-semibold
+}
+/* top courses */
+
+
+/* testimonial */
+/* testimonial */
+/* Assuming .test-card is the parent container */
+.testimonial-sec {
+    @apply mx-3 mt-14 my-8 ;
+}
+.testimonial10 {
+    @apply flex gap-4 w-auto ; /* Add flex-wrap and gap to create a row with margin */
+}
+/* Assuming .testimonial is the child element */
+.testimonial-card10 {
+    @apply relative rounded-2xl  min-w-[180px] max-w-[300px] h-[100px] px-4  bg-slate-200 m-2;
+    
+}
+.test-svg {
+    @apply absolute top-6 left-6 fill-slate-100
+}
+/* Assuming other classes are within .testimonial */
+.test-head {
+    @apply relative;
+}
+
+.test-subhead {
+    @apply  tracking-tight text-slate-900 overflow-hidden;
+}
+
+.test-caption {
+    @apply relative mt-2 flex items-center justify-between border-t border-slate-100 ;
+}
+
+.test-title {
+    @apply  text-slate-900;
+}
+
+.test-desig {
+    @apply mt-1 text-sm text-slate-500;
+}
+
+.test-image {
+    @apply overflow-hidden rounded-full bg-slate-50;
+}
+
+.test-image img {
+    @apply h-10 w-10 object-cover;
 }
