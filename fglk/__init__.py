@@ -21,6 +21,7 @@ app.register_blueprint(Admin,url_prefix='/admin')
 def index():
     return render_template('index.html')
 
+
 @app.route('/banner_data')
 def banner_data():
     data = [
