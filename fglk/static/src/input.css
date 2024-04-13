@@ -120,7 +120,7 @@ input:focus {
 }
 /* main content */
 .main-content{
-    @apply w-10/12 h-[2000px] ml-auto;
+    @apply w-10/12 h-auto ml-auto;
 }
 
 .margin-top{
@@ -183,8 +183,8 @@ input:focus {
 .foot-content {
     @apply px-4 w-full text-center sm:w-auto sm:text-left
 }
+/* sm view start */
 
-/* bottom nav */
 .view-sm {
     @apply lg:hidden xl:hidden flex items-center h-auto shadow-sm z-10 bg-primary w-full fixed -mt-14;
 }
@@ -192,7 +192,7 @@ input:focus {
     @apply w-2/12 h-16 flex items-center justify-center;
 }
 .brandlogo-sm img {
-    @apply h-14 w-14 object-cover rounded-full;
+    @apply h-14 w-14 object-cover;
 }
 .searchBar-sm {
     @apply w-10/12 flex } 
@@ -209,7 +209,7 @@ input:focus {
 input:focus {
     @apply outline-none border-none;
 }
-/* footer */
+/* bottom nav */
 .foot-sm {
     @apply lg:hidden xl:hidden fixed bottom-0 z-10 flex items-center bg-slate-500 w-full;
 }
@@ -222,7 +222,7 @@ input:focus {
 /* Hover effect */
 .foot-item:hover {
     
-    background-color: #77e707; /* Change background color on hover */
+    background-color: #d4d8d0; /* Change background color on hover */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a box-shadow on hover */
 }
 
@@ -239,7 +239,7 @@ input:focus {
     
 }
 .banner-image10 img{
-    @apply rounded-lg ;
+    @apply rounded-lg h-36;
 
 }
 .dot-container10 {
@@ -260,7 +260,6 @@ input:focus {
     @apply w-auto h-3/4 p-4 rounded-lg;
     background: radial-gradient(circle, rgba(250, 224, 235, 1) 0%, rgba(197, 224, 255, 1) 100%); 
   }
-  
 
 .banner-head{
     @apply text-xl font-semibold  mb-2 
@@ -273,7 +272,6 @@ input:focus {
     text-lg w-1/2 my-2 p-1 rounded-full 
      bg-slate-800 text-center  ;
 }
-
 
 .r-end{
     @apply h-1/4 items-end  flex justify-end
@@ -350,7 +348,7 @@ input:focus {
 /* card section */
 
 .card-section10 {
-     @apply w-full h-full flex flex-col justify-center bg-primary
+     @apply w-full h-full -mb-16 flex flex-col justify-center bg-primary
 }
 
 .image-txt10 {
@@ -366,50 +364,92 @@ input:focus {
     @apply text-lg  w-auto py-4 px-4 text-secondaryg font-semibold
 }
 /* top courses */
-
-
-/* testimonial */
-/* testimonial */
-/* Assuming .test-card is the parent container */
-.testimonial-sec {
-    @apply mx-3 mt-14 my-8 ;
-}
-.testimonial10 {
-    @apply flex gap-4 w-auto ; /* Add flex-wrap and gap to create a row with margin */
-}
-/* Assuming .testimonial is the child element */
-.testimonial-card10 {
-    @apply relative rounded-2xl  min-w-[180px] max-w-[300px] h-[100px] px-4  bg-slate-200 m-2;
-    
-}
-.test-svg {
-    @apply absolute top-6 left-6 fill-slate-100
-}
-/* Assuming other classes are within .testimonial */
-.test-head {
-    @apply relative;
+/* input.css */
+/* Common styles for all screen sizes */
+.product-card {
+    @apply w-full bg-white my-6 border text-black border-gray-200 rounded-lg shadow;
 }
 
-.test-subhead {
-    @apply  tracking-tight text-slate-900 overflow-hidden;
+.product-image {
+    @apply p-4 rounded-t-lg;
 }
 
-.test-caption {
-    @apply relative mt-2 flex items-center justify-between border-t border-slate-100 ;
+.product-head {
+    @apply px-5 pb-5;
+}
+.product-heading10 {
+    @apply flex items-center;
+}
+.product-title {
+    @apply flex text-lg font-semibold tracking-tight text-gray-900 dark:text-black;
+}
+.author-name {
+    @apply block text-xs text-gray-500 ml-auto;
+}
+.product-rating {
+    @apply flex items-center mt-2.5 mb-5;
 }
 
-.test-title {
-    @apply  text-slate-900;
+.product-star {
+    @apply flex items-center space-x-1 rtl:space-x-reverse;
 }
 
-.test-desig {
-    @apply mt-1 text-sm text-slate-500;
+.rating-svg {
+    @apply w-4 h-4 text-yellow-300;
 }
 
-.test-image {
-    @apply overflow-hidden rounded-full bg-slate-50;
+.rating-svg:last-child {
+    @apply text-gray-900;
 }
 
-.test-image img {
-    @apply h-10 w-10 object-cover;
+.rating-badge {
+    @apply bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3;
+}
+
+.product-price {
+    @apply text-lg font-bold text-gray-900 dark:text-black;
+}
+
+.product-price-text {
+    @apply flex items-center justify-between;
+}
+
+.add-to-cart-button {
+    @apply text-white bg-secondaryg font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-secondaryg;
+}
+
+
+
+.about-exp101 {
+    @apply mt-3 text-black flex items-center font-semibold;
+    background: linear-gradient(45deg, #3ef510, #ff0000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+.about-exp101 svg {
+    @apply w-4 h-4 ml-2;
+}
+
+
+/* Responsive layout for medium screens */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .product-sm {
+        @apply flex flex-wrap;
+    }
+
+    .product-card {
+        @apply w-2/5 m-8 mb-5;
+       
+    }
+
+    .product-card:last-child {
+        margin-right: 0; /* Remove margin for the last card in a row */
+    }
+
+    .product-image {
+        @apply max-h-40;
+    }
 }

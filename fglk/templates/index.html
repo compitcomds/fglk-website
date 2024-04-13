@@ -121,7 +121,6 @@
 </section>
 {# Top Courses #}
 
-
 <section class="top-course">
     <div class="heading flexy">
         Top <div class="headind2color">Courses!!</div>
@@ -150,7 +149,7 @@
 
                         </div>
                         <div class="c-name">
-                            <p class="vid-text">Python Basics</p>
+                            <p class="vid-text">International-Law Basics</p>
                             <div class="price-info">
                                 <div class="price">
                                     <div class="real-price">Price <span class="line-through">₹102</span> ₹68</div>
@@ -235,7 +234,7 @@
 <div class="banner10">
     <div class="banner-image10">
         <div class="banner-tags10"></div>
-        <img id="banner-img10" src="https://images6.alphacoders.com/133/1333695.jpeg" alt="">
+        <img id="banner-img10" src="https://ccdstest.b-cdn.net/channels4_banner.jpg" alt="">
         <div class="dot-container10" id="dot-container10"></div>
     </div>
     <!-- <div class="banner-details">
@@ -341,46 +340,188 @@
     <div class="heading flexy">
         Top <div class="headind2color">Courses!!</div>
     </div>
-    <div class="row1">
-        <div class="swiper-container">
-            <div class="swiper-wrapper ">
-                {% for item in range(10) %}
-                <div class="swiper-slide course-card-row">
-                    <div class="course-video">
-                        <div class="c-video" id="video-container{{ item }}">
-                            <video class="video" autoplay loop disablePictureInPicture>
-                                <source src="{{ url_for('static', filename='media/video.mp4') }}" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+    <div class="product-sm">
+        <div class="product-card">
+            <a href="#">
+                <img class="product-image" src="https://ccdstest.b-cdn.net/international-law.jpg" alt="product image" />
+            </a>
+            <div class="product-head">
+                <a href="#">
+                    <h5 class="product-title">International-Law</h5>
+                    <small class="author-name">Parth Jain</small>
+                </a>
+                <div class="product-rating">
+                    <div class="product-star">
+                        <svg class="rating-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                            <path
+                                d="M10.832 0a1.521 1.521 0 0 0-1.247.66L7.365 5.847l-5.05.734a1.533 1.533 0 0 0-.848 2.622l3.656 3.562-.864 5.03a1.531 1.531 0 0 0 2.227 1.617l4.518-2.375 4.518 2.375a1.532 1.532 0 0 0 2.226-1.617l-.863-5.03 3.656-3.562a1.532 1.532 0 0 0-.848-2.622l-5.051-.734-2.259-4.578A1.522 1.522 0 0 0 10.832 0Z" />
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                            <path
+                                d="M10.832 0a1.521 1.521 0 0 0-1.247.66L7.365 5.847l-5.05.734a1.533 1.533 0 0 0-.848 2.622l3.656 3.562-.864 5.03a1.531 1.531 0 0 0 2.227 1.617l4.518-2.375 4.518 2.375a1.532 1.532 0 0 0 2.226-1.617l-.863-5.03 3.656-3.562a1.532 1.532 0 0 0-.848-2.622l-5.051-.734-2.259-4.578A1.522 1.522 0 0 0 10.832 0Z" />
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
 
-                            <div class="video-controls">
-                                <div class="mute-toggle">
-                                    <i class="fas fa-volume-mute muted-icon"></i> <!-- Muted icon -->
-                                    <i class="fas fa-volume-up unmuted-icon"></i> <!-- Unmuted icon -->
-                                </div>
-
-
-
-                            </div>
-
-                        </div>
-                        <div class="c-name">
-                            <p class="vid-text">Python Basics</p>
-                            <div class="price-info">
-                                <div class="price">
-                                    <div class="real-price">Price <span class="line-through">₹102</span> ₹68</div>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="explore-btn">Explore Now</button>
+                        <!-- Add more rating SVGs here if needed -->
+                        <span class="rating-badge">5.0</span>
                     </div>
                 </div>
-                {% endfor %}
-                <!-- <div class="swiper-scrollbar"></div> -->
+                <div class="product-price-text">
+                    <span class="product-price">₹599</span>
+                    <a href="#" class="add-to-cart-button">Add to cart</a>
+                </div>
+                <div class="more-course">
+                    <a href="{{url_for('course')}}" class="about-exp101">Explore More Course
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
             </div>
-            <!-- Add pagination if needed -->
         </div>
+        <div class="product-card">
+            <a href="#">
+                <img class="product-image" src="https://ccdstest.b-cdn.net/international-law.jpg" alt="product image" />
+            </a>
+            <div class="product-head">
+                <a href="#">
+                    <h5 class="product-title">International-Law</h5>
+                    <small class="author-name">Parth Jain</small>
+                </a>
+                <div class="product-rating">
+                    <div class="product-star">
+                        <svg class="rating-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                            <path
+                                d="M10.832 0a1.521 1.521 0 0 0-1.247.66L7.365 5.847l-5.05.734a1.533 1.533 0 0 0-.848 2.622l3.656 3.562-.864 5.03a1.531 1.531 0 0 0 2.227 1.617l4.518-2.375 4.518 2.375a1.532 1.532 0 0 0 2.226-1.617l-.863-5.03 3.656-3.562a1.532 1.532 0 0 0-.848-2.622l-5.051-.734-2.259-4.578A1.522 1.522 0 0 0 10.832 0Z" />
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                            <path
+                                d="M10.832 0a1.521 1.521 0 0 0-1.247.66L7.365 5.847l-5.05.734a1.533 1.533 0 0 0-.848 2.622l3.656 3.562-.864 5.03a1.531 1.531 0 0 0 2.227 1.617l4.518-2.375 4.518 2.375a1.532 1.532 0 0 0 2.226-1.617l-.863-5.03 3.656-3.562a1.532 1.532 0 0 0-.848-2.622l-5.051-.734-2.259-4.578A1.522 1.522 0 0 0 10.832 0Z" />
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+
+                        <!-- Add more rating SVGs here if needed -->
+                        <span class="rating-badge">5.0</span>
+                    </div>
+                </div>
+                <div class="product-price-text">
+                    <span class="product-price">₹599</span>
+                    <a href="#" class="add-to-cart-button">Add to cart</a>
+                </div>
+                <div class="more-course">
+
+                    <a href="{{url_for('course')}}" class="about-exp101">Explore More Course
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <a href="#">
+                <img class="product-image" src="https://ccdstest.b-cdn.net/international-law.jpg" alt="product image" />
+            </a>
+            <div class="product-head">
+                <a href="#">
+                    <h5 class="product-title">International-Law</h5>
+                    <small class="author-name">Parth Jain</small>
+                </a>
+                <div class="product-rating">
+                    <div class="product-star">
+                        <svg class="rating-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                            <path
+                                d="M10.832 0a1.521 1.521 0 0 0-1.247.66L7.365 5.847l-5.05.734a1.533 1.533 0 0 0-.848 2.622l3.656 3.562-.864 5.03a1.531 1.531 0 0 0 2.227 1.617l4.518-2.375 4.518 2.375a1.532 1.532 0 0 0 2.226-1.617l-.863-5.03 3.656-3.562a1.532 1.532 0 0 0-.848-2.622l-5.051-.734-2.259-4.578A1.522 1.522 0 0 0 10.832 0Z" />
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                            <path
+                                d="M10.832 0a1.521 1.521 0 0 0-1.247.66L7.365 5.847l-5.05.734a1.533 1.533 0 0 0-.848 2.622l3.656 3.562-.864 5.03a1.531 1.531 0 0 0 2.227 1.617l4.518-2.375 4.518 2.375a1.532 1.532 0 0 0 2.226-1.617l-.863-5.03 3.656-3.562a1.532 1.532 0 0 0-.848-2.622l-5.051-.734-2.259-4.578A1.522 1.522 0 0 0 10.832 0Z" />
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+
+                        <!-- Add more rating SVGs here if needed -->
+                        <span class="rating-badge">5.0</span>
+                    </div>
+                </div>
+                <div class="product-price-text">
+                    <span class="product-price">₹599</span>
+                    <a href="#" class="add-to-cart-button">Add to cart</a>
+                </div>
+                <div class="more-course">
+
+                    <a href="{{url_for('course')}}" class="about-exp101">Explore More Course
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <a href="#">
+                <img class="product-image" src="https://ccdstest.b-cdn.net/international-law.jpg" alt="product image" />
+            </a>
+            <div class="product-head">
+                <div class="product-heading10">
+                    <a href="#" class="product-info">
+                        <h5 class="product-title">International-Law</h5>
+                        <small class="author-name">Parth Jain</small>
+                    </a>
+                </div>
+                <div class="product-rating">
+                    <div class="product-star">
+                        <svg class="rating-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                            <path
+                                d="M10.832 0a1.521 1.521 0 0 0-1.247.66L7.365 5.847l-5.05.734a1.533 1.533 0 0 0-.848 2.622l3.656 3.562-.864 5.03a1.531 1.531 0 0 0 2.227 1.617l4.518-2.375 4.518 2.375a1.532 1.532 0 0 0 2.226-1.617l-.863-5.03 3.656-3.562a1.532 1.532 0 0 0-.848-2.622l-5.051-.734-2.259-4.578A1.522 1.522 0 0 0 10.832 0Z" />
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                            <path
+                                d="M10.832 0a1.521 1.521 0 0 0-1.247.66L7.365 5.847l-5.05.734a1.533 1.533 0 0 0-.848 2.622l3.656 3.562-.864 5.03a1.531 1.531 0 0 0 2.227 1.617l4.518-2.375 4.518 2.375a1.532 1.532 0 0 0 2.226-1.617l-.863-5.03 3.656-3.562a1.532 1.532 0 0 0-.848-2.622l-5.051-.734-2.259-4.578A1.522 1.522 0 0 0 10.832 0Z" />
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+
+                        <!-- Add more rating SVGs here if needed -->
+                        <span class="rating-badge">5.0</span>
+                    </div>
+                </div>
+                <div class="product-price-text">
+                    <span class="product-price">₹599</span>
+                    <a href="#" class="add-to-cart-button">Add to cart</a>
+                </div>
+                <div class="more-course">
+
+                    <a href="{{url_for('course')}}" class="about-exp101">Explore More Course
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
     </div>
+
 </section>
 <!-- testimonial -->
 <section class="testimonial-sec">
