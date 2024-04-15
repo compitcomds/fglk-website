@@ -172,7 +172,7 @@ input:focus {
 
 /* footer */
 .foot {
-    @apply bg-secondaryg py-4 text-gray-100 text-lg
+    @apply bg-secondaryg py-4 w-full  text-gray-100 text-lg
 }
 .foot-container {
     @apply container mx-auto px-4
@@ -366,12 +366,15 @@ input:focus {
 /* top courses */
 /* input.css */
 /* Common styles for all screen sizes */
+.product-sm {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-5
+}
 .product-card {
-    @apply w-full bg-white my-6 border text-black border-gray-200 rounded-lg shadow;
+    @apply w-auto h-full bg-white border text-black border-gray-200 rounded-lg shadow;
 }
 
 .product-image {
-    @apply p-4 rounded-t-lg;
+    @apply p-4 rounded-t-lg object-cover;
 }
 
 .product-head {
@@ -433,23 +436,3 @@ input:focus {
     @apply w-4 h-4 ml-2;
 }
 
-
-/* Responsive layout for medium screens */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    .product-sm {
-        @apply flex flex-wrap;
-    }
-
-    .product-card {
-        @apply w-2/5 m-8 mb-5;
-       
-    }
-
-    .product-card:last-child {
-        margin-right: 0; /* Remove margin for the last card in a row */
-    }
-
-    .product-image {
-        @apply max-h-40;
-    }
-}
