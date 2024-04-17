@@ -4,14 +4,93 @@
 {% endblock pageStyle%}
 {% block content %}
 {% block content1 %}
-<h1 class="login">hello world</h1>
+{#<section class="login-page ">
+    <div class="half-blue">
+        <!-- Blue Background Column -->
+        <div class="blue-back">
+            <div class="back-small">
+                <!-- Login Form -->
+                <div class="login-form">
+                    <h2 class="log-head">Login</h2>
+                    <form method="post">
+                        {{ form.hidden_tag() }}
+                        <div class="log-mail">
+                            {{ form.email.label(class="log-label") }}
+                            {{ form.email(class="login-email") }}
+                        </div>
+                        <div class="log-pass">
+                            {{ form.password.label(class="log-label") }}
+                            {{ form.password(class="login-password") }}
+                            <p class="log-place">Please choose a password.</p>
+                        </div>
+                        <div class="log-button">
+                            {{ form.submit(class="log-submit") }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Light Purple Background Column -->
+        <div class="purple-bg">
+            <div class="carousel-container">
+                <!-- Carousel -->
+                <div class="carousel-wrapper">
+                    <div class="carousel-image">
+                        <img src="https://via.placeholder.com/500x300" alt="Carousel Image" class="w-full">
+                    </div>
+                    <div class="carousel-text">
+                        <p class="carousel-title">Welcome to Our Platform!</p>
+                        <p class="carousel-description">Discover amazing features.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>#}
+<section class="blue-purple-section">
+    <div class="blue-part">
+        <!-- Content for the blue part -->
+        
+    </div>
+    <div class="content-wrapper">
+        <!-- Login Form -->
+        <div class="login-form">
+            <h2 class="log-head">Login</h2>
+            <form method="post">
+                {{ form.hidden_tag() }}
+                <div class="log-mail">
+                    {{ form.email.label(class="log-label") }}
+                    {{ form.email(class="login-email") }}
+                </div>
+                <div class="log-pass">
+                    {{ form.password.label(class="log-label") }}
+                    {{ form.password(class="login-password") }}
+                    <p class="log-place">Please choose a password.</p>
+                </div>
+                <div class="log-button">
+                    {{ form.submit() }}
+                </div>
+            </form>
+        </div>
+        <div class="carousel hidde">
+            <div class="carousel-content">
+                <img class="carousel-image" src="https://via.placeholder.com/500x300" alt="Carousel Image">
+                <h3>Heading</h3>
+                <p>Some text describing the carousel item.</p>
+            </div>
+        </div>
+    </div>
+    <div class="purple-part">
+        <!-- Content for the purple part -->
 
-<form method="post">
+    </div>
+</section>
+<!-- <form method="post">
     {{ form.hidden_tag() }}
-    {{ form.email(class="login-page" , placeholder="Enter Name: ")  }}
+    {{ form.email()  }}
     {{ form.password() }}
     {{ form.submit() }}
-</form>
+</form> -->
 {% endblock content1 %}
 
 {% endblock content%}
