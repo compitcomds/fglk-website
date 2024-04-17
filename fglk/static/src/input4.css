@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+h1 {
+    @apply bg-red-500;
+}
+/* top courses */
+/* Default styles */
+/* Default styles */
+.course-head {
+    @apply pt-4 m-4 text-3xl text-secondaryg font-bold;
+}
+.product-sm10 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-5 gap-4 m-5
+}
+.product-card10 {
+    @apply bg-white h-full  border w-auto text-black border-gray-200 rounded-lg shadow;
+    
+}
+
+.product-image10 {
+    @apply p-4 rounded-t-lg object-cover ;
+}
+
+.product-head10 {
+    @apply px-5 pb-5 ;
+    
+}
+
+.product-heading1010 {
+    @apply flex items-center;
+}
+
+.product-title10 {
+    @apply flex text-lg font-semibold tracking-tight text-gray-900 dark:text-black;
+}
+
+.author-name10 {
+    @apply block text-xs text-gray-500 ml-auto;
+}
+
+.product-rating10 {
+    @apply flex items-center mt-2.5 mb-5;
+}
+
+.product-star10 {
+    @apply flex items-center space-x-1 rtl:space-x-reverse;
+}
+
+.rating-svg10 {
+    @apply w-4 h-4 text-yellow-300;
+}
+
+.rating-svg10:last-child {
+    @apply text-gray-900;
+}
+
+.rating-badge10 {
+    @apply bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3;
+}
+
+.product-price10 {
+    @apply text-lg font-bold text-gray-900 dark:text-black;
+}
+
+.product-price-text10 {
+    @apply flex items-center justify-between ;
+   
+}
+.add-to-cart-button10 {
+    @apply text-white bg-secondaryg font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-secondaryg;
+}
+
+.about-exp10110 {
+    @apply mt-3 text-black flex items-center font-semibold;
+    background: linear-gradient(45deg, #3ef510, #ff0000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* text-fill-color: transparent; */
+}
+
+.about-exp10110 svg {
+    @apply w-4 h-4 ml-2;
+}
+
+

@@ -21,6 +21,7 @@ app.register_blueprint(Admin,url_prefix='/admin')
 def index():
     return render_template('index.html')
 
+
 @app.route('/banner_data')
 def banner_data():
     data = [
@@ -29,9 +30,7 @@ def banner_data():
         {'tags':['#me','#you','#it','#us','#parth Jain',"#fake Law"],'img-link': 'https://wallpapers.com/images/high/victor-in-winter-pubg-1366x768-35gglmh40a6i8jl2.webp', 'text': 'Bikes, versatile vehicles, offer efficient transportation, promoting exercise and reducing emissions, enhancing urban mobility and personal health.','heading':'This is a banner ','button-link2':'https://youtu.be/8Z8qobg8UdA?si=MWJtXivbR6UJfs_J','button-text':'Button 3'}
     ]
     return jsonify(data)
-@app.route('/2')
-def index2():
-    return render_template('index2.html')
+
 @app.route('/sample')
 def sample():
     return jsonify({'message':'tet'})
@@ -43,3 +42,11 @@ def about():
 @app.route('/card')
 def card():
     return render_template('card.html')
+
+@app.route('/course')
+def course():
+    return render_template('course.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')

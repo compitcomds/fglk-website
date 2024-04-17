@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block pageStyle %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main4.css') }}">
+
+{% endblock %}
+{% block content %}
+{% block content1 %}
+<section class="course-page ">
+    <div class="course-head">All Courses -></div>
+    <div class="product-sm10">
+        {% for item in range(6) %}
+        <div class="product-card10">
+            <div class="product-image10">
+                <img src="https://ccdstest.b-cdn.net/international-law.jpg" alt="product image" />
+            </div>
+            <div class="product-head10">
+
+                <h5 class="product-title10">International-Law</h5>
+                <small class="author-name10">Parth Jain</small>
+
+
+                <div class="product-price-text10">
+                    <span class="product-price10">₹599</span>
+                    <a href="#" class="add-to-cart-button10">Add to cart</a>
+                </div>
+                <div class="more-course10">
+                    <a href="{{url_for('course')}}" class="about-exp10110">Explore More Course
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock content1 %}
+
+{% endblock content%}

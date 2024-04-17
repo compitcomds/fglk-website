@@ -146,31 +146,38 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 window.onload = function () {
-    var mySwiper = new Swiper('.swiper-container', {
-        slidesPerView: 4,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false, // Change to false to keep autoplay running even when user interacts with swiper
-        },
-        createElements: false,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
+    // Check if Swiper library is available
+    if (typeof Swiper !== 'undefined') {
+        // Swiper library is available
+        var mySwiper = new Swiper('.top-course .swiper-container', {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
 
-    // Add event listeners to pause and resume autoplay
-    var swiperContainer = document.querySelector('.swiper-container');
-    swiperContainer.addEventListener('mouseenter', function () {
-        mySwiper.autoplay.stop();
-    });
+        // Add event listeners to pause and resume autoplay
+        var swiperContainer = document.querySelector('.top-course .swiper-container');
+        swiperContainer.addEventListener('mouseenter', function () {
+            mySwiper.autoplay.stop();
+        });
 
-    swiperContainer.addEventListener('mouseleave', function () {
-        mySwiper.autoplay.start();
-    });
+        swiperContainer.addEventListener('mouseleave', function () {
+            mySwiper.autoplay.start();
+        });
+    } else {
+        // Swiper library is not available
+        console.error('Swiper library is not loaded.');
+    }
 };
+
 // screen size to 100%
   document.addEventListener("DOMContentLoaded", function() {
     if (window.innerWidth < window.innerHeight) {

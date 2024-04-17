@@ -1,50 +1,445 @@
-{% extends 'base2.html' %}
-{% block content %}
-<!-- Main Content Area -->
+{% extends 'base.html' %}
+{% block pageStyle %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main2.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.css') }}">
 
+{% endblock %}
+
+{% block content1 %}
+
+<!-- Main Content Area -->
+{# Hero #}
 <section class="hero">
+
     <div class="banner">
         <div class="banner-image">
+            <div class="banner-tags"></div>
             <img id="banner-img" src="https://images6.alphacoders.com/133/1333695.jpeg" alt="">
             <div class="dot-container" id="dot-container"></div>
-            
         </div>
         <div class="banner-details">
-            <div class="banner-text" >
-                <div id="banner-heading">
-                    this is heading
+            <div class="banner-texts">
+                <div class="top">
+
+
+                    <div id="banner-heading" class="banner-head">
+                        this is heading
+                    </div>
+
+                    <div id="banner-text" class="banner-Subtext">
+
+                    </div>
+                    <br>
+
                 </div>
-                <div id="banner-text">
-                    
+                <div class="r-end">
+                    <div class="banner-exp" id="banner-button">
+                        <a id="banner-button-link2" href="#">Button Text</a>
+                        <i class="fa-solid fa-caret-right"></i>
+                    </div>
                 </div>
-                <div class="banner-btn" id="banner-button">
-                    <a id="banner-button-link" href="#">Button Text</a>
-                </div>  
             </div>
             <div class="banner-btn">
-                <div class="npimg" id="prev">Prev</div>
-                <div class="npimg" id="next">Next</div>
+                <div class="npimg" id="prev">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+                <div class="npimg" id="next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
             </div>
         </div>
     </div>
 </section>
-
-<br>
-<br>
-<br>
-<br>
-
-
-
+{# Feature #}
 <section class="feature">
     <div class="big_feature">
-
     </div>
     <div class="small_feature">
-
     </div>
     <div class="small_feature">
-        
     </div>
+</section>
+{# About #}
+<section class="about">
+    <div class="about-text">
+        <div class="heading">
+            Welcome To FG-LawKit <br>
+            <div class="headind2color">Explore Web!!</div>
+        </div>
+        <div class="para">
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal .
+            </p>
+            <p>
+                distribution of letters, as opposed to using 'Content here, content here', making it look like
+                readable.distribution of
+                letters, as opposed to.
+            </p>
+        </div>
+        <a class="about-exp">
+            Explore More
+            <i class="fa-solid fa-caret-right"></i>
+        </a>
+    </div>
+    <div class="about-video">
+
+        <iframe src="{{ url_for('static', filename='media/video2.mp4') }}" loading="lazy"
+            allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;disablePictureInPicture;"
+            allowfullscreen="true" controls="false"></iframe>
+
+    </div>
+</section>
+{# Feature-2 #}
+<section class="cards-section">
+    <div class="card">
+        <img src="https://images6.alphacoders.com/133/1333695.jpeg" alt="">
+        <h4>Best Courses
+            <i class="fa-solid fa-caret-right"></i>
+
+        </h4>
+        <p>distribution of letters, as opposed to.</p>
+    </div>
+    <div class="card">
+        <img src="https://images6.alphacoders.com/133/1333695.jpeg" alt="">
+        <h4>Free Semester Lecture
+            <i class="fa-solid fa-caret-right"></i>
+
+        </h4>
+        <p>distribution of letters, as opposed to.</p>
+
+    </div>
+    <div class="card">
+        <img src="https://images6.alphacoders.com/133/1333695.jpeg" alt="">
+        <h4>Podcast
+            <i class="fa-solid fa-caret-right"></i>
+
+        </h4>
+        <p>distribution of letters, as opposed to.</p>
+
+    </div>
+</section>
+{# Top Courses #}
+
+<section class="top-course">
+    <div class="heading flexy">
+        Top <div class="headind2color">Courses!!</div>
+    </div>
+    <div class="row1">
+        <div class="swiper-container">
+            <div class="swiper-wrapper ">
+                {% for item in range(10) %}
+                <div class="swiper-slide course-card-row">
+                    <div class="course-video">
+                        <div class="c-video" id="video-container{{ item }}">
+                            <video class="video" autoplay loop disablePictureInPicture>
+                                <source src="{{ url_for('static', filename='media/video.mp4') }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-controls">
+                                <div class="mute-toggle">
+                                    <i class="fas fa-volume-mute muted-icon"></i> <!-- Muted icon -->
+                                    <i class="fas fa-volume-up unmuted-icon"></i> <!-- Unmuted icon -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-name">
+                            <p class="vid-text">International-Law Basics</p>
+                            <div class="price-info">
+                                <div class="price">
+                                    <div class="real-price">Price <span class="line-through">₹102</span> ₹68</div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="explore-btn">Explore Now</button>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- <div class="swiper-scrollbar"></div> -->
+            </div>
+            <!-- Add pagination if needed -->
+        </div>
+    </div>
+</section>
+
+<section class="testimonial-sec">
+
+    <div class="heading flexy">
+        Top <div class="headind2color">Testimonial!!</div>
+    </div>
+    <marquee behavior="alternate" direction="left" loop="">
+        <div class="testimonial">
+            {% for element in range(10) %}
+            <div class="testimonial-card">
+
+                <blockquote class="test-head">
+                    <p class="test-subhead">
+                        Awesome idea. Can't wait to see how this turns out!
+                    </p>
+                </blockquote>
+                <figcaption class="test-caption">
+                    <div>
+                        <div class="test-title">Exmaple name</div>
+                        <div class="test-desig"><i>Job designation</i></div>
+                    </div>
+                    <div class="test-image">
+                        <img alt="" src="https://i.pravatar.cc/300" class="test-img" loading="lazy" width="56"
+                            height="56">
+                    </div>
+                </figcaption>
+            </div>
+
+            {% endfor %}
+        </div>
+    </marquee>
+
+    <marquee behavior="alternate" direction="right" loop="">
+        <div class="testimonial">
+            {% for element in range(10) %}
+            <div class="testimonial-card">
+
+                <blockquote class="test-head">
+                    <p class="test-subhead">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    </p>
+                </blockquote>
+                <figcaption class="test-caption">
+                    <div>
+                        <div class="test-title">Exmaple name</div>
+                        <div class="test-desig">Job designation</div>
+                    </div>
+                    <div class="test-image">
+                        <img alt="" src="https://i.pravatar.cc/300" class="test-img" loading="lazy" width="56"
+                            height="56">
+                    </div>
+                </figcaption>
+            </div>
+
+            {% endfor %}
+        </div>
+    </marquee>
+</section>
+
+<!-- Include Swiper library -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+{% endblock content1 %}
+
+
+{% block content %}
+<div class="banner10">
+    <div class="banner-image10">
+        <div class="banner-tags10"></div>
+        <img id="banner-img10" src="https://ccdstest.b-cdn.net/channels4_banner.jpg" alt="">
+        <div class="dot-container10" id="dot-container10"></div>
+    </div>
+    <!-- <div class="banner-details">
+        <div class="banner-texts">
+            <div class="top">
+
+
+                <div id="banner-heading" class="banner-head">
+                    this is heading
+                </div>
+
+                <div id="banner-text" class="banner-Subtext">
+
+                </div>
+                <br>
+
+            </div>
+            <div class="r-end">
+                <div class="banner-exp" id="banner-button">
+                    <a id="banner-button-link2" href="#">Button Text</a>
+                    <i class="fa-solid fa-caret-right"></i>
+                </div>
+            </div>
+        </div>
+        <div class="banner-btn">
+            <div class="npimg" id="prev">
+                <i class="fa-solid fa-chevron-left"></i>
+            </div>
+            <div class="npimg" id="next">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </div>
+    </div> -->
+</div>
+<!-- feature -->
+<section class="feature10">
+    <div class="big_feature10">
+    </div>
+    <div class="small-head">
+        <div class="small_feature10">
+        </div>
+        <div class="small_feature10">
+        </div>
+    </div>
+</section>
+<!-- about -->
+<section class="about10">
+    <div class="about-video10">
+
+        <iframe src="{{ url_for('static', filename='media/video2.mp4') }}" loading="lazy"
+            allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;disablePictureInPicture;"
+            allowfullscreen="true" controls="false"></iframe>
+
+    </div>
+    <div class="about-text10">
+        <div class="heading10">
+            Welcome To FG-LawKit <br>
+            <div class="headind2color">Explore Web!!</div>
+        </div>
+        <div class="para10">
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                of letters, as opposed to using 'Content here, content here', making it look like
+                readable.distribution of
+                letters, as opposed to.
+            </p>
+        </div>
+        <a class="about-exp10">
+            Explore More
+            <i class="fa-solid fa-caret-right"></i>
+        </a>
+    </div>
+
+</section>
+<!-- cards -->
+<section>
+    <div class="card-section10">
+
+        <div class="image-txt10">
+            <div class="card-image10">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="card-text10">Best Courses</div>
+        </div>
+
+        <div class="image-txt10">
+            <div class="card-image10">
+                <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="card-text10">Free Semester Lecture</div>
+        </div>
+
+        <div class="image-txt10">
+            <div class="card-image10">
+                <i class="fas fa-headphones"></i>
+            </div>
+            <div class="card-text10">Podcast</div>
+        </div>
+    </div>
+</section>
+<!-- top courses -->
+<section class="top-course ">
+    <div class="heading flexy">
+        Top <div class="headind2color">Courses!!</div>
+    </div>
+    <div class="product-sm">
+        {% for item in range(4) %}
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://ccdstest.b-cdn.net/international-law.jpg" alt="product image" />
+            </div>
+            <div class="product-head">                
+                    <h5 class="product-title">International-Law</h5>
+                    <small class="author-name">Parth Jain</small>                
+                <div class="product-rating">
+                    <div class="product-star">
+                        <svg class="rating-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                            <path
+                                d="M10.832 0a1.521 1.521 0 0 0-1.247.66L7.365 5.847l-5.05.734a1.533 1.533 0 0 0-.848 2.622l3.656 3.562-.864 5.03a1.531 1.531 0 0 0 2.227 1.617l4.518-2.375 4.518 2.375a1.532 1.532 0 0 0 2.226-1.617l-.863-5.03 3.656-3.562a1.532 1.532 0 0 0-.848-2.622l-5.051-.734-2.259-4.578A1.522 1.522 0 0 0 10.832 0Z" />
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                            <path
+                                d="M10.832 0a1.521 1.521 0 0 0-1.247.66L7.365 5.847l-5.05.734a1.533 1.533 0 0 0-.848 2.622l3.656 3.562-.864 5.03a1.531 1.531 0 0 0 2.227 1.617l4.518-2.375 4.518 2.375a1.532 1.532 0 0 0 2.226-1.617l-.863-5.03 3.656-3.562a1.532 1.532 0 0 0-.848-2.622l-5.051-.734-2.259-4.578A1.522 1.522 0 0 0 10.832 0Z" />
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+
+                        <!-- Add more rating SVGs here if needed -->
+                        <span class="rating-badge">5.0</span>
+                    </div>
+                </div>
+                <div class="product-price-text">
+                    <span class="product-price">₹599</span>
+                    <a href="#" class="add-to-cart-button">Add to cart</a>
+                </div>
+                <div class="more-course">
+                    <a href="{{url_for('course')}}" class="about-exp101">Explore More Course
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+
+    </div>
+
+</section>
+<!-- testimonial -->
+<section class="testimonial-sec">
+
+    <div class="heading flexy">
+        Top <div class="headind2color">Testimonial!!</div>
+    </div>
+    <marquee behavior="alternate" direction="left" loop="">
+        <div class="testimonial">
+            {% for element in range(10) %}
+            <div class="testimonial-card">
+
+                <blockquote class="test-head">
+                    <p class="test-subhead">
+                        Awesome idea. Can't wait to see how this turns out!
+                    </p>
+                </blockquote>
+                <figcaption class="test-caption">
+                    <div>
+                        <div class="test-title">Exmaple name</div>
+                        <div class="test-desig"><i>Job designation</i></div>
+                    </div>
+                    <div class="test-image">
+                        <img alt="" src="https://i.pravatar.cc/300" class="test-img" loading="lazy" width="56"
+                            height="56">
+                    </div>
+                </figcaption>
+            </div>
+
+            {% endfor %}
+        </div>
+    </marquee>
+
+    <marquee behavior="alternate" direction="right" loop="">
+        <div class="testimonial">
+            {% for element in range(10) %}
+            <div class="testimonial-card">
+
+                <blockquote class="test-head">
+                    <p class="test-subhead">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    </p>
+                </blockquote>
+                <figcaption class="test-caption">
+                    <div>
+                        <div class="test-title">Exmaple name</div>
+                        <div class="test-desig">Job designation</div>
+                    </div>
+                    <div class="test-image">
+                        <img alt="" src="https://i.pravatar.cc/300" class="test-img" loading="lazy" width="56"
+                            height="56">
+                    </div>
+                </figcaption>
+            </div>
+
+            {% endfor %}
+        </div>
+    </marquee>
 </section>
 {% endblock %}
