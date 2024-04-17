@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 {% block pageStyle %}
-<link rel="stylesheet" type="text/css" href="D:\FGLK-website\fglk-website\fglk\Auth\static\css\mainAuth.css">
-
-{% endblock %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('Auth.static', filename='css/mainAuth.css') }}">
+{% endblock pageStyle%}
 {% block content %}
 {% block content1 %}
 <h1 class="login">hello world</h1>

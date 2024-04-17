@@ -13,7 +13,7 @@ from .Mail import SendMail
 from .Otp import generate_otp,check_otp
 ## can use flask cache memory to store the memeory into flask carche ##
 
-Auth=Blueprint('Auth',__name__,template_folder='templates/Auth',static_folder='static')
+Auth=Blueprint('Auth',__name__,template_folder='templates/Auth',static_folder='static/Auth')
 
 bcrypt = Bcrypt(app)
 login_manager=LoginManager(app)
