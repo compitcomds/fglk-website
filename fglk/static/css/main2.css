@@ -672,7 +672,8 @@ video {
   border-radius: 0.375rem;
   font-size: 3.75rem;
   line-height: 1;
-  color: #ffff;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
   --tw-backdrop-blur: blur(4px);
   --tw-backdrop-brightness: brightness(1);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
@@ -998,7 +999,8 @@ video {
 
 /* testimonial */
 
-/* Assuming .test-card is the parent container */
+/* Assuming .test-card is t
+he parent container */
 
 .testimonial-sec {
   margin-left: 0.75rem;

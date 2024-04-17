@@ -12,6 +12,9 @@ h1 {
 /* top courses */
 /* Default styles */
 /* Default styles */
+.course-head {
+    @apply pt-4 m-4 text-3xl text-secondaryg font-bold;
+}
 .product-sm10 {
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-5 gap-4 m-5
 }
@@ -34,7 +37,7 @@ h1 {
 }
 
 .product-title10 {
-    @apply flex text-lg font-semibold tracking-tight text-gray-100 dark:text-black;
+    @apply flex text-lg font-semibold tracking-tight text-gray-900 dark:text-black;
 }
 
 .author-name10 {

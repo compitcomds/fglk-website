@@ -46,3 +46,7 @@ def card():
 @app.route('/course')
 def course():
     return render_template('course.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')

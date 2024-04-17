@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
+{% block pageStyle %}
+<link rel="stylesheet" type="text/css" href="D:\FGLK-website\fglk-website\fglk\Auth\static\css\mainAuth.css">
+
+{% endblock %}
 {% block content %}
+{% block content1 %}
+<h1 class="login">hello world</h1>
 
 <form method="post">
     {{ form.hidden_tag() }}
-    {{ form.email() }}
+    {{ form.email(class="login-page" , placeholder="Enter Name: ")  }}
     {{ form.password() }}
     {{ form.submit() }}
 </form>
+{% endblock content1 %}
 
-{% endblock %}
+{% endblock content%}
