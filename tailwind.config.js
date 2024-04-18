@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["*"],
+  content: ['*', 'node_modules/preline/dist/*.js',],
   theme: {
     aspectRatio: {
       none: 0,
@@ -47,5 +47,6 @@ module.exports = {
   plugins: [
     require("tailwindcss-responsive-embed"),
     require("tailwindcss-aspect-ratio"),
+    require('preline/plugin'),
   ],
 };
