@@ -54,3 +54,15 @@ def login():
 @app.route('/register')
 def register():
     return render_template('register.html')
+
+@app.route('/forgot_password')
+def forgot_password():
+    return render_template('forgot_password.html')
+
+@app.route('/otp')
+def otp():
+    return render_template('otp.html')
+
+@app.route('/resetPassword')
+def resetPassword():
+    return render_template('resetPassword.html')
