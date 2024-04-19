@@ -1,18 +1,89 @@
 {% extends 'base.html' %}
+{% block pageStyle %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('Auth.static', filename='css/mainAuth.css') }}">
+{% endblock pageStyle%}
 {% block content %}
-
-<form method="post">
+{% block content1 %}
+<section>
+    <div class="register-page">
+        <!-- Container -->
+        <div class="reg-one">
+            <div class="reg-two">
+                <!-- Row -->
+                <div class="reg-three">
+                    <!-- Col -->
+                    <div class="reg-four"
+                        style="background-image: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800')"></div>
+                    <!-- Col -->
+                    <div class="reg-five">
+                        <h3 class="reg-six">Create an Account!</h3>
+                        <form class="reg-seven" method="post">
+                            {{ form.hidden_tag() }}
+                            <div class="reg-eight">
+                                <div class="reg-nine">
+                                    {{ form.name.label( class="reg-ten", for="firstName") }}
+                                    
+                                    {{ form.name(class="reg-eleven", id="firstName", type="text", placeholder="First Name") }}
+                                </div>
+                            </div>
+                            <div class="reg-thirteen">
+                                {{ form.email.label(class="reg-ten", for="email") }}
+                                
+                                {{ form.email(class="reg-fourteen", id="email", type="email", placeholder="Email") }}
+                            </div>
+                            <div class="reg-eight">
+                                <div class="reg-nine">
+                                    {{ form.password.label(class="reg-ten", for="password") }}
+                        
+                                    {{ form.password(class="reg-fifteen", id="password", type="password",
+                                    placeholder="Password") }}
+                                    <p class="reg-sixteen">Please choose a password.</p>
+                                </div>
+                                <!-- <div class="reg-twelve">
+                                    <label class="reg-ten"
+                                        for="c_password">
+                                        Confirm Password
+                                    </label>
+                                    <input
+                                        class="reg-fourteen"
+                                        id="c_password" type="password" placeholder="******************" />
+                                </div> -->
+                            </div>
+                            <div class="reg-seventeen">
+                                {{ form.submit(class="reg-eighteen", type="button") }}
+                            </div>
+                            <hr class="reg-nineteen">
+                            <!-- <div class="reg-twenty">
+                                <a class="reg-twenty-one" href="#">
+                                    Forgot Password?
+                                </a>
+                            </div> -->
+                            <div class="reg-twenty">
+                                <a class="reg-twenty-one" href="{{url_for('login')}}">
+                                    Already have an account? Login!
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{#<form method="post">
     {{ form.hidden_tag() }}
     {{ form.name.label() }}{{ form.name() }}
     {{ form.email.label() }}{{ form.email() }}
     {{ form.password.label() }}{{ form.password() }}
-    
-    {% if role=='admin' %}
-        {{ form.adminkey.label() }}{{ form.adminkey() }}
-    {% endif %}
-    
-    {{ form.submit() }}
-        
-</form>
 
-{% endblock %}
+    {% if role=='admin' %}
+    {{ form.adminkey.label() }}{{ form.adminkey() }}
+    {% endif %}
+
+    {{ form.submit() }}
+
+</form>#}
+
+{% endblock content1 %}
+
+{% endblock content%}
