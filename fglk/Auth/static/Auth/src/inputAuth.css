@@ -16,13 +16,13 @@
     @apply lg:w-4/12 xl:w-5/12 p-6 sm:p-12 max-h-[50vh]
 }
 .log-three {
-    @apply w-16 h-16 mx-auto -mt-4
+    @apply w-full flex justify-center rounded-full text-secondaryg text-4xl font-bold items-center mx-auto -mt-4
 }
 .log-four {
     @apply mt-4 flex flex-col items-center
 }
 .log-five {
-    @apply text-2xl xl:text-3xl font-extrabold text-secondaryg
+    @apply text-2xl xl:text-3xl font-bold text-slate-900
 }
 .log-six {
     @apply w-full flex-1 mt-4

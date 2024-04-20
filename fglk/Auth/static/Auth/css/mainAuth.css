@@ -933,8 +933,16 @@ video {
   margin-left: auto;
   margin-right: auto;
   margin-top: -1rem;
-  height: 4rem;
-  width: 4rem;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(63 196 70 / var(--tw-text-opacity));
 }
 
 .log-four {
@@ -947,9 +955,9 @@ video {
 .log-five {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 800;
+  font-weight: 700;
   --tw-text-opacity: 1;
-  color: rgb(63 196 70 / var(--tw-text-opacity));
+  color: rgb(15 23 42 / var(--tw-text-opacity));
 }
 
 @media (min-width: 1280px) {
