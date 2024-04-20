@@ -186,7 +186,10 @@ input:focus {
 /* sm view start */
 
 .view-sm {
-    @apply lg:hidden xl:hidden flex items-center h-auto shadow-sm z-10 bg-primary w-full fixed -mt-14;
+    @apply lg:hidden xl:hidden pb-2 h-auto shadow-sm z-10 bg-primary w-full fixed -mt-14;
+}
+.first-nav {
+    @apply flex items-center justify-between px-2
 }
 .brandlogo-sm {
     @apply w-2/12 h-16 flex items-center justify-center;
@@ -195,7 +198,8 @@ input:focus {
     @apply h-14 w-14 object-cover;
 }
 .searchBar-sm {
-    @apply w-10/12 flex } 
+    @apply w-full flex md:px-8 px-2
+} 
 
 .searchBar-sm form {
     @apply w-full flex rounded-full shadow-sm mx-2
@@ -327,12 +331,12 @@ input:focus {
 .about-text10 {
     @apply  w-full h-auto p-2 flex flex-col 
 }
-.about-video10 {
+/* .about-video10 {
     @apply embed-responsive aspect-ratio-4/3 
 }
 .about-video10 iframe{
     @apply  rounded-2xl embed-responsive-item 
-}
+} */
 .heading10 {
     @apply text-xl font-semibold
 }
@@ -435,4 +439,80 @@ input:focus {
 .about-exp101 svg {
     @apply w-4 h-4 ml-2;
 }
+
+.burger {
+    @apply bg-gray-100
+}
+.burger-one {
+    @apply flex flex-col  mt-5 
+}
+.sm-hide {
+    @apply text-2xl px-2 py-4 font-semibold
+}
+.burger-two {
+    @apply flex items-center mb-4 border bg-slate-200
+}
+.burger-two svg{
+    @apply w-6 h-6 mr-2
+}
+.burger-three {
+    @apply flex items-center border bg-slate-200
+}
+.burger-three svg{
+    @apply w-6 h-6 mr-2
+}
+.burger-four {
+    @apply text-gray-700
+}
+.burger-five {
+    @apply mt-4
+}
+.burger-six {
+    @apply mb-2
+}
+/* Tailwind CSS */
+/* Assuming you have Tailwind CSS setup and included in your project */
+
+/* Tailwind CSS with @apply */
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+    @apply hidden;
+}
+
+/* Custom scrollbar for Firefox */
+.scrollbar-hidden {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Sidebar styles */
+.sidebar {
+    @apply fixed top-0 left-0 bottom-0 w-[250px] bg-white shadow-md z-50 hidden;
+}
+
+.sidebar ul {
+    @apply list-none;
+}
+
+.sidebar li {
+    @apply py-2 px-4;
+}
+
+/* Burger icon styles */
+.burger-icon {
+    @apply cursor-pointer px-6;
+}
+.burger-icon svg{
+    @apply w-6 h-6 cursor-pointer
+}
+/* Custom classes for showing/hiding sidebar */
+.hiden {
+    @apply hidden;
+}
+
+.shown {
+    @apply block;
+}
+
 

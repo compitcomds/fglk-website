@@ -35,7 +35,7 @@
         }
     </style>
     <style>
-       
+
     </style>
 </head>
 
@@ -97,7 +97,7 @@
         </div>
     </section>
     <!-- sm and md view -->
-    <section class="view-sm">
+    <!-- <section class="view-sm">
         <div class="brandlogo-sm">
             <img src="https://ccdstest.b-cdn.net/logo-fg.jpg" alt="image" srcset="">
         </div>
@@ -107,8 +107,76 @@
                 <input type="submit" value="Search">
             </form>
         </div>
-    </section>
 
+    </section> -->
+    <!-- HTML -->
+    <section class="view-sm">
+        <div class="first-nav">
+            <div class="brandlogo-sm">
+                <img src="https://ccdstest.b-cdn.net/logo-fg.jpg" alt="image" srcset="">
+            </div>
+
+            <div class="burger-icon">
+                <svg class="" id="open-sidebar" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="searchBar-sm">
+            <form method="post" class="searchBar">
+                <input type="text" placeholder="Search..." id="searchInput" />
+                <input type="submit" value="Search">
+            </form>
+        </div>
+
+
+        <!-- Sidebar -->
+        <div class="sidebar hiden">
+            <h2 class="sm-hide">Sidebar</h2>
+            <ul class="burger-one">
+                <li class="burger-two">
+                    <svg class="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 21v-2m0 0V9m0 12a4 4 0 018 0m-8 2a4 4 0 100-8"></path>
+                    </svg>
+                    <a href="#" class="burger-four">Login</a>
+                </li>
+                <li class="burger-two">
+                    <svg class="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 21v-2m0 0V9m0 12a4 4 0 018 0m-8 2a4 4 0 100-8"></path>
+                    </svg>
+                    <a href="#" class="burger-four">Sign Up</a>
+                </li>
+                <li class="burger-three">
+                    <svg class="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 21v-2m0 0V9m0 12a4 4 0 018 0m-8 2a4 4 0 100-8"></path>
+                    </svg>
+                    <a href="#" class="burger-four">Logout</a>
+                </li>
+            </ul>
+        </div>
+
+    </section>
     <section class="hero10">
         <!-- main content -->
 
@@ -207,10 +275,34 @@
         </div>
 
     </section>
- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.4.4/swiper-bundle.min.js"></script>
+    <script>
+        // Get sidebar and openSidebarButton elements
+        const sidebar = document.querySelector('.sidebar');
+        const openSidebarButton = document.getElementById('open-sidebar');
+
+        // Add event listener to openSidebarButton
+        openSidebarButton.addEventListener('click', (e) => {
+            // Stop propagation to prevent closing the sidebar immediately after opening it
+            e.stopPropagation();
+            // Toggle the translate-x-full class to show/hide the sidebar
+            sidebar.classList.toggle('-translate-x-full');
+        });
+
+        // Close the sidebar when clicking outside of it
+        document.addEventListener('click', (e) => {
+            // Check if the clicked element is neither inside the sidebar nor the openSidebarButton
+            if (!sidebar.contains(e.target) && e.target !== openSidebarButton) {
+                // Add translate-x-full class to hide the sidebar
+                sidebar.classList.add('-translate-x-full');
+            }
+        });
+
+    </script>
+
     <script src="https://stocksales.b-cdn.net/static%20content/assets/js/swiper.min.js"></script>
 </body>
 
