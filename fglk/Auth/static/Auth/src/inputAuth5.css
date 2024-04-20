@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* RESET PASSWORD */
+.change-pass {
+    @apply w-full  max-w-lg mx-auto p-6 min-h-[700px]
+}
+.change-one {
+    @apply mt-7 bg-white  rounded-xl shadow-lg border-2 border-indigo-300  
+}
+.change-two {
+    @apply p-4 sm:p-7
+}
+.change-three {
+    @apply text-center
+}
+.change-four {
+    @apply block text-2xl font-bold text-secondaryg
+}
+.change-five {
+    @apply mt-2 text-sm text-gray-600 
+}
+.change-six {
+    @apply text-secondaryg decoration-2 hover:underline font-medium
+}
+.change-seven {
+    @apply mt-5
+}
+.change-eight {
+    @apply grid gap-y-4
+}
+.change-nine {
+    @apply block text-sm font-bold ml-1 mb-2 
+}
+.change-ten {
+    @apply py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 shadow-sm
+}
+.change-eleven {
+    @apply hidden text-xs text-red-600 mt-2
+}
+.change-twelve {
+    @apply py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-secondaryg hover:text-white text-black hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all text-sm 
+}
+.change-thirteen {
+    @apply mt-3 flex justify-center items-center text-center divide-x divide-gray-300 dark:divide-gray-700
+}
+.change-fourteen {
+    @apply pr-3.5 inline-flex items-center gap-x-2 text-sm text-gray-600 decoration-2 hover:underline hover:text-blue-600 dark:text-gray-500 dark:hover:text-gray-200
+}
+.change-fifteen {
+    @apply pl-3 inline-flex items-center gap-x-2 text-sm text-gray-600 decoration-2 hover:underline hover:text-blue-600 dark:text-gray-500 dark:hover:text-gray-200
+}

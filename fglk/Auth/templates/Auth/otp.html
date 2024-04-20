@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block pageStyle %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('Auth.static', filename='css/mainAuth.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('Auth.static', filename='css/mainAuth4.css') }}">
 {% endblock pageStyle%}
 {% block content %}
 {% block content1 %}
@@ -31,7 +31,7 @@
                             <!-- <p class="otp-eleven" id="email-error">Please include a valid email address so we can get
                                 back to you</p> -->
                         </div>
-                        <a href="{{url_for('otp')}}">
+                        <a >
                             {{ form.submit(type="submit", class="otp-twelve") }}
                         </a>
                     </div>

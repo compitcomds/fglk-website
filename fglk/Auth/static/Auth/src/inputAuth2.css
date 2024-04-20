@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Register Page */
+.register-page {
+    @apply h-screen bg-gray-400 ;
+}
+.reg-one {
+    @apply mx-auto
+}
+.reg-two {
+    @apply flex justify-center items-center px-6 py-12
+}
+.reg-three {
+    @apply w-full xl:w-3/4 lg:w-11/12 flex
+}
+.reg-four {
+    @apply w-full h-auto bg-gray-400  hidden lg:block lg:w-5/12 bg-cover rounded-l-lg
+}
+.reg-five {
+    @apply w-full lg:w-7/12 bg-white  p-5 rounded-lg lg:rounded-l-none
+}
+.reg-six {
+    @apply py-4 text-2xl text-center text-secondaryg  
+}
+.reg-seven {
+    @apply px-8 pt-6 pb-8 mb-4 bg-white  rounded
+}
+.reg-eight {
+    @apply mb-4 md:flex md:justify-between
+}
+.reg-nine {
+    @apply mb-4 md:mr-2 md:mb-0
+}
+.reg-ten {
+    @apply block mb-2 text-sm font-bold text-gray-700 
+}
+.reg-eleven {
+    @apply w-full px-3 py-2 text-sm leading-tight text-gray-700  border rounded shadow 
+}
+.reg-twelve {
+    @apply md:ml-2
+}
+.reg-thirteen {
+    @apply mb-4
+}
+.reg-fourteen {
+    @apply w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700  border rounded shadow 
+}
+.reg-fifteen {
+    @apply w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border border-red-500 rounded shadow 
+}
+.reg-sixteen {
+    @apply text-xs italic text-red-500
+}
+
+.reg-seventeen {
+    @apply mb-6 text-center bg-secondaryg rounded-full cursor-pointer
+}
+
+.reg-eighteen {
+    @apply w-full px-4 py-2 font-bold cursor-pointer text-white bg-secondaryg rounded-full hover:bg-green-600  
+}
+.reg-nineteen {
+    @apply mb-6 border-t
+}
+.reg-twenty {
+    @apply text-center
+}
+.reg-twenty-one {
+    @apply inline-block text-sm text-blue-500  align-baseline hover:text-blue-800
+}

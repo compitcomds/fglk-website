@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block pageStyle %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('Auth.static', filename='css/mainAuth.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('Auth.static', filename='css/mainAuth2.css') }}">
 {% endblock pageStyle%}
 {% block content %}
 {% block content1 %}
@@ -23,7 +23,7 @@
                                 <div class="reg-nine">
                                     {{ form.name.label( class="reg-ten", for="firstName") }}
                                     
-                                    {{ form.name(class="reg-eleven", id="firstName", type="text", placeholder="First Name") }}
+                                    {{ form.name(class="reg-eleven", id="firstName", type="text", placeholder="Enter Your Name") }}
                                 </div>
                             </div>
                             <div class="reg-thirteen">
