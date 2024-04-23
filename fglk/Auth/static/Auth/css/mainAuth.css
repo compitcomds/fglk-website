@@ -888,7 +888,6 @@ video {
 .log-one {
   margin: 0px;
   display: flex;
-  max-height: 650px;
   max-width: 1280px;
   flex: 1 1 0%;
   justify-content: center;
@@ -907,7 +906,6 @@ video {
 }
 
 .log-two {
-  max-height: 50vh;
   padding: 1.5rem;
 }
 
@@ -930,26 +928,28 @@ video {
 }
 
 .log-three {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -1rem;
+  margin: 1rem;
+  margin-bottom: 1.25rem;
   display: flex;
-  width: 100%;
-  align-items: center;
   justify-content: center;
-  border-radius: 9999px;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  text-wrap: wrap;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(63 196 70 / var(--tw-text-opacity));
+}
+
+.log-three span {
+  margin-inline-end: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .log-four {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .log-five {
@@ -976,7 +976,6 @@ video {
 .log-seven {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .log-eight {
@@ -984,7 +983,6 @@ video {
   display: flex;
   width: 100%;
   max-width: 20rem;
-  align-items: center;
   justify-content: center;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
@@ -1139,7 +1137,6 @@ video {
   margin-top: 1.25rem;
   display: flex;
   width: 100%;
-  align-items: center;
   justify-content: center;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
