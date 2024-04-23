@@ -27,7 +27,7 @@
 .log-six {
     @apply w-full flex-1 mt-4
 }
-.log-seven {
+.log-seven{
     @apply flex flex-col items-center
 }
 .log-eight {
@@ -91,5 +91,5 @@
     @apply text-center
 }
 .logi-twenty-one {
-    @apply inline-block text-sm text-blue-500  align-baseline hover:text-blue-800
+    @apply  text-sm text-blue-500  align-baseline hover:text-blue-800
 }
