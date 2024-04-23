@@ -6,7 +6,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
 
+  -webkit-appearance: button;
+  /* 1 */
+ @apply bg-secondaryg;
+  /* 2 */
+  background-image: none;
+  
+  /* 2 */
+  
+}
+
+.dropdown-button {
+    @apply bg-opacity-0
+  } 
 /* Register Page */
 .register-page {
     @apply h-screen bg-gray-400 ;
@@ -61,11 +78,17 @@
 }
 
 .reg-seventeen {
-    @apply mb-6 text-center bg-secondaryg rounded-full cursor-pointer
+    @apply mb-6 text-center rounded-full cursor-pointer
 }
 
 .reg-eighteen {
-    @apply w-full px-4 py-2 font-bold cursor-pointer text-white bg-secondaryg rounded-full hover:bg-green-600  
+    @apply w-full px-4 py-2 font-bold 
+      cursor-pointer
+     flex items-center justify-center
+     text-white
+     bg-secondaryg rounded-full
+     hover:bg-green-600  
+   
 }
 .reg-nineteen {
     @apply mb-6 border-t

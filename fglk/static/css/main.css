@@ -1123,6 +1123,7 @@ input:focus {
   width: 100%;
   align-items: center;
   justify-content: center;
+  --tw-bg-opacity: 0;
   padding-left: 0.25rem;
   padding-right: 0.25rem;
   padding-top: 0.5rem;
@@ -2115,7 +2116,7 @@ input:focus {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
+  /* text-fill-color: transparent; */
 }
 
 .about-exp101 svg {

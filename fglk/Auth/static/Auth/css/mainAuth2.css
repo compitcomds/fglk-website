@@ -873,6 +873,23 @@ video {
   transition-duration: 150ms;
 }
 
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+  /* 1 */
+  --tw-bg-opacity: 1;
+  background-color: rgb(63 196 70 / var(--tw-bg-opacity));
+  /* 2 */
+  background-image: none;
+  /* 2 */
+}
+
+.dropdown-button {
+  --tw-bg-opacity: 0;
+}
+
 /* Register Page */
 
 .register-page {
@@ -1080,14 +1097,15 @@ video {
   margin-bottom: 1.5rem;
   cursor: pointer;
   border-radius: 9999px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(63 196 70 / var(--tw-bg-opacity));
   text-align: center;
 }
 
 .reg-eighteen {
+  display: flex;
   width: 100%;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
   border-radius: 9999px;
   --tw-bg-opacity: 1;
   background-color: rgb(63 196 70 / var(--tw-bg-opacity));

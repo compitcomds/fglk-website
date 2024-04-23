@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 img{
     @apply w-full h-full  ;
     
@@ -94,7 +95,7 @@ input:focus {
 }
 
 .dropdown-button {
-    @apply inline-flex justify-center items-center w-full px-1 py-2 text-sm font-medium text-textcol;
+    @apply inline-flex bg-opacity-0 justify-center items-center w-full px-1 py-2 text-sm font-medium text-textcol;
 }
 
 .dropdown-arrow {
@@ -433,7 +434,7 @@ input:focus {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
+    /* text-fill-color: transparent; */
 }
 
 .about-exp101 svg {
