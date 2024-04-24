@@ -905,7 +905,6 @@ button,
 .reg-one {
   margin: 0px;
   display: flex;
-  max-height: 650px;
   max-width: 1280px;
   flex: 1 1 0%;
   justify-content: center;
@@ -924,7 +923,6 @@ button,
 }
 
 .reg-two {
-  max-height: 50vh;
   padding: 1.5rem;
 }
 
@@ -947,45 +945,81 @@ button,
 }
 
 .reg-three {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -1rem;
+  margin: 1rem;
+  margin-bottom: 1.25rem;
   display: flex;
-  width: 100%;
-  align-items: center;
   justify-content: center;
-  border-radius: 9999px;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  text-wrap: wrap;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(63 196 70 / var(--tw-text-opacity));
 }
 
+@media (min-width: 768px) {
+  .reg-three {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .reg-three {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .reg-three {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+.reg-three span {
+  margin-inline-end: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .reg-four {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .reg-five {
-  font-size: 1.5rem;
-  line-height: 2rem;
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(15 23 42 / var(--tw-text-opacity));
 }
 
+@media (min-width: 768px) {
+  .reg-five {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .reg-five {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
 @media (min-width: 1280px) {
   .reg-five {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 
 .reg-six {
-  margin-top: 1rem;
+  margin-top: 0px;
   width: 100%;
   flex: 1 1 0%;
 }

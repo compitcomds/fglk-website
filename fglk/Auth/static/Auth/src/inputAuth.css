@@ -16,7 +16,7 @@
     @apply lg:w-4/12 xl:w-5/12 p-6 sm:p-12 
 }
 .log-three {
-    @apply text-secondaryg text-3xl font-bold flex justify-center mb-5 m-4 text-wrap
+    @apply text-secondaryg text-sm md:text-base lg:text-lg xl:text-xl flex font-bold  justify-center mb-5 m-4 text-wrap
 }
 .log-three span{
     @apply me-2 text-black;

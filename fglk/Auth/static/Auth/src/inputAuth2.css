@@ -29,22 +29,25 @@ button,
     @apply min-h-screen bg-gray-100 text-gray-900 flex justify-center
 }
 .reg-one {
-    @apply max-w-screen-xl max-h-[650px] m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1
+    @apply max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1
 }
 .reg-two {
-    @apply lg:w-4/12 xl:w-5/12 p-6 sm:p-12 max-h-[50vh]
+    @apply lg:w-4/12 xl:w-5/12 p-6 sm:p-12 
 }
 .reg-three {
-    @apply w-full flex justify-center rounded-full  text-secondaryg text-4xl font-bold items-center mx-auto -mt-4
+    @apply text-secondaryg text-sm md:text-base lg:text-lg xl:text-xl flex font-bold  justify-center mb-5 m-4 text-wrap
+}
+.reg-three span{
+    @apply me-2 text-black;
 }
 .reg-four {
-    @apply mt-4 flex flex-col items-center
+    @apply mt-2 flex flex-col items-center
 }
 .reg-five {
-    @apply text-2xl xl:text-3xl font-bold text-slate-900
+    @apply  md:text-base lg:text-lg xl:text-xl font-bold text-slate-900
 }
 .reg-six {
-    @apply w-full flex-1 mt-4
+    @apply w-full flex-1 mt-0
 }
 .reg-seven{
     @apply flex flex-col items-center
