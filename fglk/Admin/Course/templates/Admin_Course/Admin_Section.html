@@ -1,29 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base_admin.html' %}
+{% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Sections Form</title>
-</head>
-
-<body>
-    <h2>Add Sections Form</h2>
-    <form method="POST">
-        {{ form.hidden_tag() }}
-       this is section add
-        {{ form.name(size=32) }}
-        {{ form.submit }}
-    </form>
-    <hr>
-    {% for element in data %}
-        {{ element|e }}
-        <a href="{{url_for('.content',course_id=course_id,section_id=element._id)}}">click</a>
-        <a href="?_id={{element._id}}">update</a>
-        <a href="?_id={{element._id}}&Delete=True">delete</a>
-        <br><br>
-    {% endfor %}
-
-</body>
-
-</html>
+<h2>Add Sections Form</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    this is section add
+    {{ form.name(size=32) }}
+    {{ form.submit }}
+</form>
+<hr>
+{% for element in data %}
+{{ element|e }}
+<a href="{{url_for('.content',course_id=course_id,section_id=element._id)}}">click</a>
+<a href="?_id={{element._id}}">update</a>
+<a href="?_id={{element._id}}&Delete=True">delete</a>
+<br><br>
+{% endfor %}
+{% endblock content%}

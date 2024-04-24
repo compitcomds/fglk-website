@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Sections Form</title>
-</head>
-
-<body>
+{% extends 'base_admin.html' %}
+{% block content %}
+    
     <h2>Add content Form</h2>
     <hr>
     <a href="{{url_for('.content',section_id=section_id,course_id=course_id,data_type='video')}}">videos</a>
@@ -45,7 +38,4 @@
     <a href="{{url_for('.content',section_id=section_id,course_id=course_id,content_id=element._id,Delete=true)}}">Delete</a>
     <br><br>
     {% endfor %}
-
-</body>
-
-</html>
+    {% endblock content%}
