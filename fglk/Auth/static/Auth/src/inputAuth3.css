@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* FORGOT PASSWORD */
+.forgot-pass {
+    @apply w-full  max-w-lg mx-auto p-6 min-h-[1000px]
+}
+.forgot-one {
+    @apply mt-7 bg-white  rounded-xl shadow-lg border-2 border-indigo-300  
+}
+.forgot-two {
+    @apply p-4 sm:p-7
+}
+.forgot-three {
+    @apply text-center
+}
+.forgot-four {
+    @apply block text-2xl font-bold text-secondaryg 
+}
+.forgot-five {
+    @apply mt-2 text-sm text-gray-600 
+}
+.forgot-six {
+    @apply text-secondaryg decoration-2 hover:underline font-medium
+}
+.forgot-seven {
+    @apply mt-5
+}
+.forgot-eight {
+    @apply grid gap-y-4
+}
+.forgot-nine {
+    @apply block text-sm font-bold ml-1 mb-2 
+}
+.forgot-ten {
+    @apply py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 shadow-sm
+}
+.forgot-eleven {
+    @apply hidden text-xs text-red-600 mt-2
+}
+.forgot-twelve {
+    @apply py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-secondaryg text-white  hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all text-sm 
+}
+.forgot-thirteen {
+    @apply mt-3 flex justify-center items-center text-center divide-x divide-gray-300 dark:divide-gray-700
+}
+.forgot-fourteen {
+    @apply pr-3.5 inline-flex items-center gap-x-2 text-sm text-gray-600 decoration-2 hover:underline hover:text-blue-600 dark:text-gray-500 dark:hover:text-gray-200
+}
+.forgot-fifteen {
+    @apply pl-3 inline-flex items-center gap-x-2 text-sm text-gray-600 decoration-2 hover:underline hover:text-blue-600 dark:text-gray-500 dark:hover:text-gray-200
+}

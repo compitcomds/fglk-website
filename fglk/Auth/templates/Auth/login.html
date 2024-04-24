@@ -4,181 +4,62 @@
 {% endblock pageStyle%}
 {% block content %}
 {% block content1 %}
-{#<style>
-    .login-page {
-        @apply bg-slate-900 flex justify-center items-center h-screen
-    }
 
-    .form-inp {
-        @apply py-3 px-6 border border-gray-300 rounded;
-    }
-
-    .login-form {
-        @apply grid place-items-center relative w-[300px] h-[470px] p-16 bg-gray-900 shadow-lg outline border-2 border-green-500 rounded;
-    }
-
-    .log-head {
-        @apply text-green-500 font-semibold text-4xl;
-    }
-
-    .log-small-head {
-        @apply text-white text-lg mt-4;
-    }
-
-    .log-form-body {
-        @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[230px];
-    }
-
-    .sub-btn {
-        @apply block w-full text-green-500 bg-transparent font-semibold text-lg py-4 px-5 border border-green-500 rounded cursor-pointer transition duration-300 ease-in-out;
-    }
-
-    .sub-btn:hover {
-        @apply bg-green-500 text-gray-900;
-    }
-
-    .forget-pass a {
-        @apply text-gray-600 text-sm no-underline;
-    }
-
-    .baar {
-        @apply absolute left-1/2 bottom-[-50px] w-28 h-8 transform -translate-x-1/2 bg-green-500 rounded-lg;
-    }
-
-    .baar:before,
-    .baar:after {
-        @apply absolute w-8 h-8 bg-gray-300 rounded-full;
-    }
-
-    .baar:before {
-        @apply right-[-20px];
-    }
-
-    .baar:after {
-        @apply right-[-38px];
-    }
-
-    /* Custom styles */
-    .login-form {
-        @apply bg-black;
-    }
-
-    .form-inp input {
-        @apply w-full bg-transparent text-green-500 border-none outline-none;
-    }
-
-    .form-inp input:focus {
-        @apply border border-green-500;
-    }
-</style>#}
-{#<section class="login-page ">
-    <div class="half-blue">
-        <!-- Blue Background Column -->
-        <div class="blue-back">
-            <div class="back-small">
-                <!-- Login Form -->
-                <div class="login-form">
-                    <h2 class="log-head">Login</h2>
-                    <form method="post">
-                        {{ form.hidden_tag() }}
-                        <div class="log-mail">
-                            {{ form.email.label(class="log-label") }}
-                            {{ form.email(class="login-email") }}
-                        </div>
-                        <div class="log-pass">
-                            {{ form.password.label(class="log-label") }}
-                            {{ form.password(class="login-password") }}
-                            <p class="log-place">Please choose a password.</p>
-                        </div>
-                        <div class="log-button">
-                            {{ form.submit(class="log-submit") }}
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- Light Purple Background Column -->
-        <div class="purple-bg">
-            <div class="carousel-container">
-                <!-- Carousel -->
-                <div class="carousel-wrapper">
-                    <div class="carousel-image">
-                        <img src="https://via.placeholder.com/500x300" alt="Carousel Image" class="w-full">
+<section>
+    <div class="login-page">
+        <div class="log-one">
+            <div class="log-two">
+                <div class="log-four">
+                    <div class="log-three">
+                        <span>Welcome to </span> FG-Lawkits
                     </div>
-                    <div class="carousel-text">
-                        <p class="carousel-title">Welcome to Our Platform!</p>
-                        <p class="carousel-description">Discover amazing features.</p>
-                    </div>
+                    <!-- <div class="log-six"> -->
+                        <form method="post">
+                            {{ form.hidden_tag() }}
+                            <div class="log-fourteen">
+                                {{ form.email(class="log-fifteen", placeholder="Email", type="email") }}
+                                {{ form.password(class="log-sixteen", placeholder="Password", type="password") }}
+
+                                <button class="log-seventeen">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                                        <circle cx="8.5" cy="7" r="4" />
+                                        <path d="M20 8v6M23 11h-6" />
+                                    </svg>
+                                    {{ form.submit(class="log-eighteen") }}
+                                </button>
+                                <hr class="logi-nineteen">
+                                <div class="log-seven">
+                                    <a href="{{url_for('forgot_password')}}" class="log-eight logi-twenty-one"> Forgot
+                                        Password?
+                                    </a>
+                                    <a href="{{url_for('register')}}" class="log-eight logi-twenty-one">Sign Up
+                                    </a>
+                                </div>
+                                <p class="log-nineteen">
+                                    I agree to abide by FG-Lawkit
+                                    <a href="#" class="">
+                                        Terms of Service
+                                    </a>
+                                    and its
+                                    <a href="#" class="">
+                                        Privacy Policy
+                                    </a>
+                                </p>
+                            </div>
+                        </form>
+                    <!-- </div> -->
+                </div>
+            </div>
+            <div class="log-twenty">
+                <div class="log-twenty-one"
+                    style="background-image: url('https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg');">
                 </div>
             </div>
         </div>
-    </div>
-</section>#}
-<section class="blue-purple-section">
-
-    <!-- Login Form -->
-    <div class="log-car">
-        <div class="login-form">
-            <h2 class="log-head">Login</h2>
-            <form method="post">
-                {{ form.hidden_tag() }}
-                <div class="log-mail">
-                    {{ form.email.label(class="log-label") }}
-                    {{ form.email(class="login-email") }}
-                </div>
-                <div class="log-pass">
-                    {{ form.password.label(class="log-label") }}
-                    {{ form.password(class="login-password") }}
-
-                </div>
-                <div class="log-button">
-                    {{ form.submit() }}
-                </div>
-            </form>
-        </div>
-        <div class="carousel hidde">
-            <div class="carousel-content">
-                <img class="carousel-image"
-                    src="https://media.nojoto.com/wallpaper/main/wallpaper-2020-02-24-23-49-16-6ba5557d2bc266a5f905c13e23adcdbd.jpg"
-                    alt="">
-            </div>
-        </div>
-
     </div>
 </section>
-<!-- <form method="post">
-    {{ form.hidden_tag() }}
-    {{ form.email()  }}
-    {{ form.password() }}
-    {{ form.submit() }}
-</form> -->
-{#<section class="login-page">
-    <div id="form-ui">
-        <form action="" method="post" id="form" class="login-form">
-            <div id="form-body" class="log-form-body">
-                <div id="welcome-lines">
-                    <div id="welcome-line-1" class="log-head">FG Lawkit</div>
-                    <div id="welcome-line-2" class="log-small-head">Welcome Back, Loyd</div>
-                </div>
-                <div id="input-area">
-                    <div class="form-inp">
-                        <input placeholder="Email Address" type="text">
-                    </div>
-                    <div class="form-inp">
-                        <input placeholder="Password" type="password">
-                    </div>
-                </div>
-                <div id="submit-button-cvr">
-                    <button id="submit-button" class="sub-btn" type="submit">Login</button>
-                </div>
-                <div id="forgot-pass" class="forget-pass">
-                    <a href="#">Forgot password?</a>
-                </div>
-                <div id="bar" class="baar"></div>
-            </div>
-        </form>
-    </div>
-</section>#}
 {% endblock content1 %}
 
 {% endblock content%}

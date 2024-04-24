@@ -1,18 +1,164 @@
 {% extends 'base.html' %}
+{% block pageStyle %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('Auth.static', filename='css/mainAuth2.css') }}">
+{% endblock pageStyle%}
 {% block content %}
+{% block content1 %}
+{#<section>
+    <div class="register-page">
+        <!-- Container -->
+        <div class="reg-one">
+            <div class="reg-two">
+                <!-- Row -->
+                <div class="reg-three">
+                    <!-- Col -->
+                    <div class="reg-four"
+                        style="background-image: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800')"></div>
+                    <!-- Col -->
+                    <div class="reg-five">
+                        <h3 class="reg-six">Create an Account!</h3>
+                        <form class="reg-seven" method="post">
+                            {{ form.hidden_tag() }}
+                            <div class="reg-eight">
+                                <div class="reg-nine">
+                                    {{ form.name.label( class="reg-ten", for="firstName") }}
 
-<form method="post">
+                                    {{ form.name(class="reg-eleven", id="firstName", type="text", placeholder="Enter
+                                    Your Name") }}
+                                </div>
+                            </div>
+                            <div class="reg-thirteen">
+                                {{ form.email.label(class="reg-ten", for="email") }}
+
+                                {{ form.email(class="reg-fourteen", id="email", type="email", placeholder="Email") }}
+                            </div>
+                            <div class="reg-eight">
+                                <div class="reg-nine">
+                                    {{ form.password.label(class="reg-ten", for="password") }}
+
+                                    {{ form.password(class="reg-fifteen", id="password", type="password",
+                                    placeholder="Password") }}
+                                    <p class="reg-sixteen">Please choose a password.</p>
+                                </div>
+                                <!-- <div class="reg-twelve">
+                                    <label class="reg-ten"
+                                        for="c_password">
+                                        Confirm Password
+                                    </label>
+                                    <input
+                                        class="reg-fourteen"
+                                        id="c_password" type="password" placeholder="******************" />
+                                </div> -->
+                            </div>
+                            <div class="reg-seventeen">
+                                {{ form.submit(class="reg-eighteen") }}
+                            </div>
+                            <hr class="reg-nineteen">
+                            <!-- <div class="reg-twenty">
+                                <a class="reg-twenty-one" href="#">
+                                    Forgot Password?
+                                </a>
+                            </div> -->
+                            <div class="reg-twenty">
+                                <a class="reg-twenty-one" href="{{url_for('login')}}">
+                                    Already have an account? login!
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>#}
+
+<!-- source:https://codepen.io/owaiswiz/pen/jOPvEPB -->
+<section>
+    <div class="register-page">
+        <div class="reg-one">
+            <div class="reg-twenty">
+                <div class="reg-twenty-one"
+                    style="background-image: url('https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg');">
+                </div>
+            </div>
+            <div class="reg-two">
+                <div class="reg-three">
+                    FG-Lawkit
+                    <!-- <img src="https://ccdstest.b-cdn.net/rego-fg.jpg" class="reg-three" /> -->
+                </div>
+                <div class="reg-four">
+                    <h1 class="reg-five">
+                        Sign Up
+                    </h1>
+                    <div class="reg-six">
+
+
+                        <!-- <div class="reg-twelve">
+                            <div class="reg-thirteen">
+                                Or sign up with e-mail
+                            </div>
+                        </div> -->
+                        <form method="post">
+                            {{ form.hidden_tag() }}
+                            <div class="reg-fourteen">
+                                {{ form.name(class="reg-sixteen", id="firstName", type="text", placeholder="Name") }}
+                                <!-- {{ form.email.label() }} -->
+                                {{ form.email(class="reg-fifteen", placeholder="Email", type="email") }}
+                                <!-- {{ form.password.label() }} -->
+                                {{ form.password(class="reg-sixteen", placeholder="Password", type="password") }}
+
+                                <button class="reg-seventeen">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                                        <circle cx="8.5" cy="7" r="4" />
+                                        <path d="M20 8v6M23 11h-6" />
+                                    </svg>
+                                    {{ form.submit(class="reg-eighteen") }}
+                                </button>
+
+                            </div>
+                        </form>
+                        <hr class="regi-nineteen">
+
+                        <div class="reg-twenty1">
+                            <a class="reg-twenty1-one" href="{{url_for('login')}}">
+                                Already have an account? login!
+                            </a>
+                        </div>
+                        <p class="reg-nineteen">
+                            I agree to abide by FG-Lawkit
+                            <a href="#" class="">
+                                Terms of Service
+                            </a>
+                            and its
+                            <a href="#" class="">
+                                Privacy Policy
+                            </a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{#<form method="post">
     {{ form.hidden_tag() }}
     {{ form.name.label() }}{{ form.name() }}
     {{ form.email.label() }}{{ form.email() }}
     {{ form.password.label() }}{{ form.password() }}
-    
-    {% if role=='admin' %}
-        {{ form.adminkey.label() }}{{ form.adminkey() }}
-    {% endif %}
-    
-    {{ form.submit() }}
-        
-</form>
 
-{% endblock %}
+    {% if role=='admin' %}
+    {{ form.adminkey.label() }}{{ form.adminkey() }}
+    {% endif %}
+
+    {{ form.submit() }}
+
+</form>#}
+
+{% endblock content1 %}
+
+{% endblock content%}

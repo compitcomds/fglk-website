@@ -5,69 +5,94 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
-.blue-purple-section {
-    @apply flex flex-col justify-center items-center max-h-screen h-[80vh] bg-slate-300;
+/* Login Page */
+.login-page {
+    @apply min-h-screen bg-gray-100 text-gray-900 flex justify-center
 }
-
-
-
-.log-car {
-    @apply  flex  m-5 p-4 w-[60%] rounded-2xl
+.log-one {
+    @apply max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1
 }
-.login-form {
-    @apply bg-white p-8  w-[600px]  h-full rounded-l-2xl;
+.log-two {
+    @apply lg:w-4/12 xl:w-5/12 p-6 sm:p-12 
 }
-
-.carousel {
-    @apply bg-white  w-[600px] h-full  rounded-r-2xl;
-    
+.log-three {
+    @apply text-secondaryg text-3xl font-bold flex justify-center mb-5 m-4 text-wrap
 }
-
-
-.log-head {
-    @apply text-2xl font-semibold mb-4 text-center;
+.log-three span{
+    @apply me-2 text-black;
 }
-
-.log-mail {
-    @apply mb-4;
+.log-four {
+    @apply mt-4 flex flex-col 
 }
-
-.log-label {
-    @apply block text-gray-700 text-sm font-bold mb-2;
+.log-five {
+    @apply text-2xl xl:text-3xl font-bold text-slate-900
 }
-
-.login-email {
-    @apply shadow border rounded w-full py-2 px-3 text-gray-700;
+.log-six {
+    @apply w-full flex-1 mt-4
 }
-
-.log-pass {
-    @apply mb-6;
+.log-seven{
+    @apply flex flex-col 
 }
-
-.login-password {
-    @apply shadow border  rounded w-full py-2 px-3 text-gray-700 mb-3;
+.log-eight {
+    @apply w-full max-w-xs m-2 font-bold shadow-sm rounded-lg py-3 bg-green-100 hover:bg-green-300 text-gray-800 flex  justify-center transition-all ;
 }
-
-.log-place {
-    @apply text-red-500 text-xs italic;
+.log-nine {
+    @apply bg-white p-2 rounded-full
 }
-
-.log-button {
-    @apply flex items-center text-white bg-blue-600 justify-center hover:bg-blue-700 hover:text-white rounded-lg font-bold py-2 px-4;
+.log-nine svg{
+    @apply w-4
 }
-
-.log-submit {
-    @apply bg-blue-600 text-white hover:bg-blue-700 hover:text-white font-bold py-2 px-4 rounded;
+.log-ten {
+    @apply ml-4
 }
-
-
-/* Style for carousel content */
-.carousel-content {
-    @apply text-center w-full h-full bg-slate-500 rounded-r-xl 
-    
+.log-eleven {
+    @apply bg-white p-1 rounded-full
 }
-
-.carousel-image {
-    @apply w-full h-full bg-slate-400 object-fill rounded-r-xl 
+.log-eleven svg{
+    @apply w-6
+}
+.log-twelve {
+    @apply mb-4 border-b text-center
+}
+.log-thirteen {
+    @apply leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2
+}
+.log-fourteen {
+    @apply mx-auto max-w-xs
+}
+.log-fifteen {
+    @apply w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white
+}
+.log-sixteen {
+    @apply w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5
+}
+.log-seventeen {
+    @apply mt-5  font-semibold bg-secondaryg text-gray-100 w-full py-4 rounded-lg hover:bg-green-600 transition-all   flex  justify-center 
+}
+.log-seventeen svg {
+    @apply w-6 h-6 -ml-2
+}
+.log-eighteen {
+    @apply ml-3
+}
+.log-nineteen {
+    @apply mt-6 text-xs text-gray-600 text-center
+}
+.log-nineteen a{
+    @apply border-b border-gray-500 border-dotted
+}
+.log-twenty {
+    @apply flex-1 bg-green-200   text-center hidden lg:flex rounded-r
+}
+.log-twenty-one {
+    @apply m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat
+}
+.logi-nineteen {
+    @apply my-6 border-t
+}
+.logi-twenty {
+    @apply text-center
+}
+.logi-twenty-one {
+    @apply  text-sm text-blue-500  align-baseline hover:text-blue-800
 }
