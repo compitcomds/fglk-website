@@ -10,11 +10,12 @@ Student = Blueprint('Student',__name__,template_folder='templates/Student',stati
 @login_required
 def checker():
       cookie_token = request.cookies.get('token')
-      if current_user and current_user.token != cookie_token:
+      if current_user and current_user.token != cookie_token and ( current_user.role != 'Student') :
                 logout_user()
                 flash('You have been logged out due to multiple logins.', 'error')
                 return redirect(url_for('Auth.login'))
       
 @Student.route('/')
 def studentIndex():
-        return "this is std pages after login"
+        current_user
+        return str(current_user.role)

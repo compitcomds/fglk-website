@@ -16,6 +16,8 @@ app.register_blueprint(Auth,url_prefix='/')
 from fglk.Admin.view import Admin
 app.register_blueprint(Admin,url_prefix='/admin')
 
+from fglk.Student.view import Student
+app.register_blueprint(Student,url_prefix='/student')
 
 @app.route('/')
 def index():

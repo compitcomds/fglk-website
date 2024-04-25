@@ -47,7 +47,7 @@ def login():
                 response.set_cookie('token', token)
                 return response
             elif user_data['role'] == 'Student':
-                response = redirect(url_for("Auth.test_login"))###--- this also change
+                response = redirect(url_for("Student.studentIndex"))###--- this also change
                 response.set_cookie('token', token)
                 return response
         else:
