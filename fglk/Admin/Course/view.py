@@ -13,6 +13,7 @@ Admin_Course = Blueprint('Admin_Course',
 
 @Admin_Course.route('/',methods=['GET','POST'])
 def Course():
+      update=False
       _id=request.args.get('_id')
       Delete=request.args.get('Delete', type=bool)
       if _id and Delete:
@@ -21,6 +22,7 @@ def Course():
             db.course.delete_one({'_id':ObjectId(_id)})
             return redirect(url_for('.Course'))
       if _id:
+            update=True
             data=db.course.find_one({'_id':ObjectId(_id)})
             if data:
                   form=AddCourseForm(**data)  
@@ -58,7 +60,7 @@ def Course():
                   db.course.update_one({'_id':ObjectId(_id)},{'$set':data})
             return redirect(url_for('.Course'))
       data=db.course.find()
-      return render_template('Admin_Course.html',form=form,data=list(data))
+      return render_template('Admin_Course.html',form=form,data=list(data),update=update)
 
 # route for adding Sections in course:
 @Admin_Course.route('/<string:course_id>',methods=['GET','POST'])

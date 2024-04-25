@@ -1,19 +1,81 @@
 {% extends 'base_admin.html' %}
 {% block content %}
+<!-- Button to trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sectionAddModal">
+    Add Section
+</button>
 
-<h2>Add Sections Form</h2>
+<!-- Modal -->
+<div class="modal fade" id="sectionAddModal" tabindex="-1" role="dialog" aria-labelledby="sectionAddModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sectionAddModalLabel">Add New Section</h5>
+                <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Your Form -->
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        <label for="section-name" class="col-form-label">Section Name:</label>
+                        {{ form.name(class_="form-control", id="section-name", size=32) }}
+                    </div>
+                    {{ form.submit(class_="btn btn-primary") }}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{#<h2>Add Sections Form</h2>
 <form method="POST">
     {{ form.hidden_tag() }}
     this is section add
     {{ form.name(size=32) }}
     {{ form.submit }}
-</form>
+</form>#}
 <hr>
-{% for element in data %}
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Sections</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for i in data %}
+
+                    <tr>
+                        <td>{{i.name}}</td>
+                        <td>
+                            <a href="{{url_for('.content',course_id=course_id,section_id=i._id)}}" class="btn btn-warning">click</a>
+                            <a href="?_id={{i._id}}" class="btn btn-success">update</a>
+                            <a href="?_id={{i._id}}&Delete=True" class="btn btn-danger">delete</a>
+                        </td>
+                    </tr>
+
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{#{% for element in data %}
 {{ element|e }}
 <a href="{{url_for('.content',course_id=course_id,section_id=element._id)}}">click</a>
 <a href="?_id={{element._id}}">update</a>
 <a href="?_id={{element._id}}&Delete=True">delete</a>
 <br><br>
-{% endfor %}
+{% endfor %}#}
 {% endblock content%}
