@@ -11,7 +11,7 @@
         Add Course
     </button>
 </div>
-<hr>
+
 <!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-xl-8 col-lg-7">
@@ -94,13 +94,66 @@
     img2-{{ form.img2() }}<br>
     img3-{{ form.img3() }}<br>
     {{ form.submit }}
-</form>#}
-{% for element in data %}
-{{ element|e }}
-<a href="{{element._id}}">click</a>
-<a href="?_id={{element._id}}">update</a>
-<a href="?_id={{element._id}}&Delete=True">delete</a>
-<br>
-<br>
-{% endfor %}
+</form>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Courses</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Video</th>
+                        <th>Hrs</th>
+                        <th>Price</th>
+                        <th>Image 1</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for i in data %}
+
+                    <tr>
+                        <td>{{i.name}}</td>
+                        <td>{{i.course_video}}</td>
+                        <td>{{i.hrs}}</td>
+                        <td>{{i.price}}</td>
+                        <td>  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Open Modal
+                          </button></td>
+
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Text to display -->
+                <p>Hello</p>
+            </div>
+            <div class="modal-footer">
+                <!-- Button to close modal -->
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 {% endblock content%}
