@@ -1,9 +1,15 @@
 {% extends 'base_admin.html' %}
 {% block content %}
 
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
+<!-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm justify-content-end">Add Course</a>
-    
+
+</div> -->
+<!-- Button trigger modal -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCourseModal">
+        Add Course
+    </button>
 </div>
 
 <!-- <div class="container">
@@ -19,9 +25,63 @@
         </div>
     </div>
 </div> -->
-
-
-<h2>Add Course</h2>
+<!-- Modal -->
+<div class="modal fade" id="addCourseModal" tabindex="-1" aria-labelledby="addCourseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addCourseModalLabel">Add Course</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form inside modal -->
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        <label for="courseName">Name</label>
+                        {{ form.name(class="form-control", id="courseName") }}
+                    </div>
+                    <div class="form-group">
+                        <label for="coursediscription">Description</label>
+                        {{ form.discription(class="form-control", id="coursediscription") }}
+                    </div>
+                    <div class="form-group">
+                        <label for="courseVideo">Course Video</label>
+                        {{ form.course_video(class="form-control", id="courseVideo") }}
+                    </div>
+                    <div class="form-group">
+                        <label for="courseHours">Hours</label>
+                        {{ form.hrs(class="form-control", id="courseHours") }}
+                    </div>
+                    <div class="form-group">
+                        <label for="coursePrice">Price</label>
+                        {{ form.price(class="form-control", id="coursePrice") }}
+                    </div>
+                    <div class="form-group">
+                        <label for="courseDiscount">Discount</label>
+                        {{ form.discount(class="form-control", id="courseDiscount") }}
+                    </div>
+                    <div class="form-group">
+                        <label for="courseImg1">Image 1</label>
+                        {{ form.img1(class="form-control-file", id="courseImg1") }}
+                    </div>
+                    <div class="form-group">
+                        <label for="courseImg2">Image 2</label>
+                        {{ form.img2(class="form-control-file", id="courseImg2") }}
+                    </div>
+                    <div class="form-group">
+                        <label for="courseImg3">Image 3</label>
+                        {{ form.img3(class="form-control-file", id="courseImg3") }}
+                    </div>
+                    {{ form.submit(class="btn btn-success") }}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{#<h2>Add Course</h2>
 <form method="POST">
     {{ form.hidden_tag() }}
     Name-{{ form.name() }}<br>
