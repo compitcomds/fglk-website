@@ -10,16 +10,14 @@ Admin = Blueprint('Admin',__name__,template_folder='templates/Admin',static_fold
 @login_required
 def checker():
       cookie_token = request.cookies.get('token')
-      if current_user and current_user.token != cookie_token and current_user.role=='admin':
+      if current_user and current_user.token != cookie_token and current_user.role!='admin':
                 logout_user()
                 flash('You have been logged out due to multiple logins.', 'error')
                 return redirect(url_for('Auth.login'))
 
 
 @Admin.route('/')
-def AdminIndex():
-      
-      
+def AdminIndex():   
       print(current_user.token,"this is current user token")
       print(request.cookies.get('token'),"this is request user token")
       return render_template('index_admin.html')
