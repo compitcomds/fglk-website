@@ -1,10 +1,6 @@
 {% extends 'base_admin.html' %}
 {% block content %}
 
-<!-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm justify-content-end">Add Course</a>
-
-</div> -->
 <!-- Button trigger modal -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCourseModal">
@@ -31,7 +27,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="addCourseModalLabel">Add Course</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closebtn">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -81,6 +77,17 @@
         </div>
     </div>
 </div>
+{% if update %}
+    <script>
+        console.log("Data")
+        window.onload = () => {
+            var addCourseModal = new bootstrap.Modal(document.getElementById('addCourseModal'))
+            addCourseModal.show()
+        }
+    </script>
+{% endif %}
+
+
 {#<h2>Add Course</h2>
 <form method="POST">
     {{ form.hidden_tag() }}
@@ -94,7 +101,7 @@
     img2-{{ form.img2() }}<br>
     img3-{{ form.img3() }}<br>
     {{ form.submit }}
-</form>
+</form>#}
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -106,10 +113,10 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Video</th>
                         <th>Hrs</th>
                         <th>Price</th>
-                        <th>Image 1</th>
+                        <th>Media</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
 
@@ -118,14 +125,54 @@
 
                     <tr>
                         <td>{{i.name}}</td>
-                        <td>{{i.course_video}}</td>
                         <td>{{i.hrs}}</td>
                         <td>{{i.price}}</td>
-                        <td>  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            Open Modal
-                          </button></td>
+                        <td> <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#exampleModal{{loop.index}}">
+                                Open Modal
+                            </button>
+                        </td>
+                        <td>
+                            <a href="{{i._id}}" class="btn btn-warning">click</a>
+                            <a href="?_id={{i._id}}" class="btn btn-success">update</a>
+                            <a href="?_id={{i._id}}&Delete=True" class="btn btn-danger">delete</a>
+                        </td>
 
                     </tr>
+                    <div class="modal fade" id="exampleModal{{loop.index}}" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Images and Video for {{i.name}}</h5>
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    
+                                    
+                                    
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Display the first image -->
+                                    {% if i.img1 and i.course_video%}
+                                    <img src="{{i.img1}}" alt="img1" class="img-thumbnail">
+                                    <img src="{{i.img2}}" alt="img1" class="img-thumbnail">
+                                    <img src="{{i.img3}}" alt="img1" class="img-thumbnail">
+
+                                    <div class="embed-responsive embed-responsive-4by3">
+                                        <iframe class="embed-responsive-item" src="{{i.course_video}}"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                    {% endif %}
+                                    <!-- Repeat for other images if any -->
+                                </div>
+                                <div class="modal-footer">
+                                    <!-- Button to close modal -->
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     {%endfor%}
                 </tbody>
             </table>
@@ -133,27 +180,6 @@
     </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- Text to display -->
-                <p>Hello</p>
-            </div>
-            <div class="modal-footer">
-                <!-- Button to close modal -->
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
 
-
+  
 {% endblock content%}

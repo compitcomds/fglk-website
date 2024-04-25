@@ -14,6 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -28,17 +29,21 @@
             <hr class="sidebar-divider my-0">
             <li class="nav-item active">
                 <a class="nav-link" href="{{url_for('Admin.Admin_Course.Course')}}">
-                    <i class="fa-solid fa-book"></i>
-
-
-                    <span>Courses</span></a>
+                    <i class="bi bi-journal-bookmark-fill"></i>
+                    <!-- Bootstrap icon for Courses, choose one that fits your design -->
+                    <span>Courses</span>
+                </a>
             </li>
+            <hr class="sidebar-divider my-0">
             <li class="nav-item active">
                 <a class="nav-link" href="{{url_for('Admin.Admin_Community.asd')}}">
-                    <i class="fa-solid fa-book"></i>
-
-                    <span>Community</span></a>
+                    <i class="bi bi-people-fill"></i>
+                    <!-- Bootstrap icon for Community, choose one that fits your design -->
+                    <span>Community</span>
+                </a>
             </li>
+            <hr class="sidebar-divider my-0">
+
         </ul>
         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
@@ -54,8 +59,8 @@
                                 <i class="bi bi-arrow-left"></i> Back
                             </button>
                         </div>
-                    </nav>                  
-                    
+                    </nav>
+
                 </div>
             </div>
             <div class="container-fluid">
@@ -88,6 +93,13 @@
     <!-- Include Bootstrap Bundle JS (includes Popper.js) -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            $('.close').on('click', function () {
+                window.location.href = "{{ url_for('Admin.Admin_Course.Course') }}";
+            });
+        });
+    </script>
 </body>
 
 </html>

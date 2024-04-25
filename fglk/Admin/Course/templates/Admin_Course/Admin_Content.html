@@ -1,41 +1,197 @@
 {% extends 'base_admin.html' %}
 {% block content %}
-    
-    <h2>Add content Form</h2>
-    <hr>
-    <a href="{{url_for('.content',section_id=section_id,course_id=course_id,data_type='video')}}">videos</a>
-    <a href="{{url_for('.content',section_id=section_id,course_id=course_id,data_type='docs')}}">docs</a>
+<h2>Add content Form</h2>
+<hr>
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Sec_Id</th>
+                    <th>Course_Id</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{section_id}}</td>
+                    <td>{{course_id}}</td>
+                </tr>
 
-    <hr>
-    data_type-{{data_type}} <br>
-    sections-{{section_id}} <br>
-    course_id-{{course_id}} <br>
-    {% if data_type == "video" %}
-    <form method="POST">
-        {{ form.hidden_tag() }}
-        title- {{ form.title() }}
-        dis-{{ form.discription() }}
-        link-{{ form.link() }}
-        reso-{{ form.resource() }}
-        {{ form.submit }}
-        {% for error in form.link.errors %}
-        <span style="color: red;">{{ error }}</span><br>
+            </tbody>
+        </table>
+    </div>
+</div>
+<button type="button"
+    onclick="location.href='{{url_for('.content',section_id=section_id,course_id=course_id,data_type='video')}}'"
+    class="btn btn-primary me-2 mb-2">
+    <i class="bi bi-camera-video-fill"></i> Videos
+</button>
+
+<button type="button"
+    onclick="location.href='{{url_for('.content',section_id=section_id,course_id=course_id,data_type='docs')}}'"
+    class="btn btn-primary mb-2">
+    <i class="bi bi-file-earmark-text-fill"></i> Docs
+</button>
+<button type="button" onclick="location.href='{{url_for('.content',course_id=course_id,section_id=section_id)}}'"
+    class="btn btn-primary mb-2">
+    <i class="bi bi-file-earmark-text-fill"></i> None
+</button>
+
+
+
+<hr>
+
+{% if data_type == "video" %}
+<form method="POST" class="needs-validation" novalidate>
+    {{ form.hidden_tag() }}
+
+    <div class="form-group mb-3">
+        <label for="title">Title</label>
+        {{ form.title(class="form-control", id="title", placeholder="Enter title") }}
+        {% for error in form.title.errors %}
+        <div class="invalid-feedback" style="display: block;">
+            {{ error }}
+        </div>
         {% endfor %}
-    </form>
+    </div>
 
-    {%elif data_type == "docs"%}
-    <form method="POST">
-        {{ form.hidden_tag() }}
-        title-{{ form.title() }}
-        content{{ form.content_text() }}
-        {{ form.submit }}
-    </form>
-    {% endif %}
-    <hr>
-    {% for element in data %}
-    {{ element|e }}
-    <a href="{{url_for('.content',section_id=section_id,course_id=course_id,data_type=element.type,content_id=element._id)}}">Update</a>
-    <a href="{{url_for('.content',section_id=section_id,course_id=course_id,content_id=element._id,Delete=true)}}">Delete</a>
-    <br><br>
-    {% endfor %}
-    {% endblock content%}
+    <div class="form-group mb-3">
+        <label for="description">Description</label>
+        {{ form.discription(class="form-control", id="discription", placeholder="Enter description") }}
+        {% for error in form.discription.errors %}
+        <div class="invalid-feedback" style="display: block;">
+            {{ error }}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="link">Link</label>
+        {{ form.link(class="form-control", id="link", placeholder="Enter link") }}
+        {% for error in form.link.errors %}
+        <div class="invalid-feedback" style="display: block;">
+            {{ error }}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="resource">Resource</label>
+        {{ form.resource(class="form-control", id="resource", placeholder="Enter resource") }}
+    </div>
+
+    <div class="form-group">
+        {{ form.submit(class="btn btn-primary") }}
+    </div>
+</form>
+
+
+{%elif data_type == "docs"%}
+<form method="POST" class="needs-validation" novalidate>
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+        <label for="titleField" class="form-label">Title</label>
+        {{ form.title(class="form-control", id="titleField", placeholder="Enter the title") }}
+        {% for error in form.title.errors %}
+        <div class="invalid-feedback">
+            {{ error }}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="mb-3">
+        <label for="contentTextField" class="form-label">Content</label>
+        {{ form.content_text(class="form-control", id="contentTextField", placeholder="Enter the content", rows=4) }}
+        {% for error in form.content_text.errors %}
+        <div class="invalid-feedback">
+            {{ error }}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="mb-3">
+        {{ form.submit(class="btn btn-primary") }}
+    </div>
+</form>
+
+{#<form method="POST">
+    {{ form.hidden_tag() }}
+    title-{{ form.title() }}
+    content{{ form.content_text() }}
+    {{ form.submit }}
+</form>#}
+{% endif %}
+<hr>
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Resource</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for i in data %}
+
+                <tr>
+                    <td>{{i.title}}</td>
+                    <td>{{i.type}}</td>
+
+                    <td> <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#exampleModal{{loop.index}}">
+                            Open Modal
+                        </button>
+                    </td>
+                    <td>                        
+                        <a href="{{url_for('.content',section_id=section_id,course_id=course_id,data_type=i.type,content_id=i._id)}}" class="btn btn-success">update</a>
+                        <a href="{{url_for('.content',section_id=section_id,course_id=course_id,content_id=i._id,Delete=true)}}" class="btn btn-danger">delete</a>
+                    </td>
+
+                </tr>
+                <div class="modal fade" id="exampleModal{{loop.index}}" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">{{i.name}}</h5>
+                                <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal"
+                                    aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+
+
+
+                            </div>
+                            <div class="modal-body">
+                                <!-- Display the first image -->
+                                {% if i.link%}
+                                <!-- <img src="{{i.img1}}" alt="img1" class="img-thumbnail">
+                                <img src="{{i.img2}}" alt="img1" class="img-thumbnail">
+                                <img src="{{i.img3}}" alt="img1" class="img-thumbnail"> -->
+
+                                <div class="embed-responsive embed-responsive-4by3">
+                                    <iframe class="embed-responsive-item" src="{{i.link}}" allowfullscreen></iframe>
+                                </div>
+                                {% elif i.content_text %}
+                                {{i.content_text|safe}}
+                                {% endif %}
+                                <!-- Repeat for other images if any -->
+                            </div>
+                            <div class="modal-footer">
+                                <!-- Button to close modal -->
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content%}
