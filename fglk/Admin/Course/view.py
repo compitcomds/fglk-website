@@ -65,6 +65,7 @@ def Course():
 # route for adding Sections in course:
 @Admin_Course.route('/<string:course_id>',methods=['GET','POST'])
 def section(course_id):
+      update=False
       _id=request.args.get('_id')
       Delete=request.args.get('Delete', type=bool)
       if _id and Delete:
@@ -76,6 +77,7 @@ def section(course_id):
             return redirect (url_for('.section',course_id=course_id))
       if _id:
             data=db.section.find_one({'_id':ObjectId(_id)})
+            update=True
             if data:
                   form=AddSection(**data)  
             else:
@@ -103,7 +105,7 @@ def section(course_id):
             return redirect (url_for('.section',course_id=course_id))
       data=db.course.find_one({'_id':ObjectId(course_id)})
       data1=db.section.find({'_id':{'$in':data['sections']}})
-      return render_template('Admin_Section.html',form=form,data=list(data1),course_id=course_id)
+      return render_template('Admin_Section.html',form=form,data=list(data1),course_id=course_id,update=update)
 
 # adding content
 @Admin_Course.route('/<string:course_id>/<string:section_id>',methods=['GET','POST'])
