@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block pageStyle %}
+<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main4.css') }}"> -->
+
+{% endblock %}
+{% block content %}
+{% block content1 %}
+<BR>
+<BR>
+<BR>
+<BR>
+
+{{data['_id']}}<br>
+{{data['name']}}<br>
+{{data['discription']}}<br>
+{{data['course_video']}}<br>
+{{data['hrs']}}<br>
+{{data['price']}}<br>
+{{data['discount']}}<br>
+{{data['img1']}}<br>
+{{data['img2']}}<br>
+{{data['img3']}}<br>
+{{data['section']}}<br>
+
+
+{% endblock content1 %}
+
+{% endblock content%}

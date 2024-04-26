@@ -5,8 +5,15 @@
 {% endblock %}
 {% block content %}
 {% block content1 %}
-{{data}}
-<section class="course-page ">
+<br>
+<br>
+{% for i in data %}
+        {{ i }} <br>
+        <a href="{{url_for('course_details',course_id=i._id)}}"><b>click</b></a>
+        <hr>
+{% endfor %}
+
+<!-- <section class="course-page ">
     <div class="course-head">All Courses -></div>
     <div class="product-sm10">
         {% for item in range(6) %}
@@ -36,7 +43,7 @@
         </div>
         {% endfor %}
     </div>
-</section>
+</section> -->
 
 {% endblock content1 %}
 
