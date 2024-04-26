@@ -47,7 +47,8 @@ def card():
 
 @app.route('/course')
 def course():
-    return render_template('course.html')
+    data=list(db.course.find())
+    return render_template('course.html',data=data)
 
 @app.route('/login')
 def login():
