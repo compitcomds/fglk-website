@@ -4,7 +4,14 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sectionAddModal">
     Add Section
 </button>
-
+{% if update %}
+<script>
+    window.onload = () => {
+        var addCourseModal = new bootstrap.Modal(document.getElementById('sectionAddModal'));
+        addCourseModal.show();
+    };
+</script>
+{% endif %}
 <!-- Modal -->
 <div class="modal fade" id="sectionAddModal" tabindex="-1" role="dialog" aria-labelledby="sectionAddModalLabel"
     aria-hidden="true">
@@ -12,7 +19,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="sectionAddModalLabel">Add New Section</h5>
-                <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -39,6 +46,7 @@
     {{ form.submit }}
 </form>#}
 <hr>
+
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Sections</h6>
