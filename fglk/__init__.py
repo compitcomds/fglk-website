@@ -2,8 +2,8 @@ from dotenv import load_dotenv
 from flask import Flask, jsonify,render_template
 from config import Config
 from flask_cors import CORS
-
-
+from .database import db
+from bson.objectid import ObjectId
 load_dotenv(override=True)
 
 app = Flask(__name__)
@@ -47,7 +47,14 @@ def card():
 
 @app.route('/course')
 def course():
-    return render_template('course.html')
+    data=list(db.course.find())
+    return render_template('course.html',data=data)
+
+@app.route('/course/<course_id>')
+def course_details(course_id):
+    data=(db.course.find_one({'_id':ObjectId(course_id)}))
+    return render_template('course_details.html',data=data)
+
 
 @app.route('/login')
 def login():
