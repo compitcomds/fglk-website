@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Styles for Course ID */
+.course-details {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8 m-4
+}
+.course-id {
+    @apply text-xl font-semibold text-gray-800;
+}
+
+/* Styles for Course Name */
+.course-name {
+    @apply text-gray-600;
+}
+
+/* Styles for Course Description */
+.course-description {
+    @apply mt-4 text-gray-700;
+}
+
+/* Styles for Course Video */
+.course-video {
+    @apply mt-4 text-gray-700;
+}
+
+/* Styles for Course Hours */
+.course-hours {
+    @apply mt-4 text-gray-700;
+}
+
+/* Styles for Course Price and Discount */
+.price-discount-wrapper {
+    @apply flex flex-row justify-between mt-4;
+}
+
+/* Styles for Course Price */
+.course-price {
+    @apply text-gray-700;
+}
+
+/* Styles for Course Discount */
+.course-discount {
+    @apply text-gray-700;
+}
+
+/* Styles for Course Images */
+.course-images {
+    @apply grid grid-cols-3 gap-4 mt-4;
+}
+
+/* Styles for individual Course Image */
+.course-image {
+    @apply w-full h-auto;
+}
+
+/* Styles for Course Sections */
+.course-sections {
+    @apply mt-4;
+}
+
+/* Styles for Section Heading */
+.section-heading {
+    @apply text-lg font-semibold text-gray-800;
+}
+
+/* Styles for Section List */
+.section-list {
+    @apply mt-2;
+}
+
+/* Styles for individual Section Item */
+.section-item {
+    @apply text-gray-700;
+}
