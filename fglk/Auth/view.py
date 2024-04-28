@@ -24,9 +24,9 @@ def load_user(user_id):
     user_data = db.users.find_one({'_id': ObjectId(user_id)})
     if user_data:
         if user_data['role'] =='Student':
-            return Student(user_data['_id'], user_data['name'],user_data['role'],user_data['courses'],user_data['email'],user_data['token'])
+            return Student(user_id=user_data['_id'], name=user_data['name'],role=user_data['role'],courses=user_data['courses'],email=user_data['email'],token=user_data['token'])
         elif user_data['role']=='Admin':
-            return Admin(user_data['_id'],user_data['name'],user_data['email'],user_data['role'],user_data['token'])
+            return Admin(user_id=user_data['_id'],name=user_data['name'],role=user_data['role'],email=user_data['email'],token=user_data['token'])
     return None
 
 @Auth.route('/login',methods=['GET','POST'])
@@ -36,9 +36,9 @@ def login():
         user_data = db.users.find_one({'email': form.email.data})
         if user_data and bcrypt.check_password_hash(user_data['password'], form.password.data):
             if user_data['role'] =='Student':
-                user= Student(user_data['_id'], user_data['name'],user_data['role'],user_data['courses'],user_data['email'],user_data['token'])
+                user= Student(user_id=user_data['_id'], name=user_data['name'],role=user_data['role'],courses=user_data['courses'],email=user_data['email'],token=user_data['token'])
             elif user_data['role']=='Admin':
-                user= Admin(user_data['_id'],user_data['name'],user_data['email'],user_data['role'],user_data['token'])   
+                user= Admin(user_id=user_data['_id'],name=user_data['name'],role=user_data['role'],email=user_data['email'],token=user_data['token'])   
             token = token_hex(16)  # Generate a 32-character random token
             db.users.update_one({'_id': user.user_id}, {'$set': {'token': token}})
             login_user(user)
@@ -77,7 +77,7 @@ def register():
                     'date_of_register': date,
                     }
             if role != 'admin':
-                data['courses']=None
+                data['courses']=[]
             if role == 'admin' and Config.ADMINKEY != form.adminkey.data:
                 flash('Key is incorrect', 'error')
             else:

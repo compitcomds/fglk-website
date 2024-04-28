@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block pageStyle %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main4.css') }}">
+{% endblock pageStyle%}
+{% block content %}
+{% block content1 %}    
+<br>
+<br>
+<br>
+pending from the side of client 
+<hr>
+<br>
+<br>
+<b>
+    if you want to get the course <br> 
+    click to the btn given below
+</b>
+<br>
+<br>
+{% for element in data %}
+        {{ element|e }}
+        <a class = "add-to-cart-button10" href="{{url_for('Payment.make_payment',course_id=element._id)}}">get access</a>
+{% endfor %}
+
+<br>
+<br>
+{% endblock content1 %}
+
+{% endblock content%}

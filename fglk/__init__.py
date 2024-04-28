@@ -19,6 +19,9 @@ app.register_blueprint(Admin,url_prefix='/admin')
 from fglk.Student.view import Student
 app.register_blueprint(Student,url_prefix='/student')
 
+from fglk.Payment.view import Payment
+app.register_blueprint(Payment,url_prefix='/payment')
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -55,6 +58,10 @@ def course_details(course_id):
     data=(db.course.find_one({'_id':ObjectId(course_id)}))
     return render_template('course_details.html',data=data)
 
+# @app.route('/course/<course_id>')
+# def course_details(course_id):
+#     data=(db.course.find_one({'_id':ObjectId(course_id)}))
+#     return render_template('course_details.html',data=data)
 
 @app.route('/login')
 def login():

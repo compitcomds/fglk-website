@@ -73,7 +73,14 @@
                             </div>
                             <div class="group">
                                 <button type="button" class="dropdown-button">
-                                    Darshan
+                                    {% if current_user.is_authenticated %}
+                                        {{current_user.name}}
+                                    {{current_user.role}}
+
+                                    {% else %}
+                                    No login
+                                    {% endif %}
+                                    
                                     <!-- Dropdown arrow -->
                                     <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                         fill="currentColor">
