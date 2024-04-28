@@ -8,7 +8,7 @@
 
 /* Styles for Course ID */
 .course-details {
-    @apply grid grid-cols-1 md:grid-cols-2 gap-8 m-4
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8 m-4 bg-yellow-50 rounded 
 }
 .course-id {
     @apply text-xl font-semibold text-gray-800;
@@ -23,10 +23,12 @@
 .course-description {
     @apply mt-4 text-gray-700;
 }
-
+.video-wrapper {
+    @apply w-full h-52 p-4
+}
 /* Styles for Course Video */
 .course-video {
-    @apply mt-4 text-gray-700;
+    @apply mt-4 rounded-md text-gray-700 w-full h-52;
 }
 
 /* Styles for Course Hours */
