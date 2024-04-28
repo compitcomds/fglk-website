@@ -7,44 +7,47 @@
 {% block content1 %}
 <br>
 <br>
-{% for i in data %}
-        {{ i }} <br>
-        <a href="{{url_for('course_details',course_id=i._id)}}"><b>click</b></a>
-        <hr>
-{% endfor %}
+<!-- {% for i in data %}
+{{ i }} <br>
+<a href="{{url_for('course_details',course_id=i._id)}}"><b>click</b></a>
+<hr>
+{% endfor %} -->
 
-<!-- <section class="course-page ">
+<section class="course-page ">
     <div class="course-head">All Courses -></div>
     <div class="product-sm10">
-        {% for item in range(6) %}
+        {% for i in data %}
         <div class="product-card10">
             <div class="product-image10">
-                <img src="https://ccdstest.b-cdn.net/international-law.jpg" alt="product image" />
+                <img src="{{i.img1}}" alt="product image" />
             </div>
             <div class="product-head10">
-
-                <h5 class="product-title10">International-Law</h5>
-                <small class="author-name10">Parth Jain</small>
-
-
+                <div class="product-header10">
+                    <button class="product-title210">Intermediate{{i.level}}</button>
+                </div>
+                <div class="product-header10">
+                    <h5 class="product-title10">{{i.name}}</h5>
+                    <small class="author-name10">Created By: {{i.author}}</small>
+                </div>
                 <div class="product-price-text10">
-                    <span class="product-price10">₹599</span>
-                    <a href="#" class="add-to-cart-button10">Add to cart</a>
+                    <span class="product-price102">₹{{i.discount}} </span>
+                    <small class="author-name108"><del>₹{{i.price}}</del></small>
                 </div>
-                <div class="more-course10">
-                    <a href="{{url_for('course')}}" class="about-exp10110">Explore More Course
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="2" class="" viewBox="0 0 24 24">
-                            <path d="M5 12h14M12 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
+                <div class="product-price-text10">
+                    <span class="product-price10">
+                        <i class="far fa-clock"></i>&nbsp; <P>Duration:</P>&nbsp;{{i.hrs}} hr
+                    </span>
+
                 </div>
+                <span class="product-title110">{{i.discription}}</span>
+            </div>
+            <div class="enroll-now">
+                <a href="{{url_for('course_details',course_id=i._id)}}" class="add-to-cart-button10">Enroll Now</a>
             </div>
         </div>
         {% endfor %}
     </div>
-</section> -->
-
+</section>
 {% endblock content1 %}
 
 {% endblock content%}

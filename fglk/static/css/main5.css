@@ -873,265 +873,126 @@ video {
   transition-duration: 150ms;
 }
 
-h1 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
+/* Styles for Course ID */
 
-/* top courses */
-
-/* Default styles */
-
-/* Default styles */
-
-.course-head {
-  margin-top: -1rem;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-  font-weight: 700;
-  --tw-text-opacity: 1;
-  color: rgb(63 196 70 / var(--tw-text-opacity));
-}
-
-.product-sm10 {
-  margin: 1.25rem;
+.course-details {
+  margin: 1rem;
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 2rem;
 }
 
 @media (min-width: 768px) {
-  .product-sm10 {
+  .course-details {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 1024px) {
-  .product-sm10 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1280px) {
-  .product-sm10 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1536px) {
-  .product-sm10 {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-}
-
-.product-card10 {
-  height: 100%;
-  width: auto;
-  text-overflow: ellipsis;
-  border-radius: 0.5rem;
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.product-image10 {
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-}
-
-.product-image10 img {
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.product-head10 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.product-header10 {
-  text-overflow: ellipsis;
-}
-
-.product-heading1010 {
-  display: flex;
-  align-items: center;
-}
-
-.product-title10 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 1.125rem;
+.course-id {
+  font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 600;
-  letter-spacing: -0.025em;
   --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
+  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
-@media (prefers-color-scheme: dark) {
-  .product-title10 {
-    --tw-text-opacity: 1;
-    color: rgb(0 0 0 / var(--tw-text-opacity));
-  }
-}
+/* Styles for Course Name */
 
-.product-title210 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 0.375rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(99 102 241 / var(--tw-bg-opacity));
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+.course-name {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
-.product-title210:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
-}
+/* Styles for Course Description */
 
-.author-name10 {
-  margin-left: auto;
-  display: block;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+.course-description {
+  margin-top: 1rem;
   --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
+  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
-.author-name108 {
-  margin-left: auto;
-  display: block;
-  padding-top: 1rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+/* Styles for Course Video */
+
+.course-video {
+  margin-top: 1rem;
   --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
+  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
-.product-rating10 {
-  margin-top: 0.625rem;
-  margin-bottom: 1.25rem;
+/* Styles for Course Hours */
+
+.course-hours {
+  margin-top: 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+/* Styles for Course Price and Discount */
+
+.price-discount-wrapper {
+  margin-top: 1rem;
   display: flex;
-  align-items: center;
-}
-
-.product-star10 {
-  display: flex;
-  align-items: center;
-}
-
-.product-star10 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.product-star10:where([dir="rtl"], [dir="rtl"] *) > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 1;
-}
-
-.rating-svg10 {
-  height: 1rem;
-  width: 1rem;
-  --tw-text-opacity: 1;
-  color: rgb(253 224 71 / var(--tw-text-opacity));
-}
-
-.rating-svg10:last-child {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
-}
-
-.product-price102 {
-  margin-top: 0.5rem;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: 700;
-}
-
-.product-price10 {
-  margin-top: 0.5rem;
-  display: flex;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.product-price10 p {
-  --tw-text-opacity: 1;
-  color: rgb(190 24 93 / var(--tw-text-opacity));
-}
-
-.product-price10 i {
-  padding-top: 0.125rem;
-  --tw-text-opacity: 1;
-  color: rgb(190 24 93 / var(--tw-text-opacity));
-}
-
-.product-price-text10 {
-  display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: space-between;
-  font-weight: 600;
 }
 
-.add-to-cart-button10 {
-  display: flex;
+/* Styles for Course Price */
+
+.course-price {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+/* Styles for Course Discount */
+
+.course-discount {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+/* Styles for Course Images */
+
+.course-images {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* Styles for individual Course Image */
+
+.course-image {
+  height: auto;
   width: 100%;
-  align-items: center;
-  justify-content: center;
-  border-bottom-right-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 98 66 / var(--tw-bg-opacity));
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  text-align: center;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 500;
+}
+
+/* Styles for Course Sections */
+
+.course-sections {
+  margin-top: 1rem;
+}
+
+/* Styles for Section Heading */
+
+.section-heading {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
-.add-to-cart-button10:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(234 88 12 / var(--tw-bg-opacity));
+/* Styles for Section List */
+
+.section-list {
+  margin-top: 0.5rem;
 }
 
-.enroll-now {
-  display: flex;
-  flex-direction: column;
-  padding-top: 0.75rem;
-}
+/* Styles for individual Section Item */
 
-.product-title110 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  letter-spacing: -0.025em;
+.section-item {
   --tw-text-opacity: 1;
-  color: rgb(100 116 139 / var(--tw-text-opacity));
+  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 .hover\:bg-blue-700:hover {

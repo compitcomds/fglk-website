@@ -13,37 +13,47 @@ h1 {
 /* Default styles */
 /* Default styles */
 .course-head {
-    @apply pt-4 m-4 text-3xl text-secondaryg font-bold;
+    @apply text-3xl -mt-4 text-secondaryg font-bold;
 }
 .product-sm10 {
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-5 gap-4 m-5
 }
 .product-card10 {
-    @apply bg-white h-full  border w-auto text-black border-gray-200 rounded-lg shadow;
+    @apply bg-white h-full  text-ellipsis border w-auto text-black border-gray-200 rounded-lg shadow;
     
 }
 
 .product-image10 {
-    @apply p-4 rounded-t-lg object-cover ;
+    @apply rounded-t-lg  ;
+}
+
+.product-image10 img {
+    @apply object-cover rounded-t-lg;
 }
 
 .product-head10 {
-    @apply px-5 pb-5 ;
+    @apply px-5  whitespace-nowrap overflow-hidden text-ellipsis;
     
 }
-
+.product-header10 {
+    @apply text-ellipsis
+}
 .product-heading1010 {
     @apply flex items-center;
 }
 
 .product-title10 {
-    @apply flex text-lg font-semibold tracking-tight text-gray-900 dark:text-black;
+    @apply  text-lg overflow-hidden whitespace-nowrap text-ellipsis font-semibold tracking-tight text-gray-900 dark:text-black;
 }
-
+.product-title210 {
+    @apply text-lg bg-indigo-500 hover:bg-indigo-600 px-3 py-1 my-2 rounded-md text-white_back;
+}
 .author-name10 {
-    @apply block text-xs text-gray-500 ml-auto;
+    @apply block text-sm text-gray-500 ml-auto;
 }
-
+.author-name108 {
+    @apply block text-sm text-gray-500 ml-auto pt-4;
+}
 .product-rating10 {
     @apply flex items-center mt-2.5 mb-5;
 }
@@ -60,33 +70,31 @@ h1 {
     @apply text-gray-900;
 }
 
-.rating-badge10 {
-    @apply bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3;
-}
 
+
+.product-price102 {
+    @apply text-lg font-bold mt-2;
+}
 .product-price10 {
-    @apply text-lg font-bold text-gray-900 dark:text-black;
+    @apply flex text-sm mt-2 ;
 }
-
+.product-price10 p{
+    @apply  text-pink-700;
+}
+.product-price10 i{
+    @apply pt-0.5 text-pink-700
+}
 .product-price-text10 {
-    @apply flex items-center justify-between ;
+    @apply flex items-center justify-between font-semibold;
    
 }
 .add-to-cart-button10 {
-    @apply text-white bg-secondaryg font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-secondaryg;
+    @apply w-full text-white flex justify-center items-center bg-secondaryo hover:bg-orange-600 font-medium rounded-b-lg text-sm  py-2 text-center 
+}
+.enroll-now {
+    @apply pt-3 flex flex-col
 }
 
-.about-exp10110 {
-    @apply mt-3 text-black flex items-center font-semibold;
-    background: linear-gradient(45deg, #3ef510, #ff0000);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    /* text-fill-color: transparent; */
+.product-title110 {
+    @apply  text-slate-500 overflow-hidden whitespace-nowrap text-ellipsis tracking-tight ;
 }
-
-.about-exp10110 svg {
-    @apply w-4 h-4 ml-2;
-}
-
-
