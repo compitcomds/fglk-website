@@ -5,12 +5,7 @@
 {% endblock %}
 {% block content %}
 {% block content1 %}
-<BR>
-<BR>
-<BR>
-<BR>
-
-{{data['_id']}}<br>
+{#{{data['_id']}}<br>
 {{data['name']}}<br>
 {{data['discription']}}<br>
 {{data['course_video']}}<br>
@@ -20,36 +15,45 @@
 {{data['img1']}}<br>
 {{data['img2']}}<br>
 {{data['img3']}}<br>
-{{data['section']}}<br>
+{{data['section']}}<br>#}
+<div class="headingg">Course Details</div>
 <div class="course-details">
     <!-- Left side -->
-    <div>
+    <div class="casting">
         <!-- Video -->
         <div class="video-wrapper">
             <iframe src="{{ data.course_video }}" frameborder="0" allowfullscreen class="course-video"></iframe>
+
         </div>
         <!-- Price and Discount -->
         <div class="price-discount-wrapper">
-            <p class="course-price">{{ data.price }}</p>
-            <p class="course-discount">{{ data.discount }}</p>
+            <div class="course-discount">₹{{ data.discount }}</div>
+            <div class="course-price"><del>₹{{ data.price }}</del></div>
         </div>
     </div>
     <!-- Right side -->
     <div>
         <!-- Course ID -->
-        <h2 class="course-id">{{ data.id }}</h2>
+        <!-- <h2 class="course-id">{{ data.id }}</h2> -->
         <!-- Course Name -->
         <p class="course-name">{{ data.name }}</p>
         <!-- Course Description -->
         <p class="course-description">{{ data.discription }}</p>
         <!-- Course Hours -->
-        <p class="course-hours">{{ data.hrs }}</p>
-        <!-- Course Images -->
-        <div class="course-images">
-            <img src="{{ data.img1 }}" alt="Image 1" class="course-image">
-            <img src="{{ data.img2 }}" alt="Image 2" class="course-image">
-            <img src="{{ data.img3 }}" alt="Image 3" class="course-image">
+        <div class="mod-duration">
+            <div class="module">
+                <p class="course-hours">Duration <i class="fab fa-youtube"></i></p>
+                <div class="vertical-line"></div>
+                <p class="course-hours">Module <i class="fas fa-book"></i></p>
+            </div>
+            <div class="module">
+                <p class="course-hours">{{ data.hrs }} Hrs</p>
+                <div class="vertical-line"></div>
+                <p class="course-hours">{{ data.hrs }} Hrs</p>
+            </div>
         </div>
+        <!-- Course Images -->
+
         <!-- Course Sections -->
         <div class="course-sections">
             <h3 class="section-heading">Sections</h3>
@@ -59,8 +63,13 @@
             </ul>
         </div>
     </div>
-</div>
 
+</div>
+<div class="course-images">
+    <img src="{{ data.img1 }}" alt="Image 1" class="course-image">
+    <img src="{{ data.img2 }}" alt="Image 2" class="course-image">
+    <img src="{{ data.img3 }}" alt="Image 3" class="course-image">
+</div>
 
 {% endblock content1 %}
 

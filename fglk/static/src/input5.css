@@ -7,6 +7,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Styles for Course ID */
+.headingg {
+    @apply text-secondaryg m-4 lg:pt-8 sm:pt-16 text-4xl font-bold
+}
+
 .course-details {
     @apply grid grid-cols-1 md:grid-cols-2 gap-8 m-4 bg-yellow-50 rounded 
 }
@@ -15,50 +19,64 @@
 }
 
 /* Styles for Course Name */
+.casting {
+    @apply flex flex-col 
+}
 .course-name {
-    @apply text-gray-600;
+    @apply text-gray-900 text-2xl font-semibold;
 }
 
 /* Styles for Course Description */
 .course-description {
-    @apply mt-4 text-gray-700;
+    @apply mt-4 text-gray-900;
 }
 .video-wrapper {
-    @apply w-full h-52 p-4
+    @apply relative w-full pt-[56.25%] rounded-t-md
 }
 /* Styles for Course Video */
-.course-video {
-    @apply mt-4 rounded-md text-gray-700 w-full h-52;
+.course-video{
+    @apply  absolute top-0 left-0 w-full h-full rounded-t-md;
+}
+/* Styles for Course Hours */
+.mod-duration {
+    @apply mt-4 bg-red-50 rounded-md sm:rounded-lg
+}
+.module {
+    @apply flex justify-between items-center mx-4 relative px-4;
 }
 
-/* Styles for Course Hours */
-.course-hours {
-    @apply mt-4 text-gray-700;
+.vertical-line {
+    @apply h-auto absolute top-0 bottom-0 bg-slate-700 w-0.5 left-1/2 transform -translate-x-1/2;
 }
+.course-hours {
+    @apply mt-4 text-gray-900 text-xl;
+}
+
+
 
 /* Styles for Course Price and Discount */
 .price-discount-wrapper {
-    @apply flex flex-row justify-between mt-4;
+    @apply flex flex-row justify-center text-lg bg-indigo-300 rounded-b-md;
 }
 
 /* Styles for Course Price */
 .course-price {
-    @apply text-gray-700;
+    @apply text-black font-medium py-3 px-4 m-2;
 }
 
 /* Styles for Course Discount */
 .course-discount {
-    @apply text-gray-700;
+    @apply text-black font-medium py-3 px-4 m-2;
 }
 
 /* Styles for Course Images */
 .course-images {
-    @apply grid grid-cols-3 gap-4 mt-4;
+    @apply flex flex-wrap items-center justify-between mt-4 gap-2 p-6; 
 }
 
 /* Styles for individual Course Image */
 .course-image {
-    @apply w-full h-auto;
+    @apply w-64 lg:w-80 xl:w-96 h-auto rounded-md shadow-xl;
 }
 
 /* Styles for Course Sections */
@@ -78,5 +96,5 @@
 
 /* Styles for individual Section Item */
 .section-item {
-    @apply text-gray-700;
+    @apply text-gray-900;
 }

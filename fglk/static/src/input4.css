@@ -13,7 +13,7 @@ h1 {
 /* Default styles */
 /* Default styles */
 .course-head {
-    @apply text-3xl -mt-4 text-secondaryg font-bold;
+    @apply text-3xl lg:-mt-4 sm:mt-8 md:mt-8 text-secondaryg font-bold;
 }
 .product-sm10 {
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-5 gap-4 m-5
@@ -46,7 +46,7 @@ h1 {
     @apply  text-lg overflow-hidden whitespace-nowrap text-ellipsis font-semibold tracking-tight text-gray-900 dark:text-black;
 }
 .product-title210 {
-    @apply text-lg bg-indigo-500 hover:bg-indigo-600 px-3 py-1 my-2 rounded-md text-white_back;
+    @apply text-lg hover:bg-indigo-500 bg-indigo-600 px-3 py-1 my-2 rounded-md text-white_back;
 }
 .author-name10 {
     @apply block text-sm text-gray-500 ml-auto;
